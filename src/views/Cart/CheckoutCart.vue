@@ -49,7 +49,7 @@
                   <td class="invert-image">
                     <a href="single.html">
                       <img
-                        :src="`${publicPath}assets/images/m1.png`"
+                        :src="`${publicPath}assets/images/drug1.jpg`"
                         alt=""
                         class="img-responsive"
                       />
@@ -66,7 +66,7 @@
                       </div>
                     </div>
                   </td>
-                  <td class="invert">Samsung Galaxy F62</td>
+                  <td class="invert">Agrimycin 200 Oxytetracycline Injection</td>
                   <td class="invert">$499.00</td>
                   <td class="invert">
                     <div class="rem">
@@ -79,7 +79,7 @@
                   <td class="invert-image">
                     <a href="single2.html">
                       <img
-                        :src="`${publicPath}assets/images/m1.png`"
+                        :src="`${publicPath}assets/images/drug1.jpg`"
                         alt=""
                         class="img-responsive"
                       />
@@ -96,7 +96,7 @@
                       </div>
                     </div>
                   </td>
-                  <td class="invert">Refrigerator 3Star</td>
+                  <td class="invert">Gentamicin Piglet Injection</td>
                   <td class="invert">$699.00</td>
                   <td class="invert">
                     <div class="rem">
@@ -109,7 +109,7 @@
                   <td class="invert-image">
                     <a href="single.html">
                       <img
-                        :src="`${publicPath}assets/images/m1.png`"
+                        :src="`${publicPath}assets/images/drug1.jpg`"
                         alt=""
                         class="img-responsive"
                       />
@@ -126,7 +126,7 @@
                       </div>
                     </div>
                   </td>
-                  <td class="invert">FOOLPROOF Cover</td>
+                  <td class="invert">Tylan 50 Injectable Antibiotic</td>
                   <td class="invert">$299.00</td>
                   <td class="invert">
                     <div class="rem">

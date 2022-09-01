@@ -17,7 +17,7 @@
 							<div class="carousel-caption-banner" style="max-width:500px">
 								<p>Get flat
 									<span>10%</span> Cashback</p>
-								<h3 class="mt-2">Exciting Deals on Televisions</h3>
+								<h3 class="mt-2">Exciting Deals on Swine Drugs</h3>
 								<a class="btn btn-style mt-4" href="product.html">Shop Now </a>
 							</div>
 						</div>
@@ -29,9 +29,9 @@
 					<div class="container">
 						<div class="w3l-space-banner">
 							<div class="carousel-caption-banner" style="max-width:500px">
-								<p>Top
-									<span>Brands</span> lowest <span>Prices</span></p>
-								<h3 class="mt-2">Wide Range of Mobile Phones!</h3>
+								<p>Get flat
+									<span>10%</span> Cashback</p>
+								<h3 class="mt-2">Exciting Deals on Swine Drugs</h3>
 								<a class="btn btn-style mt-4" href="product.html">Shop Now </a>
 							</div>
 						</div>
@@ -43,9 +43,9 @@
 					<div class="container">
 						<div class="w3l-space-banner">
 							<div class="carousel-caption-banner" style="max-width:500px">
-								<p>Get up to
-									<span>25%</span> Off</p>
-								<h3 class="mt-2">Smart Watches New Collection!</h3>
+								<p>Get flat
+									<span>10%</span> Cashback</p>
+								<h3 class="mt-2">Exciting Deals on Swine Drugs</h3>
 								<a class="btn btn-style mt-4" href="product.html">Shop Now </a>
 							</div>
 						</div>
@@ -57,9 +57,9 @@
 					<div class="container">
 						<div class="w3l-space-banner">
 							<div class="carousel-caption-banner" style="max-width:500px">
-								<p>Top
-									<span>Sale</span> Best <span>Deals</span></p>
-								<h3 class="mt-2">Fresh, Healthy Air Everywhere!</h3>
+								<p>Get flat
+									<span>10%</span> Cashback</p>
+								<h3 class="mt-2">Exciting Deals on Swine Drugs</h3>
 								<a class="btn btn-style mt-4" href="product.html">Shop Now </a>
 							</div>
 						</div>
@@ -295,30 +295,28 @@
 								<div class="scroll">
 									<div class="row">
 										<div class="col-lg-3 col-sm-2 col-3 left-mar">
-											<img :src="`${publicPath}assets/images/k1.png`" alt="" class="img-fluid">
+											<img :src="`${publicPath}assets/images/drug8.jpg`" alt="" class="img-fluid">
 										</div>
 										<div class="col-lg-9 col-sm-10 col-9 w3_mvd">
-											<a href="#">Samsung Galaxy F62 (Laser Grey, 128 GB) (6 GB RAM)</a>
+											<a href="#">Pro-Pen-G Injectable For Cattle, Sheep, Swine And Horses</a>
 											<a href="#" class="price-mar mt-2">$12,990.00</a>
 										</div>
 									</div>
 									<div class="row my-4">
 										<div class="col-lg-3 col-sm-2 col-3 left-mar">
-											<img :src="`${publicPath}assets/images/k2.png`" alt="" class="img-fluid">
+											<img :src="`${publicPath}assets/images/drug1.jpg`" alt="" class="img-fluid">
 										</div>
 										<div class="col-lg-9 col-sm-10 col-9 w3_mvd">
-											<a href="#">Samsung 192 L Direct Cool Single Door 3 Star (2021)
-												Refrigerator</a>
+											<a href="#">Penicillin G/Norocillin Injectable</a>
 											<a href="#" class="price-mar mt-2">$12,499.00</a>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-lg-3 col-sm-2 col-3 left-mar">
-											<img :src="`${publicPath}assets/images/k3.png`" alt="" class="img-fluid">
+											<img :src="`${publicPath}assets/images/drug0.jpg`" alt="" class="img-fluid">
 										</div>
 										<div class="col-lg-9 col-sm-10 col-9 w3_mvd">
-											<a href="#">boAt Rockerz 450 Bluetooth Headset (Luscious Black, On the
-												Ear)</a>
+											<a href="#">Agrimycin 200 Oxytetracycline Injection</a>
 											<a href="#" class="price-mar mt-2">$1,199.00 </a>
 										</div>
 									</div>
@@ -338,7 +336,7 @@
 								<div class="col-md-4 product-men">
 									<div class="men-pro-item simpleCart_shelfItem">
 										<div class="men-thumb-item text-center">
-											<img :src="`${publicPath}assets/images/m1.png`" alt="" class="img-fluid">
+											<img :src="`${publicPath}assets/images/drug1.jpg`" alt="" class="img-fluid">
 											<div class="men-cart-pro">
 												<div class="inner-men-cart-pro">
 													<router-link to="/product/1" class="link-product-add-cart">Quick View</router-link>
@@ -347,7 +345,7 @@
 										</div>
 										<div class="item-info-product text-center mt-2">
 											<h4 class="pt-1">
-												<router-link to="/product/1">Redmi 9 Prime</router-link>
+												<router-link to="/product/1">Noromycin 300 LA</router-link>
 											</h4>
 											<div class="info-product-price">
 												<span class="item_price">$200.00</span>
@@ -377,7 +375,7 @@
 								<div class="col-md-4 product-men mt-md-0 mt-5">
 									<div class="men-pro-item simpleCart_shelfItem">
 										<div class="men-thumb-item text-center">
-											<img :src="`${publicPath}assets/images/m2.png`" alt="" class="img-fluid">
+											<img :src="`${publicPath}assets/images/drug2.jpg`" alt="" class="img-fluid">
 											<div class="men-cart-pro">
 												<div class="inner-men-cart-pro">
 													<router-link to="/product/1" class="link-product-add-cart">Quick View</router-link>
@@ -388,7 +386,7 @@
 										</div>
 										<div class="item-info-product text-center mt-2">
 											<h4 class="pt-1">
-												<router-link to="/product/1">Refrigerator </router-link>
+												<router-link to="/product/1">SpectoGard Scour-Chek </router-link>
 											</h4>
 											<div class="info-product-price">
 												<span class="item_price">$230.00</span>
@@ -418,7 +416,7 @@
 								<div class="col-md-4 product-men mt-md-0 mt-5">
 									<div class="men-pro-item simpleCart_shelfItem">
 										<div class="men-thumb-item text-center">
-											<img :src="`${publicPath}assets/images/m3.png`" alt="" class="img-fluid">
+											<img :src="`${publicPath}assets/images/drug3.jpg`" alt="" class="img-fluid">
 											<div class="men-cart-pro">
 												<div class="inner-men-cart-pro">
 													<router-link to="/product/1" class="link-product-add-cart">Quick View</router-link>
@@ -429,7 +427,7 @@
 										</div>
 										<div class="item-info-product text-center mt-2">
 											<h4 class="pt-1">
-												<router-link to="/product/1">Apple iPhone 11</router-link>
+												<router-link to="/product/1">Duramycin 72-200 Injectable Antibiotic For Cattle And Swine</router-link>
 											</h4>
 											<div class="info-product-price">
 												<span class="item_price">$280.00</span>
@@ -465,7 +463,7 @@
 								<div class="col-md-4 product-men mt-5">
 									<div class="men-pro-item simpleCart_shelfItem">
 										<div class="men-thumb-item text-center">
-											<img :src="`${publicPath}assets/images/m4.png`" alt="" class="img-fluid">
+											<img :src="`${publicPath}assets/images/drug4.jpg`" alt="" class="img-fluid">
 											<div class="men-cart-pro">
 												<div class="inner-men-cart-pro">
 													<router-link to="/product/1" class="link-product-add-cart">Quick View</router-link>
@@ -475,7 +473,7 @@
 										</div>
 										<div class="item-info-product text-center mt-2">
 											<h4 class="pt-1">
-												<router-link to="/product/1">Mi 4A Horizon</router-link>
+												<router-link to="/product/1">Bio-Mycin 200 Cattle And Swine Antibiotic Injection</router-link>
 											</h4>
 											<div class="info-product-price">
 												<span class="item_price">$320.00</span>
@@ -505,7 +503,7 @@
 								<div class="col-md-4 product-men mt-5">
 									<div class="men-pro-item simpleCart_shelfItem">
 										<div class="men-thumb-item text-center">
-											<img :src="`${publicPath}assets/images/m6.png`" alt="" class="img-fluid">
+											<img :src="`${publicPath}assets/images/drug5.jpg`" alt="" class="img-fluid">
 											<div class="men-cart-pro">
 												<div class="inner-men-cart-pro">
 													<router-link to="/product/1" class="link-product-add-cart">Quick View</router-link>
@@ -514,7 +512,7 @@
 										</div>
 										<div class="item-info-product text-center mt-2">
 											<h4 class="pt-1">
-												<router-link to="/product/1">Smart AC with Wi-fi</router-link>
+												<router-link to="/product/1">Liquamycin LA-200 Oxytetracycline Injection</router-link>
 											</h4>
 											<div class="info-product-price">
 												<span class="item_price">$349.00</span>
@@ -546,7 +544,7 @@
 								<div class="col-md-4 product-men mt-5">
 									<div class="men-pro-item simpleCart_shelfItem">
 										<div class="men-thumb-item text-center">
-											<img :src="`${publicPath}assets/images/m5.png`" alt="" class="img-fluid">
+											<img :src="`${publicPath}assets/images/drug2.jpg`" alt="" class="img-fluid">
 											<div class="men-cart-pro">
 												<div class="inner-men-cart-pro">
 													<router-link to="/product/1" class="link-product-add-cart">Quick View</router-link>
@@ -555,7 +553,7 @@
 										</div>
 										<div class="item-info-product text-center mt-2">
 											<h4 class="pt-1">
-												<router-link to="/product/1">Microwave Oven</router-link>
+												<router-link to="/product/1">Denagard 12.5% Liquid Concentraten</router-link>
 											</h4>
 											<div class="info-product-price">
 												<span class="item_price">$249.00</span>
@@ -604,7 +602,7 @@
 								<div class="col-md-4 product-men">
 									<div class="men-pro-item simpleCart_shelfItem">
 										<div class="men-thumb-item text-center">
-											<img :src="`${publicPath}assets/images/m7.png`" alt="">
+											<img :src="`${publicPath}assets/images/drug0.jpg`" alt="">
 											<div class="men-cart-pro">
 												<div class="inner-men-cart-pro">
 													<router-link to="/product/1" class="link-product-add-cart">Quick View</router-link>
@@ -614,7 +612,7 @@
 										<span class="product-new-top">New</span>
 										<div class="item-info-product text-center mt-2">
 											<h4 class="pt-1">
-												<router-link to="/product/1">Desert Air Cooler</router-link>
+												<router-link to="/product/1">Penicillin G/Norocillin Injectable</router-link>
 											</h4>
 											<div class="info-product-price">
 												<span class="item_price">$230.00</span>
@@ -646,7 +644,7 @@
 								<div class="col-md-4 product-men mt-md-0 mt-5">
 									<div class="men-pro-item simpleCart_shelfItem">
 										<div class="men-thumb-item text-center">
-											<img :src="`${publicPath}assets/images/m8.png`" alt="">
+											<img :src="`${publicPath}assets/images/drug6.jpg`" alt="">
 											<div class="men-cart-pro">
 												<div class="inner-men-cart-pro">
 													<router-link to="/product/1" class="link-product-add-cart">Quick View</router-link>
@@ -655,7 +653,7 @@
 										</div>
 										<div class="item-info-product text-center mt-2">
 											<h4 class="pt-1">
-												<router-link to="/product/1">Auto Washing Machine</router-link>
+												<router-link to="/product/1">Denagard 12.5% Liquid Concentrate</router-link>
 											</h4>
 											<div class="info-product-price">
 												<span class="item_price">$180.00</span>
@@ -686,7 +684,7 @@
 								<div class="col-md-4 product-men mt-md-0 mt-5">
 									<div class="men-pro-item simpleCart_shelfItem">
 										<div class="men-thumb-item text-center">
-											<img :src="`${publicPath}assets/images/m9.png`" alt="">
+											<img :src="`${publicPath}assets/images/drug8.jpg`" alt="">
 											<div class="men-cart-pro">
 												<div class="inner-men-cart-pro">
 													<router-link to="/product/1" class="link-product-add-cart">Quick View</router-link>
@@ -695,7 +693,7 @@
 										</div>
 										<div class="item-info-product text-center mt-2">
 											<h4 class="pt-1">
-												<router-link to="/product/1">Water Purifier</router-link>
+												<router-link to="/product/1">Bio-Mycin 200 Cattle And Swine Antibiotic Injection</router-link>
 											</h4>
 											<div class="info-product-price">
 												<span class="item_price">$199.00</span>
@@ -731,7 +729,7 @@
 								<div class="col-md-4 product-men">
 									<div class="men-pro-item simpleCart_shelfItem">
 										<div class="men-thumb-item text-center">
-											<img :src="`${publicPath}assets/images/mk8.png`" alt="" class="img-fluid">
+											<img :src="`${publicPath}assets/images/drug9.jpg`" alt="" class="img-fluid">
 											<div class="men-cart-pro">
 												<div class="inner-men-cart-pro">
 													<router-link to="/product/1" class="link-product-add-cart">Quick View</router-link>
@@ -740,7 +738,7 @@
 										</div>
 										<div class="item-info-product text-center mt-2">
 											<h4 class="pt-1">
-												<router-link to="/product/1">Panasonic Tab 8</router-link>
+												<router-link to="/product/1">BMD Soluble Powder For Swine And Poultry</router-link>
 											</h4>
 											<div class="info-product-price">
 												<span class="item_price">$499.00</span>
@@ -771,7 +769,7 @@
 								<div class="col-md-4 product-men mt-md-0 mt-5">
 									<div class="men-pro-item simpleCart_shelfItem">
 										<div class="men-thumb-item text-center">
-											<img :src="`${publicPath}assets/images/mk7.png`" alt="" class="img-fluid">
+											<img :src="`${publicPath}assets/images/drug4.jpg`" alt="" class="img-fluid">
 											<div class="men-cart-pro">
 												<div class="inner-men-cart-pro">
 													<router-link to="/product/1" class="link-product-add-cart">Quick View</router-link>
@@ -780,7 +778,7 @@
 										</div>
 										<div class="item-info-product text-center mt-2">
 											<h4 class="pt-1">
-												<router-link to="/product/1">Lenovo Yoga Tab</router-link>
+												<router-link to="/product/1">Agrimycin 200 Oxytetracycline Injection</router-link>
 											</h4>
 											<div class="info-product-price">
 												<span class="item_price">$599.00</span>
@@ -811,7 +809,7 @@
 								<div class="col-md-4 product-men mt-md-0 mt-5">
 									<div class="men-pro-item simpleCart_shelfItem">
 										<div class="men-thumb-item text-center">
-											<img :src="`${publicPath}assets/images/mk9.png`" alt="" class="img-fluid">
+											<img :src="`${publicPath}assets/images/drug2.jpg`" alt="" class="img-fluid">
 											<div class="men-cart-pro">
 												<div class="inner-men-cart-pro">
 													<router-link to="/product/1" class="link-product-add-cart">Quick View</router-link>
@@ -821,7 +819,7 @@
 										</div>
 										<div class="item-info-product text-center mt-2">
 											<h4 class="pt-1">
-												<router-link to="/product/1">Samsung Galaxy Tab</router-link>
+												<router-link to="/product/1">Pro-Pen-G Injectable For Cattle, Sheep, Swine And Horses</router-link>
 											</h4>
 											<div class="info-product-price">
 												<span class="item_price">$699.00</span>
@@ -870,11 +868,11 @@
 							<div class="row">
 								<div class="col-sm-7 offer-name">
 									<h6>New Collections, New Trendy</h6>
-									<h4 class="mb-3">Smart Watches</h4>
+									<h4 class="mb-3">Animal Drugs</h4>
 									<p>Sale up to 25% off all in store</p>
 								</div>
 								<div class="col-sm-5 offerimg-w3l">
-									<img :src="`${publicPath}assets/images/off1.png`" alt="" class="img-fluid">
+									<img :src="`${publicPath}assets/images/drug1.jpg`" alt="" class="img-fluid">
 								</div>
 							</div>
 						</div>
@@ -886,11 +884,11 @@
 							<div class="row ">
 								<div class="col-sm-7 offer-name">
 									<h6>Top Brands, lowest Prices</h6>
-									<h4 class="mb-3">Smart Phones</h4>
+									<h4 class="mb-3">Drugs</h4>
 									<p>Free shipping order over $100</p>
 								</div>
 								<div class="col-sm-5 offerimg-w3l">
-									<img :src="`${publicPath}assets/images/off2.png`" alt="" class="img-fluid">
+									<img :src="`${publicPath}assets/images/drug4.jpg`" alt="" class="img-fluid">
 								</div>
 							</div>
 						</div>

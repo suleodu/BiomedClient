@@ -32,30 +32,30 @@
             <div class="grid images_3_of_2">
               <div class="flexslider">
                 <ul class="slides">
-                  <li :data-thumb="`${publicPath}assets/images/si1.png`">
+                  <li :data-thumb="`${publicPath}assets/images/drug1.jpg`">
                     <div class="thumb-image">
                       <img
-                        :src="`${publicPath}assets/images/si1.png`"
+                        :src="`${publicPath}assets/images/drug1.jpg`"
                         data-imagezoom="true"
                         class="img-fluid"
                         alt=""
                       />
                     </div>
                   </li>
-                  <li :data-thumb="`${publicPath}assets/images/si2.png`">
+                  <li :data-thumb="`${publicPath}assets/images/drug1.jpg`">
                     <div class="thumb-image">
                       <img
-                        :src="`${publicPath}assets/images/si2.png`"
+                        :src="`${publicPath}assets/images/drug1.jpg`"
                         data-imagezoom="true"
                         class="img-fluid"
                         alt=""
                       />
                     </div>
                   </li>
-                  <li :data-thumb="`${publicPath}assets/images/si3.png`">
+                  <li :data-thumb="`${publicPath}assets/images/drug1.jpg`">
                     <div class="thumb-image">
                       <img
-                        :src="`${publicPath}assets/images/si3.png`"
+                        :src="`${publicPath}assets/images/drug1.jpg`"
                         data-imagezoom="true"
                         class="img-fluid"
                         alt=""
