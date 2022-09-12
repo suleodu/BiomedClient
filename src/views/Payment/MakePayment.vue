@@ -77,7 +77,7 @@
 															type="text" name="number" inputmode="numeric"
 															autocomplete="cc-number" autocompletetype="cc-number"
 															x-autocompletetype="cc-number"
-															placeholder="&#149;&#149;&#149;&#149; &#149;&#149;&#149;&#149; &#149;&#149;&#149;&#149; &#149;&#149;&#149;&#149;">
+															>
 													</div>
 												</div>
 												<div class="w3_agileits_card_number_grid_right mt-2">
@@ -85,7 +85,7 @@
 														<label class="control-label">CVV</label>
 														<input class="security-code form-control" Â· inputmode="numeric"
 															type="text" name="security-code"
-															placeholder="&#149;&#149;&#149;">
+															placeholder="">
 													</div>
 												</div>
 												<div class="clear"> </div>
