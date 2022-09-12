@@ -209,10 +209,10 @@
               </div>
             </form>
             <div class="checkout-right-basket">
-              <a href="payment.html"
+              <router-link to="/pay-cart"
                 >Make a Payment
                 <span class="far fa-hand-point-right"></span>
-              </a>
+              </router-link>
             </div>
           </div>
         </div>

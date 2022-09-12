@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Products from '../views/Products/ProductIndex.vue'
 import ProductDetails from '../views/Products/ProductDetails.vue'
 import CheckoutCart from '../views/Cart/CheckoutCart.vue'
+import PaymentPage from '../views/Payment/MakePayment.vue'
 
 const routes = [
   {
@@ -12,17 +13,18 @@ const routes = [
   {
     path: '/product/:id',
     name: 'product-details',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: ProductDetails
   },
   {path: '/checkout-cart',
   name: 'checkout-cart',
-  // route level code-splitting
-  // this generates a separate chunk (about.[hash].js) for this route
-  // which is lazy-loaded when the route is visited.
+  
   component: CheckoutCart
+  },
+  {
+    path: '/pay-cart',
+    name: 'pay-cart',
+
+    component: PaymentPage
   }
 ]
 
