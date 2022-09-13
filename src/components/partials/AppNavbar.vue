@@ -494,7 +494,7 @@
           </div>
           <div class="modal-body">
             <form action="#" method="post">
-              <vue-element-loading :active="loading" color="#FF6700" :text="loadingText" spinner="bar-fade-scale" />
+              <!-- <vue-element-loading :active="loading" color="#FF6700" :text="loadingText" spinner="bar-fade-scale" /> -->
               <div class="form-group">
                 <input
                   type="text"
@@ -936,11 +936,11 @@
   </div>
 </template>
 <script>
-import VueElementLoading from "vue-element-loading";
+// import VueElementLoading from "vue-element-loading";
 
 export default {
   components:{
-    VueElementLoading
+    // VueElementLoading
   },
   data () {
   return {
