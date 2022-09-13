@@ -312,7 +312,7 @@
 		</div>
 	</div>
 	<!-- middle section -->
-<div style="margin: 8px auto; display: block; text-align:center;">
+<div style="margin: 8px auto; display: block; text-align:center; ">
 
 <!---728x90--->
  
