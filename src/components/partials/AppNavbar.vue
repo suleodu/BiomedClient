@@ -494,11 +494,13 @@
           </div>
           <div class="modal-body">
             <form action="#" method="post">
+              <vue-element-loading :active="loading" color="#FF6700" :text="loadingText" spinner="bar-fade-scale" />
               <div class="form-group">
                 <input
                   type="text"
                   class="form-control"
                   placeholder="Your Name"
+                  v-model="form.name"
                   name="Name"
                   required=""
                 />
@@ -508,7 +510,28 @@
                   type="email"
                   class="form-control"
                   placeholder="Email"
+                  v-model="form.email"
                   name="Email"
+                  required=""
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Username"
+                  v-model="form.username"
+                  name="Username"
+                  required=""
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Phone"
+                  v-model="form.phone"
+                  name="Phone"
                   required=""
                 />
               </div>
@@ -518,6 +541,7 @@
                   class="form-control"
                   placeholder="Password"
                   name="Password"
+                  v-model="form.password"
                   id="password1"
                   required=""
                 />
@@ -528,6 +552,7 @@
                   class="form-control"
                   placeholder="Confirm Password"
                   name="Confirm Password"
+                  v-model="form.password_confirmation"
                   id="password2"
                   required=""
                 />
@@ -911,10 +936,25 @@
   </div>
 </template>
 <script>
+import VueElementLoading from "vue-element-loading";
+
 export default {
+  components:{
+    VueElementLoading
+  },
   data () {
   return {
-    publicPath: process.env.BASE_URL
+    publicPath: process.env.BASE_URL,
+    loading:false,
+    loadingText:"",
+    form: {
+
+    }
+  }
+},
+methods: {
+  register() {
+
   }
 }
 }
