@@ -2,385 +2,6 @@
   <div>
     <!-- top-header -->
 
-    <!-- Button trigger modal(select-location) -->
-    <div id="small-dialog1" class="mfp-hide">
-      <div class="select-city">
-        <h3><i class="fas fa-map-marker"></i> Please Select Your Location</h3>
-        <select class="list_of_cities">
-          <optgroup label="Popular Cities">
-            <option selected style="display: none; color: #eee">
-              Select City
-            </option>
-            <option>Birmingham</option>
-            <option>Anchorage</option>
-            <option>Phoenix</option>
-            <option>Little Rock</option>
-            <option>Los Angeles</option>
-            <option>Denver</option>
-            <option>Bridgeport</option>
-            <option>Wilmington</option>
-            <option>Jacksonville</option>
-            <option>Atlanta</option>
-            <option>Honolulu</option>
-            <option>Boise</option>
-            <option>Chicago</option>
-            <option>Indianapolis</option>
-          </optgroup>
-          <optgroup label="Alabama">
-            <option>Birmingham</option>
-            <option>Montgomery</option>
-            <option>Mobile</option>
-            <option>Huntsville</option>
-            <option>Tuscaloosa</option>
-          </optgroup>
-          <optgroup label="Alaska">
-            <option>Anchorage</option>
-            <option>Fairbanks</option>
-            <option>Juneau</option>
-            <option>Sitka</option>
-            <option>Ketchikan</option>
-          </optgroup>
-          <optgroup label="Arizona">
-            <option>Phoenix</option>
-            <option>Tucson</option>
-            <option>Mesa</option>
-            <option>Chandler</option>
-            <option>Glendale</option>
-          </optgroup>
-          <optgroup label="Arkansas">
-            <option>Little Rock</option>
-            <option>Fort Smith</option>
-            <option>Fayetteville</option>
-            <option>Springdale</option>
-            <option>Jonesboro</option>
-          </optgroup>
-          <optgroup label="California">
-            <option>Los Angeles</option>
-            <option>San Diego</option>
-            <option>San Jose</option>
-            <option>San Francisco</option>
-            <option>Fresno</option>
-          </optgroup>
-          <optgroup label="Colorado">
-            <option>Denver</option>
-            <option>Colorado</option>
-            <option>Aurora</option>
-            <option>Fort Collins</option>
-            <option>Lakewood</option>
-          </optgroup>
-          <optgroup label="Connecticut">
-            <option>Bridgeport</option>
-            <option>New Haven</option>
-            <option>Hartford</option>
-            <option>Stamford</option>
-            <option>Waterbury</option>
-          </optgroup>
-          <optgroup label="Delaware">
-            <option>Wilmington</option>
-            <option>Dover</option>
-            <option>Newark</option>
-            <option>Bear</option>
-            <option>Middletown</option>
-          </optgroup>
-          <optgroup label="Florida">
-            <option>Jacksonville</option>
-            <option>Miami</option>
-            <option>Tampa</option>
-            <option>St. Petersburg</option>
-            <option>Orlando</option>
-          </optgroup>
-          <optgroup label="Georgia">
-            <option>Atlanta</option>
-            <option>Augusta</option>
-            <option>Columbus</option>
-            <option>Savannah</option>
-            <option>Athens</option>
-          </optgroup>
-          <optgroup label="Hawaii">
-            <option>Honolulu</option>
-            <option>Pearl City</option>
-            <option>Hilo</option>
-            <option>Kailua</option>
-            <option>Waipahu</option>
-          </optgroup>
-          <optgroup label="Idaho">
-            <option>Boise</option>
-            <option>Nampa</option>
-            <option>Meridian</option>
-            <option>Idaho Falls</option>
-            <option>Pocatello</option>
-          </optgroup>
-          <optgroup label="Illinois">
-            <option>Chicago</option>
-            <option>Aurora</option>
-            <option>Rockford</option>
-            <option>Joliet</option>
-            <option>Naperville</option>
-          </optgroup>
-          <optgroup label="Indiana">
-            <option>Indianapolis</option>
-            <option>Fort Wayne</option>
-            <option>Evansville</option>
-            <option>South Bend</option>
-            <option>Hammond</option>
-          </optgroup>
-          <optgroup label="Iowa">
-            <option>Des Moines</option>
-            <option>Cedar Rapids</option>
-            <option>Davenport</option>
-            <option>Sioux City</option>
-            <option>Waterloo</option>
-          </optgroup>
-          <optgroup label="Kansas">
-            <option>Wichita</option>
-            <option>Overland Park</option>
-            <option>Kansas City</option>
-            <option>Topeka</option>
-            <option>Olathe</option>
-          </optgroup>
-          <optgroup label="Kentucky">
-            <option>Louisville</option>
-            <option>Lexington</option>
-            <option>Bowling Green</option>
-            <option>Owensboro</option>
-            <option>Covington</option>
-          </optgroup>
-          <optgroup label="Louisiana">
-            <option>New Orleans</option>
-            <option>Baton Rouge</option>
-            <option>Shreveport</option>
-            <option>Metairie</option>
-            <option>Lafayette</option>
-          </optgroup>
-          <optgroup label="Maine">
-            <option>Portland</option>
-            <option>Lewiston</option>
-            <option>Bangor</option>
-            <option>South Portland</option>
-            <option>Auburn</option>
-          </optgroup>
-          <optgroup label="Maryland">
-            <option>Baltimore</option>
-            <option>Frederick</option>
-            <option>Rockville</option>
-            <option>Gaithersburg</option>
-            <option>Bowie</option>
-          </optgroup>
-          <optgroup label="Massachusetts">
-            <option>Boston</option>
-            <option>Worcester</option>
-            <option>Springfield</option>
-            <option>Lowell</option>
-            <option>Cambridge</option>
-          </optgroup>
-          <optgroup label="Michigan">
-            <option>Detroit</option>
-            <option>Grand Rapids</option>
-            <option>Warren</option>
-            <option>Sterling Heights</option>
-            <option>Lansing</option>
-          </optgroup>
-          <optgroup label="Minnesota">
-            <option>Minneapolis</option>
-            <option>St. Paul</option>
-            <option>Rochester</option>
-            <option>Duluth</option>
-            <option>Bloomington</option>
-          </optgroup>
-          <optgroup label="Mississippi">
-            <option>Jackson</option>
-            <option>Gulfport</option>
-            <option>Southaven</option>
-            <option>Hattiesburg</option>
-            <option>Biloxi</option>
-          </optgroup>
-          <optgroup label="Missouri">
-            <option>Kansas City</option>
-            <option>St. Louis</option>
-            <option>Springfield</option>
-            <option>Independence</option>
-            <option>Columbia</option>
-          </optgroup>
-          <optgroup label="Montana">
-            <option>Billings</option>
-            <option>Missoula</option>
-            <option>Great Falls</option>
-            <option>Bozeman</option>
-            <option>Butte-Silver Bow</option>
-          </optgroup>
-          <optgroup label="Nebraska">
-            <option>Omaha</option>
-            <option>Lincoln</option>
-            <option>Bellevue</option>
-            <option>Grand Island</option>
-            <option>Kearney</option>
-          </optgroup>
-          <optgroup label="Nevada">
-            <option>Las Vegas</option>
-            <option>Henderson</option>
-            <option>North Las Vegas</option>
-            <option>Reno</option>
-            <option>Sunrise Manor</option>
-          </optgroup>
-          <optgroup label="New Hampshire">
-            <option>Manchesters</option>
-            <option>Nashua</option>
-            <option>Concord</option>
-            <option>Dover</option>
-            <option>Rochester</option>
-          </optgroup>
-          <optgroup label="New Jersey">
-            <option>Newark</option>
-            <option>Jersey City</option>
-            <option>Paterson</option>
-            <option>Elizabeth</option>
-            <option>Edison</option>
-          </optgroup>
-          <optgroup label="New Mexico">
-            <option>Albuquerque</option>
-            <option>Las Cruces</option>
-            <option>Rio Rancho</option>
-            <option>Santa Fe</option>
-            <option>Roswell</option>
-          </optgroup>
-          <optgroup label="New York">
-            <option>New York</option>
-            <option>Buffalo</option>
-            <option>Rochester</option>
-            <option>Yonkers</option>
-            <option>Syracuse</option>
-          </optgroup>
-          <optgroup label="North Carolina">
-            <option>Charlotte</option>
-            <option>Raleigh</option>
-            <option>Greensboro</option>
-            <option>Winston-Salem</option>
-            <option>Durham</option>
-          </optgroup>
-          <optgroup label="North Dakota">
-            <option>Fargo</option>
-            <option>Bismarck</option>
-            <option>Grand Forks</option>
-            <option>Minot</option>
-            <option>West Fargo</option>
-          </optgroup>
-          <optgroup label="Ohio">
-            <option>Columbus</option>
-            <option>Cleveland</option>
-            <option>Cincinnati</option>
-            <option>Toledo</option>
-            <option>Akron</option>
-          </optgroup>
-          <optgroup label="Oklahoma">
-            <option>Oklahoma City</option>
-            <option>Tulsa</option>
-            <option>Norman</option>
-            <option>Broken Arrow</option>
-            <option>Lawton</option>
-          </optgroup>
-          <optgroup label="Oregon">
-            <option>Portland</option>
-            <option>Eugene</option>
-            <option>Salem</option>
-            <option>Gresham</option>
-            <option>Hillsboro</option>
-          </optgroup>
-          <optgroup label="Pennsylvania">
-            <option>Philadelphia</option>
-            <option>Pittsburgh</option>
-            <option>Allentown</option>
-            <option>Erie</option>
-            <option>Reading</option>
-          </optgroup>
-          <optgroup label="Rhode Island">
-            <option>Providence</option>
-            <option>Warwick</option>
-            <option>Cranston</option>
-            <option>Pawtucket</option>
-            <option>East Providence</option>
-          </optgroup>
-          <optgroup label="South Carolina">
-            <option>Columbia</option>
-            <option>Charleston</option>
-            <option>North Charleston</option>
-            <option>Mount Pleasant</option>
-            <option>Rock Hill</option>
-          </optgroup>
-          <optgroup label="South Dakota">
-            <option>Sioux Falls</option>
-            <option>Rapid City</option>
-            <option>Aberdeen</option>
-            <option>Brookings</option>
-            <option>Watertown</option>
-          </optgroup>
-          <optgroup label="Tennessee">
-            <option>Memphis</option>
-            <option>Nashville</option>
-            <option>Knoxville</option>
-            <option>Chattanooga</option>
-            <option>Clarksville</option>
-          </optgroup>
-          <optgroup label="Texas">
-            <option>Houston</option>
-            <option>San Antonio</option>
-            <option>Dallas</option>
-            <option>Austin</option>
-            <option>Fort Worth</option>
-          </optgroup>
-          <optgroup label="Utah">
-            <option>Salt Lake City</option>
-            <option>West Valley City</option>
-            <option>Provo</option>
-            <option>West Jordan</option>
-            <option>Orem</option>
-          </optgroup>
-          <optgroup label="Vermont">
-            <option>Burlington</option>
-            <option>Essex</option>
-            <option>South Burlington</option>
-            <option>Colchester</option>
-            <option>Rutland</option>
-          </optgroup>
-          <optgroup label="Virginia">
-            <option>Virginia Beach</option>
-            <option>Norfolk</option>
-            <option>Chesapeake</option>
-            <option>Arlington</option>
-            <option>Richmond</option>
-          </optgroup>
-          <optgroup label="Washington">
-            <option>Seattle</option>
-            <option>Spokane</option>
-            <option>Tacoma</option>
-            <option>Vancouver</option>
-            <option>Bellevue</option>
-          </optgroup>
-          <optgroup label="West Virginia">
-            <option>Charleston</option>
-            <option>Huntington</option>
-            <option>Parkersburg</option>
-            <option>Morgantown</option>
-            <option>Wheeling</option>
-          </optgroup>
-          <optgroup label="Wisconsin">
-            <option>Milwaukee</option>
-            <option>Madison</option>
-            <option>Green Bay</option>
-            <option>Kenosha</option>
-            <option>Racine</option>
-          </optgroup>
-          <optgroup label="Wyoming">
-            <option>Cheyenne</option>
-            <option>Casper</option>
-            <option>Laramie</option>
-            <option>Gillette</option>
-            <option>Rock Springs</option>
-          </optgroup>
-        </select>
-        <div class="clearfix"></div>
-      </div>
-    </div>
-    <!-- //shop locator (popup) -->
     <!-- modals -->
     <!-- log in -->
     <div
@@ -390,86 +11,7 @@
       role="dialog"
       aria-hidden="true"
     >
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title text-center">Log In</h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <form action="#" method="post">
-              <div class="form-group">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Username"
-                  name="Name"
-                  required=""
-                />
-              </div>
-              <div class="form-group">
-                <input
-                  type="password"
-                  class="form-control"
-                  placeholder="Password"
-                  name="Password"
-                  required=""
-                />
-              </div>
-              <div class="right-w3l">
-                <input type="submit" class="form-control" value="Log in" />
-              </div>
-              <div class="sub-w3l">
-                <div class="custom-control custom-checkbox mr-sm-2">
-                  <input
-                    type="checkbox"
-                    class="custom-control-input"
-                    id="customControlAutosizing"
-                  />
-                  <label
-                    class="custom-control-label"
-                    for="customControlAutosizing"
-                    >Remember me?</label
-                  >
-                </div>
-              </div>
-              <p class="text-center dont-do mt-3">
-                Don't have an account?
-                <a href="#" data-toggle="modal" data-target="#exampleModal2">
-                  Register Now</a
-                >
-              </p>
-              <p class="text-center dont-do mt-3">(Or)</p>
-              <div class="social text-center mt-2">
-                <ul class="list-unstyled">
-                  <li class="d-inline">
-                    <a class="icon fb" href="#facebook">
-                      <i class="fab fa-facebook-f"></i>
-                    </a>
-                  </li>
-                  <li class="d-inline mx-1">
-                    <a class="icon tw" href="#twitter">
-                      <i class="fab fa-twitter"></i>
-                    </a>
-                  </li>
-                  <li class="d-inline">
-                    <a class="icon gp" href="#google-plus">
-                      <i class="fab fa-google-plus-g"></i>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
+      <LoginUser />
     </div>
     <!-- register -->
     <div
@@ -479,125 +21,7 @@
       role="dialog"
       aria-hidden="true"
     >
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Register</h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <form action="#" method="post">
-              <!-- <vue-element-loading :active="loading" color="#FF6700" :text="loadingText" spinner="bar-fade-scale" /> -->
-              <div class="form-group">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Your Name"
-                  v-model="form.name"
-                  name="Name"
-                  required=""
-                />
-              </div>
-              <div class="form-group">
-                <input
-                  type="email"
-                  class="form-control"
-                  placeholder="Email"
-                  v-model="form.email"
-                  name="Email"
-                  required=""
-                />
-              </div>
-              <div class="form-group">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Username"
-                  v-model="form.username"
-                  name="Username"
-                  required=""
-                />
-              </div>
-              <div class="form-group">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Phone"
-                  v-model="form.phone"
-                  name="Phone"
-                  required=""
-                />
-              </div>
-              <div class="form-group">
-                <input
-                  type="password"
-                  class="form-control"
-                  placeholder="Password"
-                  name="Password"
-                  v-model="form.password"
-                  id="password1"
-                  required=""
-                />
-              </div>
-              <div class="form-group">
-                <input
-                  type="password"
-                  class="form-control"
-                  placeholder="Confirm Password"
-                  name="Confirm Password"
-                  v-model="form.password_confirmation"
-                  id="password2"
-                  required=""
-                />
-              </div>
-              <div class="right-w3l">
-                <input type="submit" class="form-control" value="Register" />
-              </div>
-              <div class="sub-w3l">
-                <div class="custom-control custom-checkbox mr-sm-2">
-                  <input
-                    type="checkbox"
-                    class="custom-control-input"
-                    id="customControlAutosizing2"
-                  />
-                  <label
-                    class="custom-control-label"
-                    for="customControlAutosizing2"
-                    >I Accept to the Terms & Conditions</label
-                  >
-                </div>
-              </div>
-              <p class="text-center dont-do mt-3">(Or)</p>
-              <div class="social text-center mt-2">
-                <ul class="list-unstyled">
-                  <li class="d-inline">
-                    <a class="icon fb" href="#facebook">
-                      <i class="fab fa-facebook-f"></i>
-                    </a>
-                  </li>
-                  <li class="d-inline mx-1">
-                    <a class="icon tw" href="#twitter">
-                      <i class="fab fa-twitter"></i>
-                    </a>
-                  </li>
-                  <li class="d-inline">
-                    <a class="icon gp" href="#google-plus">
-                      <i class="fab fa-google-plus-g"></i>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
+      <RegisterUser />
     </div>
     <!-- //modal -->
     <!-- //top-header -->
@@ -661,7 +85,7 @@
                     <nav class="navigation">
                       <div class="theme-switch-wrapper">
                         <label class="theme-switch" for="checkbox">
-                          <input type="checkbox" id="checkbox" />
+                          <input type="checkbox" @change="switchTheme($event)" id="checkbox" />
                           <div class="mode-container">
                             <i class="gg-sun"></i>
                             <i class="gg-moon"></i>
@@ -685,7 +109,7 @@
                       name="submit"
                       value=""
                     >
-                      <img src="images/cart.png" alt="" class="img-fluid" />
+                      <img :src="`${publicPath}assets/images/cart.png`" alt="" class="img-fluid" />
                       Cart
                     </button>
                   </form>
@@ -711,18 +135,8 @@
                 required=""
               >
                 <option value="">All Categories</option>
-                <option value="Televisions">Televisions</option>
-                <option value="Headphones">Headphones</option>
-                <option value="Computers">Computers</option>
-                <option value="Appliances">Appliances</option>
-                <option value="Mobiles">Mobiles</option>
-                <option value="Fruits &amp; Vegetables">Tv &amp; Video</option>
-                <option value="iPad & Tablets">iPad & Tablets</option>
-                <option value="Cameras & Camcorders">
-                  Cameras & Camcorders
-                </option>
-                <option value="Home Audio & Theater">
-                  Home Audio & Theater
+                <option :value="c.id" v-for="(c, i) in categories" :key="i">
+                  {{ c.category_name }}
                 </option>
               </select>
             </form>
@@ -740,13 +154,11 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav text-center ml-auto">
-              <li class="nav-item active mr-lg-2 mb-lg-0 mb-2">
-                <a class="nav-link" href="index.html"
-                  >Home
-                  <span class="sr-only">(current)</span>
-                </a>
-              </li>
-              <li class="nav-item dropdown mr-lg-2 mb-lg-0 mb-2">
+              <li
+                class="nav-item dropdown mr-lg-2 mb-lg-0 mb-2"
+                v-for="(c, i) in categories"
+                :key="i"
+              >
                 <a
                   class="nav-link dropdown-toggle"
                   href="#"
@@ -755,65 +167,22 @@
                   aria-haspopup="true"
                   aria-expanded="false"
                 >
-                  Electronics
+                  {{ c.category_name }}
                 </a>
                 <div class="dropdown-menu">
                   <div class="agile_inner_drop_nav_info p-4">
-                    <h5 class="mb-3">Mobiles, Computers</h5>
                     <div class="row">
-                      <div class="col-sm-6 multi-gd-img">
+                      <div
+                        class="col-sm-3 multi-gd-img"
+                        v-for="(sc, i) in c.sub_category"
+                        :key="i"
+                      >
+                        <h5 class="mb-3">{{ sc.sub_category_name }}</h5>
                         <ul class="multi-column-dropdown">
-                          <li>
-                            <a href="product.html">All Mobile Phones</a>
-                          </li>
-                          <li>
-                            <a href="product.html">All Mobile Accessories</a>
-                          </li>
-                          <li>
-                            <a href="product.html">Cases & Covers</a>
-                          </li>
-                          <li>
-                            <a href="product.html">Screen Protectors</a>
-                          </li>
-                          <li>
-                            <a href="product.html">Power Banks</a>
-                          </li>
-                          <li>
-                            <a href="product.html">All Certified Refurbished</a>
-                          </li>
-                          <li>
-                            <a href="product.html">Tablets</a>
-                          </li>
-                          <li>
-                            <a href="product.html">Wearable Devices</a>
-                          </li>
-                          <li>
-                            <a href="product.html">Smart Home</a>
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="col-sm-6 multi-gd-img">
-                        <ul class="multi-column-dropdown">
-                          <li>
-                            <a href="product.html">Laptops</a>
-                          </li>
-                          <li>
-                            <a href="product.html">Drives & Storage</a>
-                          </li>
-                          <li>
-                            <a href="product.html">Printers & Ink</a>
-                          </li>
-                          <li>
-                            <a href="product.html">Networking Devices</a>
-                          </li>
-                          <li>
-                            <a href="product.html">Computer Accessories</a>
-                          </li>
-                          <li>
-                            <a href="product.html">Game Zone</a>
-                          </li>
-                          <li>
-                            <a href="product.html">Software</a>
+                          <li v-for="(ic, i) in sc.inner_category" :key="i">
+                            <a href="product.html">{{
+                              ic.inner_category_name
+                            }}</a>
                           </li>
                         </ul>
                       </div>
@@ -821,112 +190,57 @@
                   </div>
                 </div>
               </li>
-              <li class="nav-item dropdown mr-lg-2 mb-lg-0 mb-2">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  Appliances
-                </a>
-                <div class="dropdown-menu">
-                  <div class="agile_inner_drop_nav_info p-4">
-                    <h5 class="mb-3">TV, Appliances, Electronics</h5>
-                    <div class="row">
-                      <div class="col-sm-6 multi-gd-img">
-                        <ul class="multi-column-dropdown">
-                          <li>
-                            <a href="product2.html">Televisions</a>
-                          </li>
-                          <li>
-                            <a href="product2.html"
-                              >Home Entertainment Systems</a
-                            >
-                          </li>
-                          <li>
-                            <a href="product2.html">Headphones</a>
-                          </li>
-                          <li>
-                            <a href="product2.html">Speakers</a>
-                          </li>
-                          <li>
-                            <a href="product2.html"
-                              >MP3, Media Players & Accessories</a
-                            >
-                          </li>
-                          <li>
-                            <a href="product2.html"
-                              >Audio & Video Accessories</a
-                            >
-                          </li>
-                          <li>
-                            <a href="product2.html">Cameras</a>
-                          </li>
-                          <li>
-                            <a href="product2.html">DSLR Cameras</a>
-                          </li>
-                          <li>
-                            <a href="product2.html">Camera Accessories</a>
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="col-sm-6 multi-gd-img">
-                        <ul class="multi-column-dropdown">
-                          <li>
-                            <a href="product2.html">Musical Instruments</a>
-                          </li>
-                          <li>
-                            <a href="product2.html">Gaming Consoles</a>
-                          </li>
-                          <li>
-                            <a href="product2.html">All Electronics</a>
-                          </li>
-                          <li>
-                            <a href="product2.html">Air Conditioners</a>
-                          </li>
-                          <li>
-                            <a href="product2.html">Refrigerators</a>
-                          </li>
-                          <li>
-                            <a href="product2.html">Washing Machines</a>
-                          </li>
-                          <li>
-                            <a href="product2.html"
-                              >Kitchen & Home Appliances</a
-                            >
-                          </li>
-                          <li>
-                            <a href="product2.html"
-                              >Heating & Cooling Appliances</a
-                            >
-                          </li>
-                          <li>
-                            <a href="product2.html">All Appliances</a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="nav-item mr-lg-2 mb-lg-0 mb-2">
+              <!-- <li class="nav-item mr-lg-2 mb-lg-0 mb-2">
                 <a class="nav-link" href="about.html">About Us</a>
-              </li>
-              <li class="nav-item mr-lg-2 mb-lg-0 mb-2">
+              </li> -->
+              <!-- <li class="nav-item mr-lg-2 mb-lg-0 mb-2">
                 <a class="nav-link" href="product.html">New Arrivals</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="contact.html">Contact Us</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#login"
+              </li> -->
+              <li class="nav-item" v-if="this.profile == null">
+                <a
+                  class="nav-link"
+                  href="#login"
                   data-toggle="modal"
-                  data-target="#exampleModal">Login/Register</a>
+                  data-target="#exampleModal"
+                  >Login/Register</a
+                >
               </li>
-              
+              <li class="nav-item dropdown mr-lg-2 mb-lg-0 mb-2" v-else>
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Hi {{ profile.name && profile.name.split(" ")[0] }}
+                </a>
+                <div class="dropdown-menu">
+                  <div class="agile_inner_drop_nav_info p-4">
+                    <!-- <h5 class="mb-3">Hi {{profile.name}}</h5> -->
+                    <div class="row">
+                      <div class="col-md-12">
+                        <ul class="multi-column-dropdown">
+                          <li>
+                            <a href="">My Account</a>
+                          </li>
+                          <li>
+                            <a href="">Orders</a>
+                          </li>
+                          <!-- <hr /> -->
+                          <li>
+                            <router-link to="" @click="logout()">Logout</router-link>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
             </ul>
           </div>
         </nav>
@@ -936,26 +250,67 @@
   </div>
 </template>
 <script>
-// import VueElementLoading from "vue-element-loading";
-
+import RegisterUser from "../../views/Auth/RegisterUser.vue";
+import LoginUser from "@/views/Auth/LoginUser.vue";
 export default {
-  components:{
-    // VueElementLoading
-  },
-  data () {
-  return {
-    publicPath: process.env.BASE_URL,
-    loading:false,
-    loadingText:"",
-    form: {
-
-    }
-  }
+  components: {
+    RegisterUser,
+    LoginUser
 },
-methods: {
-  register() {
+  data() {
+    return {
+      publicPath: process.env.BASE_URL,
+      profile: {},
+      categories: {},
+      filter: {
+        filters: "",
+      },
+    };
+  },
+  methods: {
+    getCategories() {
+      this.$api
+        .post(
+          "http://biomed-backend.herokuapp.com/api/category/all",
+          this.filter
+        )
+        .then((res) => {
+          console.log(res);
+          this.categories = res.data.data;
+        });
+    },
+    themeSwitcher() {
+      const toggleSwitch = document.querySelector(
+        '.theme-switch input[type="checkbox"]'
+      );
+      const currentTheme = localStorage.getItem("theme");
+      console.log(toggleSwitch);
+      if (currentTheme) {
+        document.documentElement.setAttribute("data-theme", currentTheme);
 
-  }
-}
-}
+        if (currentTheme === "dark") {
+          toggleSwitch.checked = true;
+        }
+      }
+
+    },
+    switchTheme(e) {
+      if (e.target.checked) {
+        document.documentElement.setAttribute("data-theme", "dark");
+        localStorage.setItem("theme", "dark");
+      } else {
+        document.documentElement.setAttribute("data-theme", "light");
+        localStorage.setItem("theme", "light");
+      }
+    },
+    logout() {
+      localStorage.clear();
+      location.reload();
+    }
+  },
+  mounted() {
+    this.profile = JSON.parse(localStorage.getItem("auth_user"));
+    this.getCategories();
+  },
+};
 </script>

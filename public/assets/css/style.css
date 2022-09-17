@@ -1436,6 +1436,7 @@ p.w3l-nut-middle {
 .agile_inner_drop_nav_info.p-4 h5 {
     color: var(--primary-color);
     font-weight: 500;
+    font-size: 15px;
 }
 
 /*-- //special effect --*/
