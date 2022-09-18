@@ -99,7 +99,7 @@ export default {
       this.loadingText = "Creating user, Please wait...";
       this.$api
         .post(
-          "http://biomed-backend.herokuapp.com/api/auth/login",
+          "https://biomed-backend.herokuapp.com/api/auth/login",
           this.form
         )
         .then((res) => {

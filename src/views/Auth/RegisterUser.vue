@@ -138,7 +138,7 @@ export default {
       this.loadingText = "Creating user, Please wait...";
       this.$api
         .post(
-          "http://biomed-backend.herokuapp.com/api/auth/register",
+          "https://biomed-backend.herokuapp.com/api/auth/register",
           this.form
         )
         .then((res) => {

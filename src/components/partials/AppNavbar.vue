@@ -271,7 +271,7 @@ export default {
     getCategories() {
       this.$api
         .post(
-          "http://biomed-backend.herokuapp.com/api/category/all",
+          "https://biomed-backend.herokuapp.com/api/category/all",
           this.filter
         )
         .then((res) => {
