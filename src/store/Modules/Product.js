@@ -24,7 +24,7 @@ const product = {
         ADD_ITEM(state, item) {
             item.id = state.items.length+1;
             state.items.push(item);
-        },
+        },  
         UPDATE_ITEM(state, updatedItem) {
             let foundEle = state.items.find((ele)=>{
                 return ele.id = updatedItem.id

@@ -129,6 +129,7 @@
         <nav class="navbar navbar-expand-lg navbar-light">
           <div class="agileits-navi_search">
             <form action="#" method="post">
+              <!-- {{categories}} -->
               <select
                 id="agileinfo-nav_search"
                 name="agileinfo_search"
@@ -252,6 +253,7 @@
 <script>
 import RegisterUser from "../../views/Auth/RegisterUser.vue";
 import LoginUser from "@/views/Auth/LoginUser.vue";
+import { mapState } from 'vuex'
 export default {
   components: {
     RegisterUser,
@@ -261,11 +263,11 @@ export default {
     return {
       publicPath: process.env.BASE_URL,
       profile: {},
-      categories: {},
+      // categories: {},
       filter: {
         filters: "",
       },
-    };
+    }; 
   },
   methods: {
     getCategories() {
@@ -275,7 +277,6 @@ export default {
           this.filter
         )
         .then((res) => {
-          console.log(res);
           this.categories = res.data.data;
         });
     },
@@ -311,6 +312,13 @@ export default {
   mounted() {
     this.profile = JSON.parse(localStorage.getItem("auth_user"));
     this.getCategories();
+    this.$store.dispatch('get_category', this.filter);
   },
+  computed: {
+    ...mapState({
+            categories: (state) => state.category.categories,
+            items: (state) => state.product.items,
+        }),
+  }
 };
 </script>

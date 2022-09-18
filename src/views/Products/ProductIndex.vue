@@ -15,7 +15,7 @@
 					<div class="container">
 						<div class="w3l-space-banner">
 							<div class="carousel-caption-banner" style="max-width:500px">
-								<p>Get flat {{items}}
+								<p>Get flat 
 									<span>10%</span> Cashback</p>
 								<h3 class="mt-2">Exciting Deals on Swine Drugs</h3>
 								<a class="btn btn-style mt-4" href="product.html">Shop Now </a>
@@ -917,7 +917,6 @@ export default {
 computed: {
         ...mapState({
             cart: (state) => state.cart,
-            items: (state) => state.product.items,
         }),
     },
 }

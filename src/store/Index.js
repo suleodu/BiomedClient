@@ -1,14 +1,16 @@
 // import Vue from 'vue'
 // import Vuex from 'vuex'
 import { createStore } from "vuex";
-import Product from './Modules/Product'
+import product from './Modules/product'
+import category from './Modules/category'
 
 // Vue.use(Vuex);
 
 const store = createStore({
     namespace: true,
     modules: {
-        product: Product,
+        product: product,
+        category:category
     }
 });
 
