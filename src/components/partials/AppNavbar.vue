@@ -35,11 +35,11 @@
           <!-- logo -->
           <div class="col-lg-3 col-md-4 logo_agile">
             <h1>
-              <a href="index.html"
+              <router-link to="/"
                 ><img
                   :src="`${publicPath}assets/images/biomed.png`"
                   class="img-fluid"
-              /></a>
+              /></router-link>
             </h1>
           </div>
           <!-- //logo -->
@@ -57,14 +57,34 @@
                   <input
                     class="form-control"
                     type="search"
-                    placeholder="Search for products, brands and more"
+                    placeholder="Search for products, Categories and Sub categories"
                     aria-label="Search"
+                    v-model="searchProducts.search"
+                    @keyup="searchProduct()"
                     required
                   />
-                  <button class="btn" type="submit">
+                  <button
+                    class="btn"
+                    type="submit"
+                    @click.prevent="searchProduct()"
+                  >
                     <i class="fa fa-search" aria-hidden="true"></i>
                   </button>
                 </form>
+                <div
+                  class="card search-area"
+                  v-if="products.data && searchProducts.search !== ''"
+                >
+                  <ul>
+                    <li v-for="(p, i) in products.data" class="pb-2" :key="i">
+                      <router-link :to="'/product/' + p.id" @click="clearSearch()">
+                        <p>
+                          {{ p.product_name }}
+                        </p>
+                      </router-link>
+                    </li>
+                  </ul>
+                </div>
               </div>
               <!-- //search -->
               <!-- cart details -->
@@ -85,7 +105,11 @@
                     <nav class="navigation">
                       <div class="theme-switch-wrapper">
                         <label class="theme-switch" for="checkbox">
-                          <input type="checkbox" @change="switchTheme($event)" id="checkbox" />
+                          <input
+                            type="checkbox"
+                            @change="switchTheme($event)"
+                            id="checkbox"
+                          />
                           <div class="mode-container">
                             <i class="gg-sun"></i>
                             <i class="gg-moon"></i>
@@ -97,7 +121,7 @@
                   <!-- //toggle switch for light and dark theme -->
                 </div>
                 <div class="cart-store">
-                  <a href="checkout.html"><i class="far fa-heart"></i></a>
+                  <router-link to="/wishlist"><i class="far fa-heart"></i></router-link>
                 </div>
                 <div class="wthreecartaits wthreecartaits2 cart cart box_1">
                   <form action="#" method="post" class="last text-right">
@@ -109,7 +133,11 @@
                       name="submit"
                       value=""
                     >
-                      <img :src="`${publicPath}assets/images/cart.png`" alt="" class="img-fluid" />
+                      <img
+                        :src="`${publicPath}assets/images/cart.png`"
+                        alt=""
+                        class="img-fluid"
+                      />
                       Cart
                     </button>
                   </form>
@@ -134,6 +162,8 @@
                 id="agileinfo-nav_search"
                 name="agileinfo_search"
                 required=""
+                v-model="cat"
+                @change="getProdByCat(cat)"
               >
                 <option value="">All Categories</option>
                 <option :value="c.id" v-for="(c, i) in categories" :key="i">
@@ -178,12 +208,25 @@
                         v-for="(sc, i) in c.sub_category"
                         :key="i"
                       >
-                        <h5 class="mb-3">{{ sc.sub_category_name }}</h5>
+                        <h5 class="mb-3">
+                          <router-link
+                            :to="'/products/' + c.id + '/' + sc.id"
+                            style="color: #fe6904 !important"
+                          >
+                            {{ sc.sub_category_name }}
+                          </router-link>
+                        </h5>
                         <ul class="multi-column-dropdown">
-                          <li v-for="(ic, i) in sc.inner_category" :key="i">
-                            <a href="product.html">{{
-                              ic.inner_category_name
-                            }}</a>
+                          <li
+                            v-for="(ic, i) in sc.nested_sub_category"
+                            :key="i"
+                          >
+                            <router-link
+                              :to="
+                                '/products/' + c.id + '/' + sc.id + '/' + ic.id
+                              "
+                              >{{ ic.name }}</router-link
+                            >
                           </li>
                         </ul>
                       </div>
@@ -234,7 +277,9 @@
                           </li>
                           <!-- <hr /> -->
                           <li>
-                            <router-link to="" @click="logout()">Logout</router-link>
+                            <router-link to="" @click="logout()"
+                              >Logout</router-link
+                            >
                           </li>
                         </ul>
                       </div>
@@ -250,15 +295,35 @@
     <!-- //navigation -->
   </div>
 </template>
+<style>
+.search-area {
+  background: white;
+  position: absolute;
+  height: auto;
+  width: 93.5%;
+  z-index: 1000;
+  top: 200;
+  padding: 20px;
+  /* margin */
+}
+
+.search-area ul li {
+  list-style: none;
+  color: black !important;
+}
+.search-area ul li:hover {
+  background-color: whitesmoke !important;
+}
+</style>
 <script>
 import RegisterUser from "../../views/Auth/RegisterUser.vue";
 import LoginUser from "@/views/Auth/LoginUser.vue";
-import { mapState } from 'vuex'
+import { mapState } from "vuex";
 export default {
   components: {
     RegisterUser,
-    LoginUser
-},
+    LoginUser,
+  },
   data() {
     return {
       publicPath: process.env.BASE_URL,
@@ -267,19 +332,14 @@ export default {
       filter: {
         filters: "",
       },
-    }; 
+      searchProducts: {
+        search: "",
+      },
+      products: {},
+      cat: "",
+    };
   },
   methods: {
-    getCategories() {
-      this.$api
-        .post(
-          "https://biomed-backend.herokuapp.com/api/category/all",
-          this.filter
-        )
-        .then((res) => {
-          this.categories = res.data.data;
-        });
-    },
     themeSwitcher() {
       const toggleSwitch = document.querySelector(
         '.theme-switch input[type="checkbox"]'
@@ -293,7 +353,6 @@ export default {
           toggleSwitch.checked = true;
         }
       }
-
     },
     switchTheme(e) {
       if (e.target.checked) {
@@ -307,18 +366,38 @@ export default {
     logout() {
       localStorage.clear();
       location.reload();
-    }
+    },
+    clearSearch() {
+      this.searchProducts.search = "";
+      this.products = {}
+    },
+    searchProduct() {
+      this.products = {};
+      this.$api
+        .post(
+          `https://biomed-backend.herokuapp.com/api/product/name`,
+          this.searchProducts
+        )
+        .then((res) => {
+          this.products = res.data.data;
+        })
+        .catch((err) => {
+          console.log(err.response);
+        });
+    },
+    getProdByCat(id) {
+      this.$router.push(`/products/${id}`);
+    },
   },
   mounted() {
     this.profile = JSON.parse(localStorage.getItem("auth_user"));
-    this.getCategories();
-    this.$store.dispatch('get_category', this.filter);
+    this.$store.dispatch("get_category", this.filter);
   },
   computed: {
     ...mapState({
-            categories: (state) => state.category.categories,
-            items: (state) => state.product.items,
-        }),
-  }
+      categories: (state) => state.category.categories,
+      items: (state) => state.product.items,
+    }),
+  },
 };
 </script>

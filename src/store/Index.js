@@ -1,7 +1,7 @@
 // import Vue from 'vue'
 // import Vuex from 'vuex'
 import { createStore } from "vuex";
-import product from './Modules/product'
+import product from './Modules/Product'
 import category from './Modules/category'
 
 // Vue.use(Vuex);
