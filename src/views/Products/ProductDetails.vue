@@ -279,7 +279,8 @@ export default {
           this.toast.success(res.data.message);
         })
         .catch((err) => {
-          console.log(err.response);
+                    this.toast.error(err.response.data.message);
+
         });
     }
   },

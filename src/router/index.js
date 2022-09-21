@@ -1,10 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Products from '../views/Products/ProductIndex.vue'
 import ProductDetails from '../views/Products/ProductDetails.vue'
-import CheckoutCart from '../views/Cart/CheckoutCart.vue'
+import Cart from '../views/Cart/CheckoutCart.vue'
 import WishList from '../views/Cart/WishList.vue'
 import PaymentPage from '../views/Payment/MakePayment.vue'
 import ViewProducts from '../views/Products/ViewProducts.vue'
+import Profile from '../views/Profile/MyAccount.vue'
 
 const routes = [
   {
@@ -17,9 +18,9 @@ const routes = [
     name: 'product-details',
     component: ProductDetails,
   },
-  {path: '/checkout-cart',
-  name: 'checkout-cart',
-  component: CheckoutCart
+  {path: '/cart',
+  name: 'Cart',
+  component: Cart
   },
   {
     path: '/pay-cart',
@@ -36,7 +37,13 @@ const routes = [
     name: 'View Product',
 
     component: ViewProducts
-  }
+  },
+
+  {
+    path: '/my-account',
+    name: 'Profile',
+    component: Profile
+  },
 ]
 
 const router = createRouter({

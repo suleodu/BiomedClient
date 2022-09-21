@@ -32,12 +32,12 @@
           </h4> -->
           <div class="table-responsive" v-if="products.length">
             <table class="timetable_sub">
-                <vue-element-loading
-              :active="loading"
-              color="#FF6700"
-              :text="loadingText"
-              spinner="bar-fade-scale"
-            />
+              <vue-element-loading
+                :active="loading"
+                color="#FF6700"
+                :text="loadingText"
+                spinner="bar-fade-scale"
+              />
               <thead>
                 <tr>
                   <th>SL No.</th>
@@ -49,7 +49,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr class="rem1" v-for="(p,i) in products" :key="i">
+                <tr class="rem1" v-for="(p, i) in products" :key="i">
                   <td class="invert">{{ i + 1 }}</td>
                   <td class="invert-image">
                     <a href="">
@@ -61,23 +61,34 @@
                     </a>
                   </td>
                   <td class="invert">{{ p.product_name }}</td>
-                  <td class="invert">₦{{ p.price}}</td>
+                  <td class="invert">₦{{ p.price }}</td>
                   <td class="invert">
                     <div class="rem">
                       <!-- <div class="close1"></div> -->
-                      <button class="btn btn-secondary mr-2" style="background:#628cc8; border:none;">Add to cart</button>
-                      <button class="btn btn-danger" @click="removeProduct(p)">Remove</button>
+                      <button
+                        class="btn btn-secondary mr-2"
+                        style="background: #628cc8; border: none"
+                        @click="addToCart(p)"
+                      >
+                        Add to cart
+                      </button>
+                      <button class="btn btn-danger" @click="removeProduct(p)">
+                        Remove
+                      </button>
                     </div>
                   </td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <h3 class="alert alert-primary text-center" style="background:#628cc8; color:white; border: none;" v-else>
+          <h3
+            class="alert alert-primary text-center"
+            style="background: #628cc8; color: white; border: none"
+            v-else
+          >
             You don't have any products yet
           </h3>
         </div>
-        
       </div>
     </div>
     <!-- //checkout page -->
@@ -96,7 +107,7 @@
 	<script src="js/jquery.flexslider.js"></script> -->
 	<!-- <script> -->
 <script>
-    import VueElementLoading from "vue-element-loading";
+import VueElementLoading from "vue-element-loading";
 import { useToast } from "vue-toastification";
 export default {
   data() {
@@ -113,46 +124,70 @@ export default {
     return { toast };
   },
   components: {
-    VueElementLoading
+    VueElementLoading,
   },
   methods: {
-        getWishListProducts() {
-            this.loading = true;
-            this.loadingText = "Please wait...";
-            this.$api.get(`https://biomed-backend.herokuapp.com/api/wish-list`)
-            .then((res) => {
-                this.products = res.data.data;
-            })
-            .catch((err) => {
-                console.log(err.response);
-            })
-            .finally((res) => {
-                this.loading = false;
-                this.loadingText = ""
-                console.log(res);
-            })
-        },
-        removeProduct(d) {
-            this.loading = true;
-            this.loadingText = "Please wait...";
-            this.$api.get(`https://biomed-backend.herokuapp.com/api/wish-list/remove/${d.wid}`)
-            .then((res) => {
-                          this.toast.success(res.data.message);
-
-                this.getWishListProducts();  
-            })
-            .catch((err) => {
-                console.log(err.response);
-            })
-            .finally((res) => {
-                this.loading = false;
-                this.loadingText = ""
-                console.log(res);
-            })
-        }
+    getWishListProducts() {
+      this.loading = true;
+      this.loadingText = "Please wait...";
+      this.$api
+        .get(`https://biomed-backend.herokuapp.com/api/wish-list`)
+        .then((res) => {
+          this.products = res.data.data;
+        })
+        .catch((err) => {
+          console.log(err.response);
+        })
+        .finally((res) => {
+          this.loading = false;
+          this.loadingText = "";
+          console.log(res);
+        });
     },
-    mounted() {
-        this.getWishListProducts();
-    }
+    removeProduct(d) {
+      this.loading = true;
+      this.loadingText = "Please wait...";
+      this.$api
+        .get(
+          `https://biomed-backend.herokuapp.com/api/wish-list/remove/${d.wid}`
+        )
+        .then((res) => {
+          this.toast.success(res.data.message);
+
+          this.getWishListProducts();
+        })
+        .catch((err) => {
+          console.log(err.response);
+        })
+        .finally((res) => {
+          this.loading = false;
+          this.loadingText = "";
+          console.log(res);
+        });
+    },
+    addToCart(p) {
+      this.loading = true;
+      this.loadingText = "Please wait...";
+      let payload = {
+        product_id: p.id,
+      };
+      this.$api
+        .post(`https://biomed-backend.herokuapp.com/api/cart`, payload)
+        .then((res) => {
+          this.toast.success(res.data.message);
+        })
+        .catch((err) => {
+          this.toast.error(err.response.data.message);
+        })
+        .finally((res) => {
+          this.loading = false;
+          this.loadingText = "";
+          console.log(res);
+        });
+    },
+  },
+  mounted() {
+    this.getWishListProducts();
+  },
 };
 </script>

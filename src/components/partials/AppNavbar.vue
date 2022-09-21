@@ -124,10 +124,7 @@
                   <router-link to="/wishlist"><i class="far fa-heart"></i></router-link>
                 </div>
                 <div class="wthreecartaits wthreecartaits2 cart cart box_1">
-                  <form action="#" method="post" class="last text-right">
-                    <input type="hidden" name="cmd" value="_cart" />
-                    <input type="hidden" name="display" value="1" />
-                    <button
+                  <router-link to="/cart"
                       class="btn w3view-cart p-0"
                       type="submit"
                       name="submit"
@@ -139,8 +136,7 @@
                         class="img-fluid"
                       />
                       Cart
-                    </button>
-                  </form>
+                    </router-link>
                 </div>
               </div>
               <!-- //cart details -->
@@ -270,7 +266,7 @@
                       <div class="col-md-12">
                         <ul class="multi-column-dropdown">
                           <li>
-                            <a href="">My Account</a>
+                            <router-link to="/my-account">My Account</router-link>
                           </li>
                           <li>
                             <a href="">Orders</a>
