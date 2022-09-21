@@ -133,11 +133,11 @@
                 <div class="col-md-6">
                   <table class="table table-bordered">
                     <vue-element-loading
-                          :active="loading"
-                          color="#FF6700"
-                          :text="loadingText"
-                          spinner="bar-fade-scale"
-                        />
+                      :active="loading"
+                      color="#FF6700"
+                      :text="loadingText"
+                      spinner="bar-fade-scale"
+                    />
                     <tr>
                       <th>
                         ADDRESS BOOK
@@ -150,14 +150,43 @@
                           Add New Address
                         </button>
                       </th>
-                      
                     </tr>
                     <tr>
                       <th>
-                       <p>
-                        Your default shipping address:
-                       </p>
-                        
+                        <div
+                          v-for="(a, i) in myaddresses"
+                          style="font-weight: normal"
+                          class="pb-3"
+                          :key="i"
+                        >
+                          <div class="row">
+                            <div class="col-md-5">
+                              {{ a.name }}
+                              <i
+                                class="badge badge-primary"
+                                v-if="a.is_default == 'yes'"
+                                >Default</i
+                              >
+                              <br />
+                              {{ a.address }} <br />
+                              {{ a.city + " " + a.state }} <br />
+                              {{ a.phone }}
+                            </div>
+                            <div class="col-md-7">
+                              <button class="btn btn-warning mr-2">Edit</button>
+                              <button class="btn btn-danger mr-2" @click="deleteAddress(a)">
+                                Delete
+                              </button>
+                              <button
+                                class="btn btn-info"
+                                v-if="a.is_default !== 'yes'"
+                                @click="makeDefault(a)"
+                              >
+                                Make Default
+                              </button>
+                            </div>
+                          </div>
+                        </div>
                       </th>
                     </tr>
                   </table>
@@ -173,15 +202,16 @@
 <script>
 import VueElementLoading from "vue-element-loading";
 import { useToast } from "vue-toastification";
-import $ from 'jquery'
+import swal from "sweetalert";
+import $ from "jquery";
 export default {
   data() {
     return {
       address: {
         country: "",
       },
-      myaddresses:{},
-      loading:false,
+      myaddresses: {},
+      loading: false,
       loadingText: "",
       countries: {},
     };
@@ -202,10 +232,14 @@ export default {
       this.loading = true;
       this.loadingText = "Please wait...";
       this.$api
-        .post(`https://biomed-backend.herokuapp.com/api/user-address`, this.address)
+        .post(
+          `https://biomed-backend.herokuapp.com/api/user-address`,
+          this.address
+        )
         .then((res) => {
           this.toast.success(res.data.message);
-          $('#addressModal').modal().hide();
+          $("#addressModal").modal().hide();
+          this.getAllAddress();
         })
         .catch((err) => {
           console.log(err.response);
@@ -216,13 +250,13 @@ export default {
           console.log(res);
         });
     },
-     getAllAddress() {
+    getAllAddress() {
       this.loading = true;
       this.loadingText = "Please wait...";
       this.$api
         .get(`https://biomed-backend.herokuapp.com/api/user-address`)
         .then((res) => {
-          this.myaddresses = res.data.data
+          this.myaddresses = res.data.data;
         })
         .catch((err) => {
           console.log(err.response);
@@ -232,6 +266,58 @@ export default {
           this.loadingText = "";
           console.log(res);
         });
+    },
+    makeDefault(data) {
+      this.loading = true;
+      this.loadingText = "Please wait...";
+      this.$api
+        .patch(
+          `https://biomed-backend.herokuapp.com/api/user-address/make-default/${data.id}`
+        )
+        .then((res) => {
+          this.toast.success(res.data.message);
+          this.getAllAddress();
+        })
+        .catch((err) => {
+          console.log(err.response);
+        })
+        .finally((res) => {
+          this.loading = false;
+          this.loadingText = "";
+          console.log(res);
+        });
+    },
+    deleteAddress(data) {
+      swal({
+        title: "Are you sure?",
+        text: "Once deleted, you will not be able to recover this Address Details!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      }).then((willDelete) => {
+        if (willDelete) {
+          this.loading = true;
+          this.loadingText = "Please wait...";
+          this.$api
+            .patch(
+              `https://biomed-backend.herokuapp.com/api/user-address/remove/${data.id}`
+            )
+            .then((res) => {
+              this.toast.success(res.data.message);
+              this.getAllAddress();
+            })
+            .catch((err) => {
+              console.log(err.response);
+            })
+            .finally((res) => {
+              this.loading = false;
+              this.loadingText = "";
+              console.log(res);
+            });
+        } else {
+          swal("Your imaginary file is safe!");
+        }
+      });
     },
   },
   mounted() {
