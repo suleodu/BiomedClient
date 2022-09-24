@@ -311,7 +311,7 @@ export default {
   },
   mounted() {
     this.profile = JSON.parse(localStorage.getItem("auth_user"));
-    this.getCategories();
+    // this.getCategories();
     this.$store.dispatch('get_category', this.filter);
   },
   computed: {
