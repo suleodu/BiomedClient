@@ -8,10 +8,10 @@
         </h3>
         <ul class="w3_short pt-3 pb-5">
           <li>
-            <a href="index.html" class="text-white">Home</a>
+            <router-link to="/" class="text-white">Home</router-link>
             <i class="fa fa-angle-right mx-2 text-white" aria-hidden="true"></i>
           </li>
-          <li class="text-light">Single Product 1</li>
+          <li class="text-light">{{ productDetails.product_name }}</li>
         </ul>
       </div>
     </div>
@@ -69,38 +69,55 @@
           </div>
 
           <div class="col-lg-7 single-right-left simpleCart_shelfItem">
-            <h3 class="mb-3">Redmi 9 Prime (Space Blue, 64 GB) (4 GB RAM)</h3>
+            <h3 class="mb-3">{{ productDetails.product_name }}</h3>
             <p class="mb-3">
-              <span class="item_price">$360.00</span>
-              <del class="mx-2 font-weight-light">$400.00</del>
-              <label>Free delivery</label>
+              <span class="item_price">₦{{ productDetails.price }}</span>
+              <!-- <del class="mx-2 font-weight-light">$400.00</del> -->
+              <!-- <label>Free delivery</label> -->
             </p>
             <div class="single-infoagile">
               <ul>
-                <li class="mb-3">Cash on Delivery Eligible.</li>
-                <li class="mb-3">Shipping Speed to Delivery.</li>
-                <li class="mb-3">EMIs from $100/month.</li>
                 <li class="mb-3">
-                  Bank Offer Extra 5% off* with Axis Bank Buzz Credit Card
+                  Disease:
+                  {{
+                    productDetails.product_disease &&
+                    productDetails.product_disease.disease_name
+                  }}
+                </li>
+                <li class="mb-3">
+                  Category:
+                  {{
+                    productDetails.nested_sub_category &&
+                    productDetails.nested_sub_category.sub_category.category
+                      .category_name
+                  }}
+                </li>
+                <li class="mb-3">
+                  Sub Category:
+                  {{
+                    productDetails.nested_sub_category &&
+                    productDetails.nested_sub_category.sub_category
+                      .sub_category_name
+                  }}
+                </li>
+                <li class="mb-3">
+                  Nested Sub Category:
+                  {{
+                    productDetails.nested_sub_category &&
+                    productDetails.nested_sub_category.name
+                  }}
                 </li>
               </ul>
             </div>
             <div class="product-single-w3l">
               <p class="my-3">
                 <i class="far fa-hand-point-right mr-2"></i>
-                1 Year Manufacturer Warranty
+                Description
               </p>
 
-              <ul>
-                <li class="mb-1">
-                  Handset, Power Adapter, USB Type-C Cable, SIM Eject Tool,
-                  Simple Protective Cover, Warranty Card, User Guide
-                </li>
-                <li class="mb-1">Full HD+ IPS Display</li>
-                <li class="mb-1">13MP Rear Camera | 8MP Front Camera</li>
-                <li class="mb-1">5020 mAh</li>
-                <li class="mb-1">2340 x 1080 Pixels</li>
-              </ul>
+              <p>
+                {{ productDetails.description }}
+              </p>
               <p class="my-sm-4 my-3">
                 <i class="far fa-hand-point-right mr-2"></i>Net banking &
                 Credit/ Debit/ ATM card
@@ -118,25 +135,28 @@
               >
                 <form action="#" method="post">
                   <fieldset>
-                    <input type="hidden" name="cmd" value="_cart" />
-                    <input type="hidden" name="add" value="1" />
-                    <input type="hidden" name="business" value=" " />
-                    <input
-                      type="hidden"
-                      name="item_name"
-                      value="Samsung Galaxy J7 Prime"
-                    />
-                    <input type="hidden" name="amount" value="200.00" />
-                    <input type="hidden" name="discount_amount" value="1.00" />
-                    <input type="hidden" name="currency_code" value="USD" />
-                    <input type="hidden" name="return" value=" " />
-                    <input type="hidden" name="cancel_return" value=" " />
-                    <input
-                      type="submit"
+                    <div class="row">
+                      <div class="col-md-6">
+                        <input
+                          type="submit"
+                          name="submit"
+                          value="Add to cart"
+                          @click.prevent="addToCart"
+                          class="btn btn-style mr-5"
+                        />
+                      </div>
+                      <div class="col-md-6">
+                        <input
+                        @click.prevent="addProductToWishList"
                       name="submit"
-                      value="Add to cart"
-                      class="btn btn-style"
+                      type="submit"
+                      value="Add to WishList"
+                      class="btn btn-style ml-5"
                     />
+                      </div>
+                    </div>
+
+                    
                   </fieldset>
                 </form>
               </div>
@@ -161,7 +181,11 @@
                     <p>Sale up to 25% off all in store</p>
                   </div>
                   <div class="col-sm-5 offerimg-w3l">
-                    <img :src="`${publicPath}assets/images/off1.png`" alt="" class="img-fluid" />
+                    <img
+                      :src="`${publicPath}assets/images/off1.png`"
+                      alt=""
+                      class="img-fluid"
+                    />
                   </div>
                 </div>
               </div>
@@ -177,7 +201,11 @@
                     <p>Free shipping order over $100</p>
                   </div>
                   <div class="col-sm-5 offerimg-w3l">
-                    <img :src="`${publicPath}assets/images/off2.png`" alt="" class="img-fluid" />
+                    <img
+                      :src="`${publicPath}assets/images/off2.png`"
+                      alt=""
+                      class="img-fluid"
+                    />
                   </div>
                 </div>
               </div>
@@ -201,11 +229,63 @@
 	<script src="js/jquery.flexslider.js"></script> -->
 	<!-- <script> -->
 <script>
+  import { useToast } from "vue-toastification";
 export default {
   data() {
     return {
       publicPath: process.env.BASE_URL,
+      productDetails: {},
     };
+  },
+  setup() {
+    // Get toast interface
+    const toast = useToast();
+    return { toast };
+  },
+  methods: {
+    getProductDetails() {
+      let param = this.$route.params.product_id;
+      this.$api
+        .get(`https://biomed-backend.herokuapp.com/api/product/${param}`)
+        .then((res) => {
+          this.productDetails = res.data.data;
+        })
+        .catch((err) => {
+          console.log(err.response);
+        });
+    },
+    addProductToWishList() {
+      let param = this.$route.params.product_id;
+      let payload = {
+        product_id: param,
+      }
+      this.$api
+        .post(`https://biomed-backend.herokuapp.com/api/wish-list`, payload)
+        .then((res) => {
+          this.toast.success(res.data.message);
+        })
+        .catch((err) => {
+          console.log(err.response);
+        });
+    },
+    addToCart() {
+      let param = this.$route.params.product_id;
+      let payload = {
+        product_id: param,
+      }
+      this.$api
+        .post(`https://biomed-backend.herokuapp.com/api/cart`, payload)
+        .then((res) => {
+          this.toast.success(res.data.message);
+        })
+        .catch((err) => {
+                    this.toast.error(err.response.data.message);
+
+        });
+    }
+  },
+  mounted() {
+    this.getProductDetails();
   },
 };
 </script>

@@ -3,13 +3,13 @@
     <!-- banner-2 -->
     <div class="page-head_agile_info_w3l inner-checkout-page">
       <div class="container py-5">
-        <h3 class="title-style text-white pt-5"><span>Checkout</span> Page</h3>
+        <h3 class="title-style text-white pt-5">My<span> Cart</span></h3>
         <ul class="w3_short pt-3 pb-5">
           <li>
-            <a href="index.html" class="text-white">Home</a>
+            <router-link to="/" class="text-white">Home</router-link>
             <i class="fa fa-angle-right mx-2 text-white" aria-hidden="true"></i>
           </li>
-          <li class="text-light">Checkout</li>
+          <li class="text-light">Cart</li>
         </ul>
       </div>
     </div>
@@ -26,28 +26,33 @@
     <div class="privacy py-5">
       <div class="container py-md-5 py-4">
         <div class="checkout-right">
-          <h4 class="mb-sm-4 mb-3">
+          <!-- <h4 class="mb-sm-4 mb-3">
             Your shopping cart contains:
             <span>3 Products</span>
-          </h4>
-          <div class="table-responsive">
+          </h4> -->
+          <div class="table-responsive" v-if="products.length">
             <table class="timetable_sub">
+                <vue-element-loading
+              :active="loading"
+              color="#FF6700"
+              :text="loadingText"
+              spinner="bar-fade-scale"
+            />
               <thead>
                 <tr>
-                  <th>SL No.</th>
+                  <th>#</th>
                   <th>Product</th>
-                  <th>Quality</th>
                   <th>Product Name</th>
-
                   <th>Price</th>
+                  <th>Quantity</th>
                   <th>Remove</th>
                 </tr>
               </thead>
               <tbody>
-                <tr class="rem1">
-                  <td class="invert">1</td>
+                <tr class="rem1" v-for="(p,i) in products" :key="i">
+                  <td class="invert">{{ i + 1 }}</td>
                   <td class="invert-image">
-                    <a href="single.html">
+                    <a href="">
                       <img
                         :src="`${publicPath}assets/images/drug1.jpg`"
                         alt=""
@@ -55,211 +60,39 @@
                       />
                     </a>
                   </td>
+                  <td class="invert">{{ p.product.product_name }}</td>
+                  <td class="invert">₦{{ p.product.price}}</td>
                   <td class="invert">
-                    <div class="quantity">
-                      <div class="quantity-select">
-                        <div class="entry value-minus">&nbsp;</div>
-                        <div class="entry value">
-                          <span>1</span>
-                        </div>
-                        <div class="entry value-plus active">&nbsp;</div>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="invert">Agrimycin 200 Oxytetracycline Injection</td>
-                  <td class="invert">$499.00</td>
-                  <td class="invert">
-                    <div class="rem">
-                      <div class="close1"></div>
-                    </div>
-                  </td>
-                </tr>
-                <tr class="rem2">
-                  <td class="invert">2</td>
-                  <td class="invert-image">
-                    <a href="single2.html">
-                      <img
-                        :src="`${publicPath}assets/images/drug1.jpg`"
-                        alt=""
-                        class="img-responsive"
-                      />
-                    </a>
-                  </td>
-                  <td class="invert">
-                    <div class="quantity">
-                      <div class="quantity-select">
-                        <div class="entry value-minus">&nbsp;</div>
-                        <div class="entry value">
-                          <span>1</span>
-                        </div>
-                        <div class="entry value-plus active">&nbsp;</div>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="invert">Gentamicin Piglet Injection</td>
-                  <td class="invert">$699.00</td>
+									<div class="quantity">
+										<div class="quantity-select">
+											<div class="entry value-minus" @click="changeQuantity(p, 'de', i)">&nbsp;</div>
+											<div class="entry value">
+                        <div class="spinner-border text-warning" :class="'d-'+dis" style="color:#ff884f !important;"></div>
+                        <p :class="'d-'+dis2">
+                          {{ p.quantity }}
+                        </p></div>
+											<div class="entry value-plus active" @click="changeQuantity(p, 'in', i)">&nbsp;</div>
+										</div>
+									</div>
+								</td>
                   <td class="invert">
                     <div class="rem">
-                      <div class="close2"></div>
-                    </div>
-                  </td>
-                </tr>
-                <tr class="rem3">
-                  <td class="invert">3</td>
-                  <td class="invert-image">
-                    <a href="single.html">
-                      <img
-                        :src="`${publicPath}assets/images/drug1.jpg`"
-                        alt=""
-                        class="img-responsive"
-                      />
-                    </a>
-                  </td>
-                  <td class="invert">
-                    <div class="quantity">
-                      <div class="quantity-select">
-                        <div class="entry value-minus">&nbsp;</div>
-                        <div class="entry value">
-                          <span>1</span>
-                        </div>
-                        <div class="entry value-plus active">&nbsp;</div>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="invert">Tylan 50 Injectable Antibiotic</td>
-                  <td class="invert">$299.00</td>
-                  <td class="invert">
-                    <div class="rem">
-                      <div class="close3"></div>
+                      <div class="close1" @click="removeProduct(p)"></div>
                     </div>
                   </td>
                 </tr>
               </tbody>
             </table>
           </div>
+          <h3 class="alert alert-primary text-center" style="background:#628cc8; color:white; border: none;" v-else>
+            You have an empty cart
+          </h3>
         </div>
-        <div class="checkout-left">
-          <div class="address_form_agile mt-sm-5 mt-4">
-            <h4 class="mb-sm-4 mb-3">Add a new Details</h4>
-            <form
-              action="https://demo.w3layouts.com/demos_new/template_demo/11-06-2021/electronics-mart-liberty-demo_Free/1081434887/web/payment.html"
-              method="post"
-              class="creditly-card-form agileinfo_form"
-            >
-              <div class="creditly-wrapper wthree, w3_agileits_wrapper">
-                <div class="information-wrapper">
-                  <div class="first-row">
-                    <div class="controls form-group">
-                      <input
-                        class="billing-address-name form-control"
-                        type="text"
-                        name="name"
-                        placeholder="Full Name"
-                        required=""
-                      />
-                    </div>
-                    <div class="w3_agileits_card_number_grids">
-                      <div class="w3_agileits_card_number_grid_left form-group">
-                        <div class="controls">
-                          <input
-                            type="text"
-                            class="form-control"
-                            placeholder="Mobile Number"
-                            name="number"
-                            required=""
-                          />
-                        </div>
-                      </div>
-                      <div
-                        class="w3_agileits_card_number_grid_right form-group"
-                      >
-                        <div class="controls">
-                          <input
-                            type="text"
-                            class="form-control"
-                            placeholder="Landmark"
-                            name="landmark"
-                            required=""
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div class="controls form-group">
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Town/City"
-                        name="city"
-                        required=""
-                      />
-                    </div>
-                    <div class="controls form-group">
-                      <select class="option-w3ls">
-                        <option>Select Address type</option>
-                        <option>Office</option>
-                        <option>Home</option>
-                        <option>Commercial</option>
-                      </select>
-                    </div>
-                  </div>
-                  <button class="submit check_out btn">
-                    Delivery to this Address
-                  </button>
-                </div>
-              </div>
-            </form>
-            <div class="checkout-right-basket">
-              <router-link to="/pay-cart"
-                >Make a Payment
-                <span class="far fa-hand-point-right"></span>
-              </router-link>
-            </div>
-          </div>
-        </div>
+        
       </div>
     </div>
     <!-- //checkout page -->
 
-    <!-- middle section -->
-    <div class="join-w3l1 py-sm-5 py-4">
-      <div class="container py-xl-4 py-lg-2">
-        <div class="row">
-          <div class="col-lg-6">
-            <a href="product2.html">
-              <div class="join-agile text-left p-4">
-                <div class="row">
-                  <div class="col-sm-7 offer-name">
-                    <h6>New Collections, New Trendy</h6>
-                    <h4 class="mb-3">Smart Watches</h4>
-                    <p>Sale up to 25% off all in store</p>
-                  </div>
-                  <div class="col-sm-5 offerimg-w3l">
-                    <img src="images/off1.png" alt="" class="img-fluid" />
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-6 mt-lg-0 mt-4">
-            <a href="product.html">
-              <div class="join-agile text-left p-4">
-                <div class="row">
-                  <div class="col-sm-7 offer-name">
-                    <h6>Top Brands, lowest Prices</h6>
-                    <h4 class="mb-3">Smart Phones</h4>
-                    <p>Free shipping order over $100</p>
-                  </div>
-                  <div class="col-sm-5 offerimg-w3l">
-                    <img src="images/off2.png" alt="" class="img-fluid" />
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- middle section -->
     <div style="margin: 8px auto; display: block; text-align: center">
       <!---728x90--->
     </div>
@@ -274,11 +107,87 @@
 	<script src="js/jquery.flexslider.js"></script> -->
 	<!-- <script> -->
 <script>
+    import VueElementLoading from "vue-element-loading";
+import { useToast } from "vue-toastification";
 export default {
   data() {
     return {
       publicPath: process.env.BASE_URL,
+      products: {},
+      loading: false,
+      loadingText: "",
+      dis:'none',
+      dis2:'block'
     };
   },
+  setup() {
+    // Get toast interface
+    const toast = useToast();
+    return { toast };
+  },
+  components: {
+    VueElementLoading
+  },
+  methods: {
+        getCartItems() {
+            this.loading = true;
+            this.loadingText = "Please wait...";
+            this.$api.get(`https://biomed-backend.herokuapp.com/api/cart`)
+            .then((res) => {
+                this.products = res.data.data;
+            })
+            .catch((err) => {
+                console.log(err.response);
+            })
+            .finally((res) => {
+                this.loading = false;
+                this.loadingText = ""
+                console.log(res);
+            })
+        },
+        removeProduct(d) {
+            this.loading = true;
+            this.loadingText = "Please wait...";
+            this.$api.get(`https://biomed-backend.herokuapp.com/api/cart/remove/${d.id}`)
+            .then((res) => {
+                          this.toast.success(res.data.message);
+
+                this.getCartItems();  
+            })
+            .catch((err) => {
+                console.log(err.response);
+            })
+            .finally((res) => {
+                this.loading = false;
+                this.loadingText = ""
+                console.log(res);
+            })
+        },
+        changeQuantity(p, a, ) {
+          this.dis = 'block';
+          this.dis2 = 'none';
+            let payload = {
+              action:a,
+              product_id:500
+            }
+            this.$api.patch(`https://biomed-backend.herokuapp.com/api/cart/update-quantity/${p.id}`, payload)
+            .then((res) => {
+                this.products = res.data.data;
+                          this.toast.success(res.data.message);
+
+            })
+            .catch((err) => {
+                console.log(err.response);
+            })
+            .finally((res) => {
+                this.dis = 'none';
+          this.dis2 = 'block';
+                console.log(res);
+            })
+        }
+    },
+    mounted() {
+        this.getCartItems();
+    }
 };
 </script>
