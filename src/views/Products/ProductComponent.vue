@@ -197,7 +197,7 @@
 						<!-- first section -->
 						<div class="product-sec1 px-lg-4">
 							<div class="row">
-								<div class="col-md-4 product-men" v-for="(p,i) in products" :key="i" @click="routeProduct(p)">
+								<div class="col-md-4 product-men" v-for="(p,i) in myproducts" :key="i" @click="routeProduct(p)">
 									<div class="card pt-3 pl-3 pr-3 pb-3 mb-3" style="height:280px">
 										<div class="men-thumb-item text-center" style="text-align:center !important;">
 											<div style="width:150px; text-align: center;" class="text-center">
@@ -291,8 +291,8 @@ export default {
         }),
     },
 	mounted () {
-		this.products = this.myproducts
-		console.log(this.products)
+		
+		
 	}
 }
 </script>

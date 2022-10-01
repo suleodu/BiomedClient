@@ -4,7 +4,7 @@
 <!-- {{products}} -->
 
 	<!-- top Products -->
-	<ProductComponent :products="products"/>
+	<ProductComponent :myproducts="products"/>
 	<!-- //top products -->
 
 	<!-- middle section -->
