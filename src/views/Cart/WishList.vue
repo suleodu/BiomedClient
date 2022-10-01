@@ -152,7 +152,7 @@ export default {
           `https://biomed-backend.herokuapp.com/api/wish-list/remove/${d.wid}`
         )
         .then((res) => {
-          this.toast.success(res.data.message);
+          this.$toast.success(res.data.message);
 
           this.getWishListProducts();
         })
@@ -174,10 +174,11 @@ export default {
       this.$api
         .post(`https://biomed-backend.herokuapp.com/api/cart`, payload)
         .then((res) => {
-          this.toast.success(res.data.message);
+          this.$toast.success(res.data.message);
+          this.removeProduct(p)
         })
         .catch((err) => {
-          this.toast.error(err.response.data.message);
+          this.$toast.error(err.response.data.message);
         })
         .finally((res) => {
           this.loading = false;

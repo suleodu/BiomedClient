@@ -1,17 +1,24 @@
-// import Vue from 'vue'
-// import Vuex from 'vuex'
-import { createStore } from "vuex";
+import Vue from 'vue'
+import Vuex from 'vuex'
 import product from './Modules/product'
 import category from './Modules/category'
 
 // Vue.use(Vuex);
 
-const store = createStore({
-    namespace: true,
+Vue.use(Vuex)
+
+export default new Vuex.Store({
+    state: {
+    },
+    getters: {
+    },
+    mutations: {
+    },
+    actions: {
+    },
     modules: {
         product: product,
-        category:category
+        category: category
     }
-});
+})
 
-export default store;

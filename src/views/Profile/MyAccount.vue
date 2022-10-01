@@ -122,15 +122,129 @@
                   </div>
                 </div>
               </div>
+
+              <div
+                class="modal fade"
+                id="editAddressModal"
+                tabindex="-1"
+                role="dialog"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog modal-lg" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">
+                        Edit Address
+                      </h5>
+                      <button
+                        type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-label="Close"
+                      >
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="row">
+                        <vue-element-loading
+                          :active="loading"
+                          color="#FF6700"
+                          :text="loadingText"
+                          spinner="bar-fade-scale"
+                        />
+                        <div class="col-md-6 mb-3">
+                          <input
+                            type="text"
+                            class="form-control"
+                            v-model="edit.name"
+                            placeholder="Name"
+                          />
+                        </div>
+                        <div class="col-md-6 mb-3">
+                          <input
+                            type="email"
+                            class="form-control"
+                            v-model="edit.email"
+                            placeholder="Email"
+                          />
+                        </div>
+                        <div class="col-md-6 mb-3">
+                          <input
+                            type="tel"
+                            class="form-control"
+                            v-model="edit.phone"
+                            placeholder="Phone"
+                          />
+                        </div>
+                        <div class="col-md-6 mb-3">
+                          <select
+                            name=""
+                            class="form-control"
+                            v-model="edit.country"
+                            id=""
+                          >
+                            <option value="">--Select Country--</option>
+                            <option
+                              :value="c.name"
+                              v-for="(c, i) in countries"
+                              :key="i"
+                            >
+                              {{ c.name }}
+                            </option>
+                          </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                          <input
+                            type="text"
+                            class="form-control"
+                            v-model="edit.state"
+                            placeholder="State"
+                          />
+                        </div>
+                        <div class="col-md-6 mb-3">
+                          <input
+                            type="text"
+                            class="form-control"
+                            v-model="edit.city"
+                            placeholder="City"
+                          />
+                        </div>
+                        <div class="col-md-12 mb-3">
+                          <textarea
+                            name=""
+                            id=""
+                            cols="30"
+                            rows="2"
+                            placeholder="Address"
+                            v-model="edit.address"
+                            class="form-control"
+                          ></textarea>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-primary"
+                        @click.prevent="updateAddress"
+                      >
+                        Update
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                   <table class="table table-bordered">
                     <tr>
                       <th>ACCOUNT DETAILS</th>
                     </tr>
                   </table>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-8">
                   <table class="table table-bordered">
                     <vue-element-loading
                       :active="loading"
@@ -160,7 +274,7 @@
                           :key="i"
                         >
                           <div class="row">
-                            <div class="col-md-5">
+                            <div class="col-md-7">
                               {{ a.name }}
                               <i
                                 class="badge badge-primary"
@@ -172,9 +286,19 @@
                               {{ a.city + " " + a.state }} <br />
                               {{ a.phone }}
                             </div>
-                            <div class="col-md-7">
-                              <button class="btn btn-warning mr-2">Edit</button>
-                              <button class="btn btn-danger mr-2" @click="deleteAddress(a)">
+                            <div class="col-md-5">
+                              <button
+                                class="btn btn-warning mr-2"
+                                data-toggle="modal"
+                                data-target="#editAddressModal"
+                                @click="this.edit = a"
+                              >
+                                Edit
+                              </button>
+                              <button
+                                class="btn btn-danger mr-2"
+                                @click="deleteAddress(a)"
+                              >
                                 Delete
                               </button>
                               <button
@@ -210,6 +334,7 @@ export default {
       address: {
         country: "",
       },
+      edit: {},
       myaddresses: {},
       loading: false,
       loadingText: "",
@@ -237,13 +362,34 @@ export default {
           this.address
         )
         .then((res) => {
-          this.toast.success(res.data.message);
-          $("#addressModal").modal().hide();
+          this.$toast.success(res.data.message);
           this.getAllAddress();
+          $("#addressModal").modal('hide');
         })
         .catch((err) => {
           console.log(err.response);
         })
+        .finally((res) => {
+          this.loading = false;
+          this.loadingText = "";
+          console.log(res);
+        });
+    },
+
+    updateAddress() {
+      this.loading = true;
+      this.loadingText = "Please wait...";
+      this.$api
+        .patch(
+          `https://biomed-backend.herokuapp.com/api/user-address/${this.edit.id}`,
+          this.edit
+        )
+        .then((res) => {
+          this.$toast.success(res.data.message);
+          $("#editAddressModal").modal().hide();
+          this.getAllAddress();
+        })
+        // .catch(this.$toast.error("An Errror Occured"))
         .finally((res) => {
           this.loading = false;
           this.loadingText = "";
@@ -275,7 +421,7 @@ export default {
           `https://biomed-backend.herokuapp.com/api/user-address/make-default/${data.id}`
         )
         .then((res) => {
-          this.toast.success(res.data.message);
+          this.$toast.success(res.data.message);
           this.getAllAddress();
         })
         .catch((err) => {
@@ -299,11 +445,11 @@ export default {
           this.loading = true;
           this.loadingText = "Please wait...";
           this.$api
-            .patch(
+            .get(
               `https://biomed-backend.herokuapp.com/api/user-address/remove/${data.id}`
             )
             .then((res) => {
-              this.toast.success(res.data.message);
+              this.$toast.success(res.data.message);
               this.getAllAddress();
             })
             .catch((err) => {
@@ -314,9 +460,7 @@ export default {
               this.loadingText = "";
               console.log(res);
             });
-        } else {
-          swal("Your imaginary file is safe!");
-        }
+        } 
       });
     },
   },

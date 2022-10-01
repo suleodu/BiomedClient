@@ -1,17 +1,23 @@
 <template>
-    <div>
+    <div style="background-color: #f9f9f9;">
+		<vue-element-loading
+              :active="loading"
+              color="#FF6700"
+              :text="loadingText"
+              spinner="bar-fade-scale"
+            />
         <div class="ads-grid py-5">
 		<div class="container py-md-5 py-4">
 			<!-- tittle heading -->
 			<h3 class="tittle-w3l text-center mb-lg-5 mb-sm-4 mb-3">
-				<span class="font-weight-normal">Our</span> New Products</h3>
+				<span class="font-weight-normal">Our</span> Products</h3>
 			<!-- //tittle heading -->
 			<div class="row">
 				<!-- product right -->
 				<div class="col-lg-3 mt-lg-0 mt-4 p-lg-0 order-lg-first order-last">
 					<div class="side-bar p-sm-4 p-3">
 						<!-- reviews -->
-						<div class="customer-rev left-side py-2">
+						<!-- <div class="customer-rev left-side py-2">
 							<h3 class="agileits-sear-head mb-3">Customer Review</h3>
 							<ul>
 								<li>
@@ -59,7 +65,7 @@
 									</a>
 								</li>
 							</ul>
-						</div>
+						</div> -->
 						<!-- //reviews -->
 						<!-- price -->
 						<div class="range py-2">
@@ -67,22 +73,22 @@
 							<div class="w3l-range">
 								<ul>
 									<li>
-										<a href="#">Under $1,000</a>
+										<p @click="getProducts(1000,1000)" href="#">Under ₦1,000</p>
 									</li>
 									<li class="my-1">
-										<a href="#">$1,000 - $5,000</a>
+										<p @click="getProducts(1000,5000)" href="#">₦1,000 - ₦5,000</p>
 									</li>
 									<li>
-										<a href="#">$5,000 - $10,000</a>
+										<p @click="getProducts(5000,10000)" href="#">₦5,000 - ₦10,000</p>
 									</li>
 									<li class="my-1">
-										<a href="#">$10,000 - $20,000</a>
+										<p @click="getProducts(10000,20000)" href="#">₦10,000 - ₦20,000</p>
 									</li>
 									<li>
-										<a href="#">$20,000 $30,000</a>
+										<p @click="getProducts(20000,30000)" href="#">₦20,000 ₦30,000</p>
 									</li>
-									<li class="mt-1">
-										<a href="#">Over $30,000</a>
+									<li @click="getProducts(30000,30000)" class="mt-1">
+										<p href="#">Over ₦30,000</p>
 									</li>
 								</ul>
 							</div>
@@ -93,27 +99,27 @@
 							<h3 class="agileits-sear-head mb-3">Discount</h3>
 							<ul>
 								<li>
-									<input type="checkbox" class="checked">
+									<input type="checkbox" value="5" v-model="discount" @change="getProducts">
 									<span class="span">5% or More</span>
 								</li>
 								<li>
-									<input type="checkbox" class="checked">
+									<input type="checkbox" value="6" v-model="discount" @change="getProducts">
 									<span class="span">10% or More</span>
 								</li>
 								<li>
-									<input type="checkbox" class="checked">
+									<input type="checkbox" value="7" v-model="discount" @change="getProducts">
 									<span class="span">20% or More</span>
 								</li>
 								<li>
-									<input type="checkbox" class="checked">
+									<input type="checkbox" value="8" v-model="discount" @change="getProducts">
 									<span class="span">30% or More</span>
 								</li>
 								<li>
-									<input type="checkbox" class="checked">
+									<input type="checkbox" value="9" v-model="discount" @change="getProducts">
 									<span class="span">50% or More</span>
 								</li>
 								<li>
-									<input type="checkbox" class="checked">
+									<input type="checkbox" value="10" v-model="discount" @change="getProducts">
 									<span class="span">60% or More</span>
 								</li>
 							</ul>
@@ -191,22 +197,20 @@
 						<!-- first section -->
 						<div class="product-sec1 px-lg-4">
 							<div class="row">
-								<div class="col-md-4 product-men" v-for="(p,i) in products.data" :key="i">
-									<div class="men-pro-item simpleCart_shelfItem">
-										<div class="men-thumb-item text-center">
-											<img :src="`${publicPath}assets/images/drug1.jpg`" alt="" class="img-fluid">
-											<div class="men-cart-pro">
-												<div class="inner-men-cart-pro">
-													<router-link :to="'/product/'+p.id" class="link-product-add-cart">Quick View</router-link>
-												</div>
+								<div class="col-md-4 product-men" v-for="(p,i) in products" :key="i" @click="routeProduct(p)">
+									<div class="card pt-3 pl-3 pr-3 pb-3 mb-3" style="height:280px">
+										<div class="men-thumb-item text-center" style="text-align:center !important;">
+											<div style="width:150px; text-align: center;" class="text-center">
+												<img :src="`${publicPath}assets/images/drug1.jpg`" alt="" class="img-fluid">
 											</div>
+											
 										</div>
 										<div class="item-info-product text-center mt-2">
-											<h4 class="pt-1">
+											<h4 class="pt-1 p-name">
 												<router-link :to="'/product/'+p.id">{{ p.product_name }}</router-link>
 											</h4>
 											<div class="info-product-price">
-												<span class="item_price">${{p.price}}</span>
+												<span class="item_price">₦{{p.price}}</span>
 												<!-- <del>$280.00</del> -->
 											</div>
 											
@@ -225,28 +229,70 @@
 	</div>
     </div>
 </template>
+<style>
+	.p-name {
+		overflow: hidden;
+text-overflow: ellipsis;
+display: -webkit-box;
+-webkit-line-clamp: 2;
+-webkit-box-orient: vertical;
+	}
+	.w3l-range ul li p {
+		color: black;
+		cursor: pointer;
+	}
+</style>
 <script>
 import { mapState } from "vuex";
+import VueElementLoading from "vue-element-loading";
 export default {
+	components: {
+        'vue-element-loading': VueElementLoading
+	},
     data() {
         return {
-            publicPath: process.env.BASE_URL
+            publicPath: process.env.BASE_URL,
+			loadingText : "fetching products, Please wait...",
+			products:{},
+			discount: []
         };
     },
 	props:{
-		products:{
-            type:Array,
+		myproducts:{
+            type:Object,
 		}
+	},
+	methods: {
+		routeProduct(p) {
+			this.$router.push(`/product/${p.id}`)
+		},
+		getProducts(from,to) {
+	
+			let payload = {
+				price_range:from,
+				from:from,
+                to:to,
+				discount:this.discount
+			}
+			// this.$store.dispatch("get_category", payload);
+			this.$store.commit('LOADING', true)
+			this.$api.post(`https://biomed-backend.herokuapp.com/api/product/product-filter`, payload)
+			.then((res) => {
+				this.products = res.data.data;
+				this.$store.commit('LOADING', false)
+			})
+
+		},
 	},
     computed: {
         ...mapState({
-            cart: (state) => state.cart,
+            loading: (state) => state.category.loading,
             categories: (state) => state.category.categories,
-            items: (state) => state.product.items,
         }),
     },
 	mounted () {
-		// console.log(this.products)
+		this.products = this.myproducts
+		console.log(this.products)
 	}
 }
 </script>

@@ -28,11 +28,23 @@
     <div class="banner-bootom-w3-agileits py-5">
       <div class="container py-md-5 py-4">
         <div class="row">
-          <div class="col-lg-5 col-md-8 single-right-left">
+          <div class="col-md-6 single-right-left">
             <div class="grid images_3_of_2">
               <div class="flexslider">
+              
                 <ul class="slides">
-                  <li :data-thumb="`${publicPath}assets/images/drug1.jpg`">
+                  <li :data-thumb="myImg">
+                    <div class="thumb-image">
+                      <img
+                        :src="myImg"
+                        :key="Math.random()"
+                        data-imagezoom="true"
+                        class="img-fluid"
+                        alt=""
+                      />
+                    </div>
+                  </li>
+                  <!-- <li :data-thumb="`${publicPath}assets/images/drug1.jpg`">
                     <div class="thumb-image">
                       <img
                         :src="`${publicPath}assets/images/drug1.jpg`"
@@ -51,24 +63,14 @@
                         alt=""
                       />
                     </div>
-                  </li>
-                  <li :data-thumb="`${publicPath}assets/images/drug1.jpg`">
-                    <div class="thumb-image">
-                      <img
-                        :src="`${publicPath}assets/images/drug1.jpg`"
-                        data-imagezoom="true"
-                        class="img-fluid"
-                        alt=""
-                      />
-                    </div>
-                  </li>
+                  </li> -->
                 </ul>
                 <div class="clearfix"></div>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-7 single-right-left simpleCart_shelfItem">
+          <div class="col-md-6 single-right-left simpleCart_shelfItem">
             <h3 class="mb-3">{{ productDetails.product_name }}</h3>
             <p class="mb-3">
               <span class="item_price">₦{{ productDetails.price }}</span>
@@ -124,41 +126,33 @@
               </p>
             </div>
             <div class="occasion-cart">
-              <div
-                class="
-                  snipcart-details
-                  top_brand_home_details
-                  item_add
-                  single-item
-                  hvr-outline-out
-                "
-              >
-                <form action="#" method="post">
-                  <fieldset>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <input
-                          type="submit"
-                          name="submit"
-                          value="Add to cart"
-                          @click.prevent="addToCart"
-                          class="btn btn-style mr-5"
-                        />
-                      </div>
-                      <div class="col-md-6">
-                        <input
-                        @click.prevent="addProductToWishList"
-                      name="submit"
-                      type="submit"
-                      value="Add to WishList"
-                      class="btn btn-style ml-5"
-                    />
-                      </div>
-                    </div>
-
-                    
-                  </fieldset>
-                </form>
+              <div class="rowma">
+                <button
+                  @click.prevent="addToCart"
+                  class="btn btn-style mr-2"
+                  style="width: 180px; display: inline-block"
+                >
+                  <p style="color: white" :class="'d-' + cartstat1">
+                    ADD TO CART
+                  </p>
+                  <p
+                    class="spinner-border text-light"
+                    :class="'d-' + cartstat2"
+                  ></p>
+                </button>
+                <button
+                  @click.prevent="addProductToWishList"
+                  class="btn btn-style ml-2"
+                  style="width: 200px; display: inline-block"
+                >
+                  <p style="color: white" :class="'d-' + cartstat3">
+                    ADD TO WISHLIST
+                  </p>
+                  <p
+                    class="spinner-border text-light"
+                    :class="'d-' + cartstat4"
+                  ></p>
+                </button>
               </div>
             </div>
           </div>
@@ -177,12 +171,12 @@
                 <div class="row">
                   <div class="col-sm-7 offer-name">
                     <h6>New Collections, New Trendy</h6>
-                    <h4 class="mb-3">Smart Watches</h4>
+                    <h4 class="mb-3">Animal Drugs</h4>
                     <p>Sale up to 25% off all in store</p>
                   </div>
                   <div class="col-sm-5 offerimg-w3l">
                     <img
-                      :src="`${publicPath}assets/images/off1.png`"
+                      :src="`${publicPath}assets/images/drug1.jpg`"
                       alt=""
                       class="img-fluid"
                     />
@@ -197,12 +191,12 @@
                 <div class="row">
                   <div class="col-sm-7 offer-name">
                     <h6>Top Brands, lowest Prices</h6>
-                    <h4 class="mb-3">Smart Phones</h4>
+                    <h4 class="mb-3">Drugs</h4>
                     <p>Free shipping order over $100</p>
                   </div>
                   <div class="col-sm-5 offerimg-w3l">
                     <img
-                      :src="`${publicPath}assets/images/off2.png`"
+                      :src="`${publicPath}assets/images/drug4.jpg`"
                       alt=""
                       class="img-fluid"
                     />
@@ -229,19 +223,19 @@
 	<script src="js/jquery.flexslider.js"></script> -->
 	<!-- <script> -->
 <script>
-  import { useToast } from "vue-toastification";
 export default {
   data() {
     return {
       publicPath: process.env.BASE_URL,
       productDetails: {},
+      cartstat1: "block",
+      cartstat2: "none",
+      cartstat3: "block",
+      cartstat4: "none",
+      myImg : require('../../../public/assets/images/drug1.jpg')
     };
   },
-  setup() {
-    // Get toast interface
-    const toast = useToast();
-    return { toast };
-  },
+
   methods: {
     getProductDetails() {
       let param = this.$route.params.product_id;
@@ -255,37 +249,57 @@ export default {
         });
     },
     addProductToWishList() {
+      this.cartstat3 = "none";
+      this.cartstat4 = "block";
       let param = this.$route.params.product_id;
       let payload = {
         product_id: param,
-      }
+      };
       this.$api
         .post(`https://biomed-backend.herokuapp.com/api/wish-list`, payload)
         .then((res) => {
-          this.toast.success(res.data.message);
+          this.$toast.success(res.data.message);
         })
         .catch((err) => {
           console.log(err.response);
+        })
+        .finally((res) => {
+          console.log(res);
+          this.cartstat3 = "block";
+          this.cartstat4 = "none";
         });
     },
     addToCart() {
+      this.cartstat2 = "block";
+      this.cartstat1 = "none";
+
       let param = this.$route.params.product_id;
       let payload = {
         product_id: param,
-      }
+      };
       this.$api
         .post(`https://biomed-backend.herokuapp.com/api/cart`, payload)
         .then((res) => {
-          this.toast.success(res.data.message);
+          this.$toast.success(res.data.message);
         })
         .catch((err) => {
-                    this.toast.error(err.response.data.message);
-
+          this.$toast.error(err.response.data.message);
+        })
+        .finally((res) => {
+          console.log(res);
+          this.cartstat2 = "none";
+          this.cartstat1 = "block";
         });
-    }
+    },
   },
   mounted() {
     this.getProductDetails();
+  },
+  watch: {
+    // eslint-disable-next-line no-unused-vars
+    $route(to, from) {
+      this.getProductDetails();
+    },
   },
 };
 </script>

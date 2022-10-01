@@ -61,7 +61,7 @@
 						<h3 class="mb-3">Categories</h3>
 						<ul>
 							<li class="mb-3" v-for="(c,i) in categories" :key="i">
-								<a href="product.html">{{ c.category_name }} </a>
+								<router-link :to="'/products/'+c.id">{{ c.category_name }} </router-link>
 							</li>
 							
 						</ul>
@@ -95,18 +95,18 @@
 						<h3 class="mb-3">Get in Touch</h3>
 						<ul>
 							<li class="mb-3">
-								<i class="fas fa-map-marker"></i> Mkc, 123 Sebastian, USA.</li>
+								<i class="fas fa-map-marker"></i> **************</li>
 							<li class="mb-3">
-								<i class="fas fa-mobile"></i><a href="tel:+12 23456790"> 12 2345 6790</a> </li>
+								<i class="fas fa-mobile"></i><a href="tel:+12 23456790"> *************</a> </li>
 							<li class="mb-3">
-								<i class="fas fa-phone"></i><a href="tel:+11 36721890">+11 3672 1890</a> </li>
+								<i class="fas fa-phone"></i><a href="tel:+11 36721890">***************</a> </li>
 							<li class="mb-3">
 								<i class="fas fa-envelope-open"></i>
-								<a href="mailto:example@mail.com"> mail 1@example.com</a>
+								<a href="mailto:example@mail.com"> *************</a>
 							</li>
 							<li>
 								<i class="fas fa-envelope-open"></i>
-								<a href="mailto:example@mail.com"> mail 2@example.com</a>
+								<a href="mailto:example@mail.com"> ***************</a>
 							</li>
 						</ul>
 					</div>
@@ -161,7 +161,7 @@
 						<h5 class="font-weight-bold mb-1">{{ c.category_name }} :</h5>
 						<li class="m-sm-1" v-for="(sc, i) in c.sub_category"
                         :key="i">
-							<a href="product.html" class="border-right pr-2">{{ sc.sub_category_name}}</a>
+							<router-link :to="'/products/'+c.id+'/'+sc.id" class="border-right pr-2">{{ sc.sub_category_name}}</router-link>
 							
 						</li>
 						

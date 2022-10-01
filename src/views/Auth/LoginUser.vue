@@ -74,16 +74,12 @@
 <script>
 // import { log } from 'dist/assets/js/minicart';
 import VueElementLoading from "vue-element-loading";
-import { useToast } from "vue-toastification";
 export default {
   components: {
     VueElementLoading,
   },
-  setup() {
-    // Get toast interface
-    const toast = useToast();
-    return { toast };
-  },
+
+
   data() {
     return {
       publicPath: process.env.BASE_URL,
@@ -103,31 +99,24 @@ export default {
           this.form
         )
         .then((res) => {
-          this.toast.success(res.data.message);
+          this.$toast.success(res.data.message);
           let auth_token = res.data.data.token;
           let auth_user = res.data.data.user;
-          let tok1 = auth_token.slice(0, 6);
-          let tok2 = auth_token.slice(6, 12);
-          let tok3 = auth_token.slice(12, 18);
-          let tok4 = auth_token.slice(18, 24);
-          let tok5 = auth_token.slice(24, 30);
-          let tok6 = auth_token.slice(30, 36);
-          let tok7 = auth_token.slice(36, 42);
-        //   console.log(tok1+tok2+tok3+tok4+tok5+tok6+tok7);
           localStorage.clear();
-          localStorage.setItem('2@39$*8', tok1+this.generateTokens(36));
-          localStorage.setItem('4+6$8&8', this.generateTokens(36)+tok2);
           for (let index = 0; index < 10; index++) {
             localStorage.setItem(this.generateTokens(7),JSON.stringify(this.generateTokens(42)));
             
           }
-          localStorage.setItem('0$oR*2w', tok3 + this.generateTokens(30)+tok4);
-          localStorage.setItem('||xm2Nw', tok5 + this.generateTokens(24)+tok7+tok6);
+          localStorage.setItem('2@39$*8', auth_token);
+          
+          
+          localStorage.setItem('0$oR*2w', this.generateTokens(30));
+          localStorage.setItem('||xm2Nw', this.generateTokens(43));
           localStorage.setItem('auth_user', JSON.stringify(auth_user));
           
         })
         .catch((err) => {
-          this.toast.error(err.response.data.message);
+          this.$toast.error(err.response.data.message);
         })
         .finally((res) => {
           this.loading = false;

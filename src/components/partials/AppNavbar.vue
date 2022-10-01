@@ -1,9 +1,6 @@
 <template>
   <div>
-    <!-- top-header -->
 
-    <!-- modals -->
-    <!-- log in -->
     <div
       class="modal fade"
       id="exampleModal"
@@ -27,7 +24,7 @@
     <!-- //top-header -->
 
     <!-- header-bottom-->
-    <div class="header-bot my-md-4 my-3" id="site-header">
+    <div class="header-bot" id="site-header">
       <div class="container">
         <div
           class="row header-bot_inner_wthreeinfo_header_mid align-items-center"
@@ -37,7 +34,7 @@
             <h1>
               <router-link to="/"
                 ><img
-                  :src="`${publicPath}assets/images/biomed.png`"
+                  :src="`${publicPath}assets/images/logo.png`"
                   class="img-fluid"
               /></router-link>
             </h1>
@@ -45,9 +42,9 @@
           <!-- //logo -->
           <!-- header-bot -->
           <div class="col-lg-9 col-md-8 header">
-            <div class="row">
+            <div class="row align-items-center">
               <!-- search -->
-              <div class="col-lg-9 col-sm-8 agileits_search">
+              <div class="col-lg-8 col-sm-8 agileits_search">
                 <form
                   class="form-inline"
                   action="#"
@@ -76,8 +73,8 @@
                   v-if="products.data && searchProducts.search !== ''"
                 >
                   <ul>
-                    <li v-for="(p, i) in products.data" class="pb-2" :key="i">
-                      <router-link :to="'/product/' + p.id" @click="clearSearch()">
+                    <li v-for="(p, i) in products.data" class="pb-2" :key="i" @click="clearSearch()">
+                      <router-link :to="'/product/' + p.id">
                         <p>
                           {{ p.product_name }}
                         </p>
@@ -90,7 +87,7 @@
               <!-- cart details -->
               <div
                 class="
-                  col-lg-3 col-sm-4
+                  col-lg-2 col-sm-2
                   top_nav_right
                   text-center
                   mt-sm-0 mt-2
@@ -130,13 +127,58 @@
                       name="submit"
                       value=""
                     >
-                      <img
-                        :src="`${publicPath}assets/images/cart.png`"
-                        alt=""
-                        class="img-fluid"
-                      />
-                      Cart
+                      <i class="fa" style="font-size:24px">&#xf07a;</i>
+<span class='badge badge-warning' id='lblCartCount'> 5 </span>
                     </router-link>
+                </div>
+              </div>
+              <div class="col-md-2 col-lg-2">
+                <!-- <button class="btn btn-sm btn-primary">
+                  Login/Register
+                </button> -->
+
+                <div class="nav-item" v-if="this.profile == null">
+                  <a class="btn btn-sm btn-default shadow-sm"
+                    href="#login"
+                    data-toggle="modal"
+                    data-target="#exampleModal"
+                    >Login/Register</a
+                  >
+                </div>
+                <div class="nav-item dropdown mr-lg-2 mb-lg-0 mb-2" v-else>
+                  <a
+                    class="button btn btn-sm btn-default shadow-sm dropdown-toggle"
+                    href="#"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    Hi {{ profile.name && profile.name.split(" ")[0] }}
+                  </a>
+                  <div class="dropdown-menu">
+                    <div class="agile_inner_drop_nav_info p-4">
+                      <!-- <h5 class="mb-3">Hi {{profile.name}}</h5> -->
+                      <div class="row ">
+                        <div class="col-md-12">
+                          <ul class="multi-column-dropdown">
+                            <li>
+                              <router-link to="/my-account">My Account</router-link>
+                            </li>
+                            <li>
+                              <a href="">Orders</a>
+                            </li>
+                            <!-- <hr /> -->
+                            <li>
+                              <router-link to="" @click="logout()"
+                                >Logout</router-link
+                              >
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
               <!-- //cart details -->
@@ -230,16 +272,7 @@
                   </div>
                 </div>
               </li>
-              <!-- <li class="nav-item mr-lg-2 mb-lg-0 mb-2">
-                <a class="nav-link" href="about.html">About Us</a>
-              </li> -->
-              <!-- <li class="nav-item mr-lg-2 mb-lg-0 mb-2">
-                <a class="nav-link" href="product.html">New Arrivals</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact Us</a>
-              </li> -->
-              <li class="nav-item" v-if="this.profile == null">
+              <!-- <li class="nav-item" v-if="this.profile == null">
                 <a
                   class="nav-link"
                   href="#login"
@@ -261,7 +294,6 @@
                 </a>
                 <div class="dropdown-menu">
                   <div class="agile_inner_drop_nav_info p-4">
-                    <!-- <h5 class="mb-3">Hi {{profile.name}}</h5> -->
                     <div class="row">
                       <div class="col-md-12">
                         <ul class="multi-column-dropdown">
@@ -271,7 +303,7 @@
                           <li>
                             <a href="">Orders</a>
                           </li>
-                          <!-- <hr /> -->
+                        
                           <li>
                             <router-link to="" @click="logout()"
                               >Logout</router-link
@@ -282,7 +314,7 @@
                     </div>
                   </div>
                 </div>
-              </li>
+              </li> -->
             </ul>
           </div>
         </nav>
@@ -310,6 +342,7 @@
 .search-area ul li:hover {
   background-color: whitesmoke !important;
 }
+
 </style>
 <script>
 import RegisterUser from "../../views/Auth/RegisterUser.vue";

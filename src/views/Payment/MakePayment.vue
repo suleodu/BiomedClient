@@ -282,11 +282,11 @@
 							<div class="row">
 								<div class="col-sm-7 offer-name">
 									<h6>New Collections, New Trendy</h6>
-									<h4 class="mb-3">Smart Watches</h4>
+									<h4 class="mb-3">Animal Drugs</h4>
 									<p>Sale up to 25% off all in store</p>
 								</div>
 								<div class="col-sm-5 offerimg-w3l">
-									<img src="images/off1.png" alt="" class="img-fluid">
+									<img :src="`${publicPath}assets/images/drug1.jpg`" alt="" class="img-fluid">
 								</div>
 							</div>
 						</div>
@@ -298,11 +298,11 @@
 							<div class="row ">
 								<div class="col-sm-7 offer-name">
 									<h6>Top Brands, lowest Prices</h6>
-									<h4 class="mb-3">Smart Phones</h4>
+									<h4 class="mb-3">Drugs</h4>
 									<p>Free shipping order over $100</p>
 								</div>
 								<div class="col-sm-5 offerimg-w3l">
-									<img src="images/off2.png" alt="" class="img-fluid">
+									<img :src="`${publicPath}assets/images/drug4.jpg`" alt="" class="img-fluid">
 								</div>
 							</div>
 						</div>
@@ -319,3 +319,13 @@
 </div>
     </div>
 </template>
+<script>
+export default {
+    data() {
+        return {
+            publicPath: process.env.BASE_URL,
+        };
+    },
+
+}
+</script>

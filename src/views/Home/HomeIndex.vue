@@ -1,138 +1,57 @@
 <template>
     <div>
-        <!-- banner -->
-	<div id="carouselExampleIndicators" class="carousel slide py-5" data-ride="carousel">
-		<!-- Indicators-->
-		<ol class="carousel-indicators">
-			<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-			<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-			<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-			<li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-		</ol>
-		<div class="carousel-inner">
-			<div class="carousel-item item1 active">
-				<div class="banner-style d-flex align-items-center">
-					<div class="container">
-						<div class="w3l-space-banner">
-							<div class="carousel-caption-banner" style="max-width:500px">
-								<p>Get flat 
-									<span>10%</span> Cashback</p>
-								<h3 class="mt-2">Exciting Deals on Swine Drugs</h3>
-								<a class="btn btn-style mt-4" href="product.html">Shop Now </a>
+		<div class="container">
+			<div class="row home-bg">
+			<div class="col-12 mt-5">
+				<div class="first-box">
+					<div class="row align-items-center">
+						<div class="col-md-7 col-12 p-4 px-5">
+							<h1 class="text-white top-text">
+								SAVE on livestock, Equine  and Pet Prescription!
+							</h1>
+						</div>
+						<div class="col-md-5 col-12">
+							<div class="inn-img">
+								<img src="../../assets/13473 1.png" alt="">
 							</div>
+							<img src="../../assets/Category-Beef-LG.png" alt="" class="w-100">
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="carousel-item item2">
-				<div class="banner-style d-flex align-items-center">
-					<div class="container">
-						<div class="w3l-space-banner">
-							<div class="carousel-caption-banner" style="max-width:500px">
-								<p>Get flat
-									<span>10%</span> Cashback</p>
-								<h3 class="mt-2">Exciting Deals on Swine Drugs</h3>
-								<a class="btn btn-style mt-4" href="product.html">Shop Now </a>
-							</div>
-						</div>
+			<div class="col-12 my-5">
+				<div class="row align-items-center">
+					<div class="col-md-8 col-12">
+						<img src="../../assets/Arrow.png" alt="" class="w-100">
+					</div>
+					<div class="col-md-4 col-12">
+						<h1 class="text-dark text-center text-md-left explore">Explore all Categories</h1>
 					</div>
 				</div>
 			</div>
-			<div class="carousel-item item3">
-				<div class="banner-style d-flex align-items-center">
-					<div class="container">
-						<div class="w3l-space-banner">
-							<div class="carousel-caption-banner" style="max-width:500px">
-								<p>Get flat
-									<span>10%</span> Cashback</p>
-								<h3 class="mt-2">Exciting Deals on Swine Drugs</h3>
-								<a class="btn btn-style mt-4" href="product.html">Shop Now </a>
-							</div>
-						</div>
+			<div class="row align-items-center">
+				<div class="col-md-4 col-12" :value="c.id" v-for="(c, i) in categories" :key="i">
+					<div class="box shadow p-5 text-center">
+						<h2 class="text-uppercase">{{ c.category_name }}</h2>
+						
+						<button 
+							class="btn btn-block text-white" 
+							:class="{'btn-primary':i%2 ==0, 'btn-orange' : i%2 !=0 }"
+							@click="linkTo(c.id)"
+							>
+							Explore 
+							<i class="fa fa-arrow-right text-white"></i>
+						</button>
 					</div>
 				</div>
+				<div class="col-4"></div>
+				<div class="col-4"></div>
 			</div>
-			<div class="carousel-item item4">
-				<div class="banner-style d-flex align-items-center">
-					<div class="container">
-						<div class="w3l-space-banner">
-							<div class="carousel-caption-banner" style="max-width:500px">
-								<p>Get flat
-									<span>10%</span> Cashback</p>
-								<h3 class="mt-2">Exciting Deals on Swine Drugs</h3>
-								<a class="btn btn-style mt-4" href="product.html">Shop Now </a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+		
 		</div>
-		<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-			<span class="sr-only">Previous</span>
-		</a>
-		<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-			<span class="carousel-control-next-icon" aria-hidden="true"></span>
-			<span class="sr-only">Next</span>
-		</a>
-	</div>
-	<!-- //banner -->
-<div style="margin: 8px auto; display: block; text-align:center;">
-
-<!---728x90--->
-
- 
-</div>
-	<!-- top Products -->
-	<!-- <ProductComponent :products="products"/> -->
-	<!-- //top products -->
-
-	<!-- middle section -->
-	<div class="join-w3l1 py-sm-5 py-4">
-		<div class="container py-xl-4 py-lg-2">
-			<div class="row">
-				<div class="col-lg-6">
-					<a href="product2.html">
-						<div class="join-agile text-left p-4">
-							<div class="row">
-								<div class="col-sm-7 offer-name">
-									<h6>New Collections, New Trendy</h6>
-									<h4 class="mb-3">Animal Drugs</h4>
-									<p>Sale up to 25% off all in store</p>
-								</div>
-								<div class="col-sm-5 offerimg-w3l">
-									<img :src="`${publicPath}assets/images/drug1.jpg`" alt="" class="img-fluid">
-								</div>
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="col-lg-6 mt-lg-0 mt-4">
-					<a href="product.html">
-						<div class="join-agile text-left p-4">
-							<div class="row ">
-								<div class="col-sm-7 offer-name">
-									<h6>Top Brands, lowest Prices</h6>
-									<h4 class="mb-3">Drugs</h4>
-									<p>Free shipping order over $100</p>
-								</div>
-								<div class="col-sm-5 offerimg-w3l">
-									<img :src="`${publicPath}assets/images/drug4.jpg`" alt="" class="img-fluid">
-								</div>
-							</div>
-						</div>
-					</a>
-				</div>
-			</div>
 		</div>
+		
 	</div>
-	<!-- middle section -->
-<div style="margin: 8px auto; display: block; text-align:center;">
-
-<!---728x90--->
- 
-</div>
-    </div>
 </template>
 
 <script>
@@ -157,7 +76,10 @@ export default {
             .catch((err) => {
                 console.log(err.response);
             })
-        }
+        },
+		linkTo(route){
+			this.$router.push(`/products/${route}`);
+		}
     },
     mounted() {
         this.getProducts();
@@ -172,3 +94,51 @@ export default {
     components: {  }
 }
 </script>
+<style scoped>
+	.home-bg{
+		background : url(../../assets/bsckgroud.png)
+	}
+	.first-box{
+		background-color: #3870b6;
+		min-height: 150px;
+		border-radius: 8px;
+	}
+	.top-text, .explore{
+		line-height:1.3;
+		font-weight: 600;
+	}
+	.explore{
+		font-size:xxx-large;
+	}
+	.inn-img{
+		position:absolute;
+		top: 20%;
+		background: white;
+		border-radius: 8px;
+		left: -50px;
+	}
+	.box{
+		border-radius: 8px;
+
+	}
+	.box >h2{
+		line-height: 1.3 !important;
+		font-weight: 600 !important;
+		min-height: 150px;
+	}
+	.btn-orange{
+		background-color: #ff6a05;
+	}
+	.btn-orange:hover{
+		background-color: #3770b6;
+	}
+	@media (max-width: 800px) {
+		.inn-img{
+		position:absolute;
+		top: 70%;
+		background: white;
+		border-radius: 8px;
+		left: 35%;
+	}
+	}
+</style>

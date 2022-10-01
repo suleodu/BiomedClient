@@ -84,7 +84,7 @@
  
 </div>
 	<!-- top Products -->
-	<ProductComponent :products="products"/>
+	<ProductComponent v-if="products.data" :myproducts="products.data"/>
 	<!-- //top products -->
 
 	<!-- middle section -->
@@ -152,7 +152,7 @@ export default {
 			}
             this.$api.post(`https://biomed-backend.herokuapp.com/api/product/all`, payload)
             .then((res) => {
-                this.products = res.data.data;
+                this.products = res.data;
             })
             .catch((err) => {
                 console.log(err.response);
@@ -162,6 +162,7 @@ export default {
     mounted() {
         this.getProducts();
     },
+	
     computed: {
         ...mapState({
             cart: (state) => state.cart,

@@ -1,7 +1,9 @@
 <template>
-  <AppNavbar></AppNavbar>
+  <div id="app">
+    <AppNavbar></AppNavbar>
   <router-view/>
   <AppFooter></AppFooter>
+  </div>
 </template>
 
 <script>
