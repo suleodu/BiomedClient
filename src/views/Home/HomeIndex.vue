@@ -134,11 +134,11 @@ export default {
 	}
 	@media (max-width: 800px) {
 		.inn-img{
-		position:absolute;
-		top: 70%;
-		background: white;
-		border-radius: 8px;
-		left: 35%;
-	}
+			position:absolute;
+			top: 70%;
+			background: white;
+			border-radius: 8px;
+			left: 35%;
+		}
 	}
 </style>

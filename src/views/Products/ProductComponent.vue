@@ -73,22 +73,52 @@
 							<div class="w3l-range">
 								<ul>
 									<li>
-										<p @click="getProducts(1000,1000)" href="#">Under ₦1,000</p>
+										<p @click="getProducts(1000,1000)" href="#">
+											<label for="Under ₦1,000">
+												<input type="radio" name="filt" id="Under ₦1,000">
+											Under ₦1,000
+											</label>
+										</p>
 									</li>
 									<li class="my-1">
-										<p @click="getProducts(1000,5000)" href="#">₦1,000 - ₦5,000</p>
+										<p @click="getProducts(1000,5000)" href="#">
+											<label for="₦1,000 - ₦5,000">
+												<input type="radio" name="filt" id="₦1,000 - ₦5,000">
+											₦1,000 - ₦5,000
+											</label>
+										</p>
 									</li>
 									<li>
-										<p @click="getProducts(5000,10000)" href="#">₦5,000 - ₦10,000</p>
+										<p @click="getProducts(5000,10000)" href="#">
+											<label for="₦5,000 - ₦10,000">
+												<input type="radio" name="filt" id="₦5,000 - ₦10,000">
+											₦5,000 - ₦10,000
+											</label>
+										</p>
 									</li>
 									<li class="my-1">
-										<p @click="getProducts(10000,20000)" href="#">₦10,000 - ₦20,000</p>
+										<p @click="getProducts(10000,20000)" href="#">
+											<label for="₦10,000 - ₦20,000">
+												<input type="radio" name="filt" id="₦10,000 - ₦20,000">
+											₦10,000 - ₦20,000
+											</label>
+										</p>
 									</li>
 									<li>
-										<p @click="getProducts(20000,30000)" href="#">₦20,000 ₦30,000</p>
+										<p @click="getProducts(20000,30000)" href="#">
+											<label for="₦20,000 ₦30,000">
+												<input type="radio" name="filt" id="₦20,000 ₦30,000">
+											₦20,000 ₦30,000
+											</label>
+										</p>
 									</li>
 									<li @click="getProducts(30000,30000)" class="mt-1">
-										<p href="#">Over ₦30,000</p>
+										<p href="#">
+											<label for="Over ₦30,000">
+												<input type="radio" name="filt" id="Over ₦30,000">
+												Over ₦30,000
+											</label>
+										</p>
 									</li>
 								</ul>
 							</div>
