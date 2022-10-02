@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <AppNavbar></AppNavbar>
+  <AppNavbar></AppNavbar>
   <router-view/>
   <AppFooter></AppFooter>
   </div>
@@ -14,6 +14,5 @@ export default {
     AppNavbar,
     AppFooter
   },
-  
 }
 </script>

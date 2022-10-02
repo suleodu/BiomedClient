@@ -34,14 +34,14 @@
 					<div class="box shadow p-5 text-center">
 						<h2 class="text-uppercase">{{ c.category_name }}</h2>
 						
-						<button 
+						<a 
 							class="btn btn-block text-white" 
 							:class="{'btn-primary':i%2 ==0, 'btn-orange' : i%2 !=0 }"
-							@click="linkTo(c.id)"
+							:href="`/products/${c.id}`"
 							>
 							Explore 
 							<i class="fa fa-arrow-right text-white"></i>
-						</button>
+						</a>
 					</div>
 				</div>
 				<div class="col-4"></div>

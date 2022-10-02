@@ -32,11 +32,11 @@
           <!-- logo -->
           <div class="col-lg-3 col-md-4 logo_agile">
             <h1>
-              <router-link to="/"
+              <a href="/"
                 ><img
                   :src="`${publicPath}assets/images/logo.png`"
                   class="img-fluid"
-              /></router-link>
+              /></a>
             </h1>
           </div>
           <!-- //logo -->
@@ -190,138 +190,9 @@
     <!-- shop locator (popup) -->
     <!-- //header-bottom -->
     <!-- navigation -->
-    <div class="navbar-inner">
-      <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light">
-          <div class="agileits-navi_search">
-            <form action="#" method="post">
-              <!-- {{categories}} -->
-              <select
-                id="agileinfo-nav_search"
-                name="agileinfo_search"
-                required=""
-                v-model="cat"
-                @change="getProdByCat(cat)"
-              >
-                <option value="">All Categories</option>
-                <option :value="c.id" v-for="(c, i) in categories" :key="i">
-                  {{ c.category_name }}
-                </option>
-              </select>
-            </form>
-          </div>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav text-center ml-auto">
-              <li
-                class="nav-item dropdown mr-lg-2 mb-lg-0 mb-2"
-                v-for="(c, i) in categories"
-                :key="i"
-              >
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  {{ c.category_name }}
-                </a>
-                <div class="dropdown-menu">
-                  <div class="agile_inner_drop_nav_info p-4">
-                    <div class="row">
-                      <div
-                        class="col-sm-3 multi-gd-img"
-                        v-for="(sc, i) in c.sub_category"
-                        :key="i"
-                      >
-                        <h5 class="mb-3">
-                          <router-link
-                            :to="'/products/' + c.id + '/' + sc.id"
-                            style="color: #fe6904 !important"
-                          >
-                            {{ sc.sub_category_name }}
-                          </router-link>
-                        </h5>
-                        <ul class="multi-column-dropdown">
-                          <li
-                            v-for="(ic, i) in sc.nested_sub_category"
-                            :key="i"
-                          >
-                            <router-link
-                              :to="
-                                '/products/' + c.id + '/' + sc.id + '/' + ic.id
-                              "
-                              >{{ ic.name }}</router-link
-                            >
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <!-- <li class="nav-item" v-if="this.profile == null">
-                <a
-                  class="nav-link"
-                  href="#login"
-                  data-toggle="modal"
-                  data-target="#exampleModal"
-                  >Login/Register</a
-                >
-              </li>
-              <li class="nav-item dropdown mr-lg-2 mb-lg-0 mb-2" v-else>
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  Hi {{ profile.name && profile.name.split(" ")[0] }}
-                </a>
-                <div class="dropdown-menu">
-                  <div class="agile_inner_drop_nav_info p-4">
-                    <div class="row">
-                      <div class="col-md-12">
-                        <ul class="multi-column-dropdown">
-                          <li>
-                            <router-link to="/my-account">My Account</router-link>
-                          </li>
-                          <li>
-                            <a href="">Orders</a>
-                          </li>
-                        
-                          <li>
-                            <router-link to="" @click="logout()"
-                              >Logout</router-link
-                            >
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li> -->
-            </ul>
-          </div>
-        </nav>
-      </div>
-    </div>
+    <NavBar2 v-if="this.$router.history.current.path != '/'" />
     <!-- //navigation -->
-  </div>
+    </div>
 </template>
 <style>
 .search-area {
@@ -347,11 +218,13 @@
 <script>
 import RegisterUser from "../../views/Auth/RegisterUser.vue";
 import LoginUser from "@/views/Auth/LoginUser.vue";
+import NavBar2 from "./AppNavbar2.vue"
 import { mapState } from "vuex";
 export default {
   components: {
     RegisterUser,
     LoginUser,
+    NavBar2
   },
   data() {
     return {
