@@ -156,16 +156,7 @@
 						</div>
 						<!-- //discounts -->
 						<!-- electronics -->
-						<div class="left-side py-2">
-							<h3 class="agileits-sear-head mb-3">Categories</h3>
-							<ul>
-								<li v-for="(c,i) in categories" :key="i">
-									<input type="checkbox" class="checked">
-									<span class="span">{{ c.category_name }}</span>
-								</li>
-								
-							</ul>
-						</div>
+						
 						<!-- //electronics -->
 						<!-- arrivals -->
 						<div class="left-side py-2">
