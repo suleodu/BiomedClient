@@ -32,11 +32,11 @@
           <!-- logo -->
           <div class="col-lg-3 col-md-4 logo_agile">
             <h1>
-              <router-link to="/"
+              <a href="/"
                 ><img
                   :src="`${publicPath}assets/images/logo.png`"
                   class="img-fluid"
-              /></router-link>
+              /></a>
             </h1>
           </div>
           <!-- //logo -->
@@ -189,8 +189,10 @@
     </div>
     <!-- shop locator (popup) -->
     <!-- //header-bottom -->
-    <Nav2 />
-  </div>
+    <!-- navigation -->
+    <NavBar2 v-if="this.$router.history.current.path != '/'" />
+    <!-- //navigation -->
+    </div>
 </template>
 <style>
 .search-area {
@@ -216,13 +218,13 @@
 <script>
 import RegisterUser from "../../views/Auth/RegisterUser.vue";
 import LoginUser from "@/views/Auth/LoginUser.vue";
-import Nav2 from "./AppNavbar2.vue";
+import NavBar2 from "./AppNavbar2.vue"
 import { mapState } from "vuex";
 export default {
   components: {
     RegisterUser,
     LoginUser,
-    Nav2
+    NavBar2
   },
   data() {
     return {
