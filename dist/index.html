@@ -168,7 +168,7 @@
     padding: 2px 5px;
     vertical-align: top;
     margin-left: -10px; 
-}</style><script defer="defer" src="/js/chunk-vendors.d0f7da5c.js"></script><script defer="defer" src="/js/app.0a1ad021.js"></script><link href="/css/app.37c5202c.css" rel="stylesheet"></head><body><noscript><strong>We're sorry but biomed doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app"></div><script src="/assets/js/jquery-3.3.1.min.js"></script><script>$(document).ready(function () {
+}</style><script defer="defer" src="/js/chunk-vendors.3edb47eb.js"></script><script defer="defer" src="/js/app.922b6c90.js"></script><link href="/css/app.1669ba71.css" rel="stylesheet"></head><body><noscript><strong>We're sorry but biomed doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app"></div><script src="/assets/js/jquery-3.3.1.min.js"></script><script>$(document).ready(function () {
         /*
           var defaults = {
           containerID: 'toTop', // fading element id
@@ -182,7 +182,7 @@
           easingType: 'easeOutQuart'
         });
 
-      });</script><script src="/assets/js/jquery-1.11.1.min.js"></script><script src="assets/js/move-top.js"></script><script src="assets/js/easing.js"></script><script>jQuery(document).ready(function ($) {
+      });</script><script src="/assets/js/jquery-1.11.1.min.js"></script><script>jQuery(document).ready(function ($) {
       $(".scroll").click(function (event) {
         event.preventDefault();
         $('html,body').animate({
@@ -213,24 +213,6 @@
         mainClass: 'my-mfp-zoom-in'
       });
 
-    });</script><script src="assets/js/scroll.js"></script><script src="assets/js/minicart.js"></script><script>paypals.minicarts
-      .render(); //use only unique class names other than paypals.minicarts.Also Replace same class name in css and minicart.min.js
-
-    paypals.minicarts.cart.on('checkout', function (evt) {
-      var items = this.items(),
-        len = items.length,
-        total = 0,
-        i;
-
-      // Count the number of each item in the cart
-      for (i = 0; i < len; i++) {
-        total += items[i].get('quantity');
-      }
-
-      if (total < 3) {
-        alert('The minimum order quantity is 3. Please add more to your shopping cart before checking out');
-        evt.preventDefault();
-      }
     });</script><script>window.onload = function () {
       document.getElementById("password1").onchange = validatePassword;
       document.getElementById("password2").onchange = validatePassword;

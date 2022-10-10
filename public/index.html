@@ -234,8 +234,6 @@
   <script src="<%= BASE_URL %>assets/js/jquery-1.11.1.min.js"></script>
   <!-- //js -->
   <!-- start-smoth-scrolling -->
-  <script type="text/javascript" src="assets/js/move-top.js"></script>
-  <script type="text/javascript" src="assets/js/easing.js"></script>
   <script type="text/javascript">
     jQuery(document).ready(function ($) {
       $(".scroll").click(function (event) {
@@ -286,32 +284,7 @@
   <!-- //popup modal (for location)-->
 
   <!-- scroll seller -->
-  <script src="assets/js/scroll.js"></script>
-  <!-- //scroll seller -->
-
-  <!-- cart-js -->
-  <script src="assets/js/minicart.js"></script>
-  <script>
-    paypals.minicarts
-      .render(); //use only unique class names other than paypals.minicarts.Also Replace same class name in css and minicart.min.js
-
-    paypals.minicarts.cart.on('checkout', function (evt) {
-      var items = this.items(),
-        len = items.length,
-        total = 0,
-        i;
-
-      // Count the number of each item in the cart
-      for (i = 0; i < len; i++) {
-        total += items[i].get('quantity');
-      }
-
-      if (total < 3) {
-        alert('The minimum order quantity is 3. Please add more to your shopping cart before checking out');
-        evt.preventDefault();
-      }
-    });
-  </script>
+  
   <!-- //cart-js -->
 
   <!-- password-script -->
