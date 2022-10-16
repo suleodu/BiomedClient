@@ -313,8 +313,8 @@
                           }}</router-link>
                         </h4>
                         <div class="info-product-price">
-                          <span class="item_price">₦{{ p.price }}</span>
-                          <!-- <del>$280.00</del> -->
+                          <span class="item_price">₦{{ p.discount_amount }}</span>
+                          <del>₦{{ p.price }}</del>
                         </div>
                       </div>
                     </div>

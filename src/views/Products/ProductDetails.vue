@@ -73,8 +73,8 @@
           <div class="col-md-6 single-right-left simpleCart_shelfItem">
             <h3 class="mb-3">{{ productDetails.product_name }}</h3>
             <p class="mb-3">
-              <span class="item_price">₦{{ productDetails.price }}</span>
-              <!-- <del class="mx-2 font-weight-light">$400.00</del> -->
+              <span class="item_price">₦{{ productDetails.discount_amount }}</span>
+              <del class="mx-2 font-weight-light">₦{{ productDetails.price }}</del>
               <!-- <label>Free delivery</label> -->
             </p>
             <div class="single-infoagile">

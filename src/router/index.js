@@ -10,6 +10,7 @@ import PaymentPage from '../views/Payment/MakePayment.vue'
 import ViewProducts from '../views/Products/ViewProducts.vue'
 import Profile from '../views/Profile/MyAccount.vue'
 import CheckoutDetails from '../views/Cart/CheckoutDetails.vue'
+import InvoiceDetails from '../views/Cart/InvoiceDetails.vue'
 
 Vue.use(VueRouter)
 
@@ -61,6 +62,12 @@ const routes = [
     path: '/checkout-details',
     name: 'Checkout Details',
     component: CheckoutDetails
+  },
+
+  {
+    path: '/invoice/:invoice_id',
+    name: 'Invoice Details',
+    component: InvoiceDetails
   },
 
 ]
