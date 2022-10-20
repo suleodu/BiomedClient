@@ -447,6 +447,12 @@ export default {
     },
     verify(response) {
       this.$api.post(`https://biomed-backend.herokuapp.com/api/invoice/check-status/${response.paymentReference}/${this.$route.params.invoice_id}`)
+      .then((res) =>{
+        if (res.data.message == "Transaction Successful") {
+          this.$toast.success(res.data.message);
+          this.generateInvoice();
+        }
+      })
     },
     payWithMonnify(data, $this) {
       MonnifySDK.initialize({
