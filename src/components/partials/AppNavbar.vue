@@ -128,7 +128,7 @@
                       value=""
                     >
                       <i class="fa" style="font-size:24px">&#xf07a;</i>
-<span class='badge badge-warning' id='lblCartCount'> 5 </span>
+<span class='badge badge-warning' id='lblCartCount' v-if="carts.length>0"> {{carts.length}} </span>
                     </router-link>
                 </div>
               </div>
@@ -170,8 +170,8 @@
                             </li>
                             <!-- <hr /> -->
                             <li>
-                              <router-link to="" @click="logout()"
-                                >Logout</router-link
+                              <div style="cursor:pointer;" @click.prevent="logout()"
+                                >Logout</div
                               >
                             </li>
                           </ul>
@@ -239,6 +239,7 @@ export default {
       },
       products: {},
       cat: "",
+      carts:{}
     };
   },
   methods: {
@@ -247,7 +248,7 @@ export default {
         '.theme-switch input[type="checkbox"]'
       );
       const currentTheme = localStorage.getItem("theme");
-      console.log(toggleSwitch);
+      // console.log(toggleSwitch);
       if (currentTheme) {
         document.documentElement.setAttribute("data-theme", currentTheme);
 
@@ -255,6 +256,20 @@ export default {
           toggleSwitch.checked = true;
         }
       }
+    },
+    getCartItems() {
+      
+      this.$api
+        .get(`https://biomed-backend.herokuapp.com/api/cart`)
+        .then((res) => {
+          this.carts = res.data.data;
+        })
+        .catch(() => {
+          // console.log(err.response);
+        })
+        .finally((res) => {
+          console.log(res);
+        });
     },
     switchTheme(e) {
       if (e.target.checked) {
@@ -283,8 +298,8 @@ export default {
         .then((res) => {
           this.products = res.data.data;
         })
-        .catch((err) => {
-          console.log(err.response);
+        .catch(() => {
+          // console.log(err.response);
         });
     },
     getProdByCat(id) {
@@ -293,6 +308,7 @@ export default {
   },
   mounted() {
     this.profile = JSON.parse(localStorage.getItem("auth_user"));
+    this.getCartItems();
     this.$store.dispatch("get_category", this.filter);
   },
   computed: {
