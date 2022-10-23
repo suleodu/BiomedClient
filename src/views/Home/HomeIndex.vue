@@ -34,7 +34,7 @@
 				<div class="col-md-4 col-12" :value="c.id" v-for="(c, i) in categories" :key="i">
 					<div class="box shadow p-5 text-center">
 						<h2 class="text-uppercase">{{ c.category_name }}</h2>
-						
+						<img src="../../assets/Category-Beef-LG.png" class="w-100 pb-3" alt="">
 						<a 
 							class="btn btn-block text-white" 
 							:class="{'btn-primary':i%2 ==0, 'btn-orange' : i%2 !=0 }"

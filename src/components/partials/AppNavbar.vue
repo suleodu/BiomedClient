@@ -25,7 +25,7 @@
 
     <!-- header-bottom-->
     <div class="header-bot" id="site-header">
-      <div class="container">
+      <div class="container my-4">
         <div
           class="row header-bot_inner_wthreeinfo_header_mid align-items-center"
         >

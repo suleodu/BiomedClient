@@ -32,14 +32,16 @@
           >
             <span class="navbar-toggler-icon"></span>
           </button>
+          
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav text-center ml-auto">
+            <ul class="navbar-nav text-center  ml-3">
               <li
                 class="nav-item dropdown mr-lg-2 mb-lg-0 mb-2"
-                v-for="(c, i) in categories"
+                v-for="(c, i) in getSelectedCategories()"
                 :key="i"
               >
                 <a
+                  
                   class="nav-link dropdown-toggle"
                   href="#"
                   role="button"
@@ -142,7 +144,7 @@ export default {
     return {
       publicPath: process.env.BASE_URL,
       profile: {},
-      // categories: {},
+      selected_categories: {},
       filter: {
         filters: "",
       },
@@ -202,10 +204,19 @@ export default {
     getProdByCat(id) {
       this.$router.push(`/products/${id}`);
     },
+    getSelectedCategories(){
+      // filter categories
+      return this.selected_categories = this.categories.filter(data=>{
+        return data.id == this.$route.params.category_id
+      })
+    }
   },
   mounted() {
     this.profile = JSON.parse(localStorage.getItem("auth_user"));
     this.$store.dispatch("get_category", this.filter);
+    this.cat = this.$route.params.category_id
+   
+
   },
   computed: {
     ...mapState({
