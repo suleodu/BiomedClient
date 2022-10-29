@@ -1,5 +1,12 @@
 <template>
   <div>
+    <div
+      class="modal fade"
+      id="register"
+      tabindex="-1"
+      role="dialog"
+      aria-hidden="true"
+    >
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -109,10 +116,12 @@
         </div>
       </div>
     </div>
+    </div>
   </div>
 </template>
 <script>
 // import { log } from 'dist/assets/js/minicart';
+import $ from 'jquery';
 import VueElementLoading from "vue-element-loading";
 export default {
   components: {
@@ -136,6 +145,7 @@ export default {
           this.form
         )
         .then((res) => {
+          $("#register").modal("hide");
           this.$toast.success(res.data.message);
           let auth_token = res.data.data.token;
           let auth_user = res.data.data.user;
@@ -152,13 +162,12 @@ export default {
           localStorage.setItem('auth_user', JSON.stringify(auth_user));
           
         })
-        .catch((err) => {
-          this.$toast.error(err.response.data.message);
-        })
-        .finally((res) => {
+        // .catch((err) => {
+        //   this.$toast.error(err.response.data.message);
+        // })
+        .finally(() => {
           this.loading = false;
           this.loadingText = "";
-          console.log(res);
         });
     },
     generateTokens(length) {

@@ -10,6 +10,7 @@
   "dependencies": {
     "@fingerprintjs/fingerprintjs-pro": "^3.7.1",
     "@fingerprintjs/fingerprintjs-pro-vue-v2": "^1.0.3",
+    "@types/jquery": "^3.5.14",
     "axios": "^0.27.2",
     "core-js": "^3.8.3",
     "dotenv": "^16.0.3",
@@ -24,6 +25,7 @@
   "devDependencies": {
     "@babel/core": "^7.12.16",
     "@babel/eslint-parser": "^7.12.16",
+    "@types/bootstrap": "^5.2.5",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-plugin-router": "^5.0.8",

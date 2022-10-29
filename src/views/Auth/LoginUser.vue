@@ -60,7 +60,7 @@
               </div>
               <p class="text-center dont-do mt-3">
                 Don't have an account?
-                <a href="#" data-toggle="modal" data-target="#exampleModal2">
+                <a href="#" data-toggle="modal" data-target="#register">
                   Register Now</a
                 >
               </p>
