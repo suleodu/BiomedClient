@@ -213,6 +213,7 @@ import RegisterUser from "../../views/Auth/RegisterUser.vue";
 import LoginUser from "@/views/Auth/LoginUser.vue";
 import NavBar2 from "./AppNavbar2.vue"
 import { mapState } from "vuex";
+import { bus } from '../../main'
 export default {
   components: {
     RegisterUser,
@@ -310,5 +311,10 @@ export default {
       items: (state) => state.product.items,
     }),
   },
+  created (){
+    bus.$on('updateCart', () => {
+      this.getCartItems();
+    })
+  }
 };
 </script>
