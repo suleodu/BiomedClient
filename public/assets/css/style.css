@@ -4881,5 +4881,8 @@ ul.twitter-feed a:hover {
         width: 45%;
     }
 }
+.container {
+    max-width: 1274px !important;
+}
 
 /*--//responsive--*/

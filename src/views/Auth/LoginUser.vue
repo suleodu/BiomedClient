@@ -113,6 +113,7 @@ export default {
           localStorage.setItem('0$oR*2w', this.generateTokens(30));
           localStorage.setItem('||xm2Nw', this.generateTokens(43));
           localStorage.setItem('auth_user', JSON.stringify(auth_user));
+          location.reload();
           
         })
         .catch((err) => {

@@ -121,7 +121,7 @@
 </template>
 <script>
 // import { log } from 'dist/assets/js/minicart';
-import $ from 'jquery';
+// import $ from 'jquery';
 import VueElementLoading from "vue-element-loading";
 export default {
   components: {
@@ -145,7 +145,7 @@ export default {
           this.form
         )
         .then((res) => {
-          $("#register").modal("hide");
+          // $("#register").modal("hide");
           this.$toast.success(res.data.message);
           let auth_token = res.data.data.token;
           let auth_user = res.data.data.user;
@@ -161,6 +161,7 @@ export default {
           localStorage.setItem('||xm2Nw', this.generateTokens(43));
           localStorage.setItem('auth_user', JSON.stringify(auth_user));
           
+          location.reload();
         })
         // .catch((err) => {
         //   this.$toast.error(err.response.data.message);

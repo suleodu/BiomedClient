@@ -6,6 +6,29 @@
       :text="loadingText"
       spinner="bar-fade-scale"
     />
+    <!-- banner -->
+	<div class="container py-5">
+    <div class="category-details">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="part-img">
+          <img :src="`${publicPath}assets/images/drug2.jpg`" alt="" class="w-100">
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div class="category align-items-center">
+          <h2 class="pb-5 pt-4" style="font-family:'Rubik'">
+            {{ getSelectedCategories()[0].category_name }}
+          </h2>
+          <span style="font-family:'Rubik'; font-size:22px; line-height:30px;">
+            {{ getSelectedCategories()[0].description }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+	<!-- //banner -->
     <div class="ads-grid py-5">
       <div class="container py-md-5 py-4">
         <!-- tittle heading -->
@@ -356,6 +379,8 @@ export default {
       discount: [],
       products: {},
       filter: {},
+      selected_categories:{},
+      // categories: {},
     };
   },
   methods: {
@@ -387,6 +412,12 @@ export default {
           this.products = res.data.data;
           this.$store.commit("LOADING", false);
         });
+    },
+    getSelectedCategories(){
+      // filter categories
+      return this.selected_categories = this.categories.filter(data=>{
+        return data.id == this.$route.params.category_id
+      })
     },
     getProductss() {
       let payload = {

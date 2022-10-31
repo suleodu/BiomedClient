@@ -33,7 +33,7 @@
               <div class="flexslider">
               
                 <ul class="slides">
-                  <li :data-thumb="myImg">
+                  <!-- <li :data-thumb="myImg"> -->
                     <div class="thumb-image">
                       <img
                         :src="myImg"
@@ -43,8 +43,8 @@
                         alt=""
                       />
                     </div>
-                  </li>
-                  <!-- <li :data-thumb="`${publicPath}assets/images/drug1.jpg`">
+                  <!-- </li> -->
+                  <li :data-thumb="`${publicPath}assets/images/drug1.jpg`">
                     <div class="thumb-image">
                       <img
                         :src="`${publicPath}assets/images/drug1.jpg`"
@@ -63,7 +63,7 @@
                         alt=""
                       />
                     </div>
-                  </li> -->
+                  </li>
                 </ul>
                 <div class="clearfix"></div>
               </div>

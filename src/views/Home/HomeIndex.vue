@@ -20,20 +20,21 @@
 				</div>
 			</div>
 			<div class="col-12 my-5">
-				<div class="row align-items-center">
+				<h1 class="text-dark text-center text-md-left explore">Explore all Categories</h1>
+				<!-- <div class="row align-items-center">
 					<div class="col-md-8 col-12">
 						<img src="../../assets/Arrow.png" alt="" class="w-100">
 					</div>
 					<div class="col-md-4 col-12">
-						<h1 class="text-dark text-center text-md-left explore">Explore all Categories</h1>
+						
 					</div>
-				</div>
+				</div> -->
 			</div>
 			<div class="row align-items-center">
 				<div class="col-md-4 col-12" :value="c.id" v-for="(c, i) in categories" :key="i">
 					<div class="box shadow p-5 text-center">
 						<h2 class="text-uppercase">{{ c.category_name }}</h2>
-						
+						<img src="../../assets/Category-Beef-LG.png" class="w-100 pb-3" alt="">
 						<a 
 							class="btn btn-block text-white" 
 							:class="{'btn-primary':i%2 ==0, 'btn-orange' : i%2 !=0 }"
