@@ -28,7 +28,7 @@
               <a href="/"
                 ><img
                   :src="`${publicPath}assets/images/logo.png`"
-                  class="img-fluid"
+                  class="img-fluid my-logo"
               /></a>
             </h1>
           </div>
@@ -318,3 +318,8 @@ export default {
   }
 };
 </script>
+<style scoped>
+  .my-logo{
+    height: 40px !important;
+  }
+</style>

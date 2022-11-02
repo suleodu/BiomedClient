@@ -7,30 +7,33 @@
       spinner="bar-fade-scale"
     />
     <!-- banner -->
-	<div class="container py-5">
-    <div class="category-details">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="part-img">
-          <img :src="`${publicPath}assets/images/drug2.jpg`" alt="" class="w-100">
+  <section class="category-banner">
+    <div class="container py-5">
+      <div class="category-details">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="part-img">
+            <!-- <img :src="`${publicPath}assets/images/drug2.jpg`" alt="" class="w-100"> -->
+          </div>
         </div>
-      </div>
-      <div class="col-md-5">
-        <div class="category align-items-center">
-          <h2 class="pb-5 pt-4" style="font-family:'Rubik'">
-            {{ getSelectedCategories()[0].category_name }}
-          </h2>
-          <span style="font-family:'Rubik'; font-size:22px; line-height:30px;">
-            {{ getSelectedCategories()[0].description }}
-          </span>
+        <div class="col-md-5">
+          <div class="category align-items-center">
+            <h2 class="pb-5 pt-4" style="font-family:'Rubik'">
+              {{ getSelectedCategories()[0].category_name }}
+            </h2>
+            <span style="font-family:'Rubik'; font-size:22px; line-height:30px;">
+              {{ getSelectedCategories()[0].description }}
+            </span>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  </div>
+    </div>
+  </section>
+	
 	<!-- //banner -->
     <div class="ads-grid py-5">
-      <div class="container py-md-5 py-4">
+      <div class="container">
         <!-- tittle heading -->
         <h3 class="tittle-w3l text-center mb-lg-5 mb-sm-4 mb-3">
           <span class="font-weight-normal">Our</span> Products
@@ -40,7 +43,7 @@
         <div class="row">
           <!-- product right -->
           <div class="col-lg-3 mt-lg-0 mt-4 p-lg-0 order-lg-first order-last">
-            <div class="side-bar p-sm-4 p-3">
+            <div class="side-bar p-sm-4 p-3 border-right">
               <!-- reviews -->
               <!-- <div class="customer-rev left-side py-2">
 							<h3 class="agileits-sear-head mb-3">Customer Review</h3>
@@ -311,7 +314,7 @@
                     @click="routeProduct(p)"
                   >
                     <div
-                      class="card pt-3 pl-3 pr-3 pb-3 mb-3"
+                      class="card pt-3 pl-3 pr-3 pb-3 mb-3 product-div"
                       style="height: 280px"
                     >
                       <div
@@ -444,3 +447,26 @@ export default {
   },
 };
 </script>
+<style>
+  .product-div{
+    border: 1px solid lightgrey;
+    border-radius: 7px;
+    border-top: 4px solid rgb(54,112,182)!important;
+    border-bottom: 4px solid rgb(255,105,3) !important;
+    box-shadow: 1px 1px 5px grey;
+    transition: all 0.5s linear;
+  }
+
+  .product-div:hover{
+    border: 1px solid lightgrey;
+    border-radius: 7px;
+    border-top: 4px solid rgb(255,105,3) !important;
+    border-bottom: 4px solid rgb(54,112,182) !important;
+    box-shadow: -2px -2px 10px grey;
+  }
+  .category-banner{
+    background: url(../../../public/assets/images/images3.jpeg);
+    background-size: cover;
+    background-position: center;
+  }
+</style>
