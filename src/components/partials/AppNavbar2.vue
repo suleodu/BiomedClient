@@ -85,16 +85,14 @@
                   </div>
                 </div>
               </li>
-              <!-- <li class="nav-item" v-if="this.profile == null">
-                <a
+              <li class="nav-item">
+                <router-link
                   class="nav-link"
-                  href="#login"
-                  data-toggle="modal"
-                  data-target="#exampleModal"
-                  >Login/Register</a
+                  to="/my-invoices"
+                  >My Invoices</router-link
                 >
               </li>
-              <li class="nav-item dropdown mr-lg-2 mb-lg-0 mb-2" v-else>
+              <!-- <li class="nav-item dropdown mr-lg-2 mb-lg-0 mb-2" v-else>
                 <a
                   class="nav-link dropdown-toggle"
                   href="#"

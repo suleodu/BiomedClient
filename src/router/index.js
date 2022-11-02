@@ -11,6 +11,7 @@ import ViewProducts from '../views/Products/ViewProducts.vue'
 import Profile from '../views/Profile/MyAccount.vue'
 import CheckoutDetails from '../views/Cart/CheckoutDetails.vue'
 import InvoiceDetails from '../views/Cart/InvoiceDetails.vue'
+import InvoiceHistory from '../views/Cart/InvoiceHistory.vue'
 
 Vue.use(VueRouter)
 
@@ -68,6 +69,11 @@ const routes = [
     path: '/invoice/:invoice_id',
     name: 'Invoice Details',
     component: InvoiceDetails
+  },
+  {
+    path: '/my-invoices',
+    name: 'Invoice History',
+    component: InvoiceHistory
   },
 
 ]
