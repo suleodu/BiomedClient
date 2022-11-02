@@ -17,6 +17,8 @@ Vue.use(Toast, options);
 Vue.config.productionTip = false
 Vue.prototype.$api = http;
 
+export const bus = new Vue();
+
 // router.beforeEach((to, from, next) => {
 //   let isLoggedIn = JSON.parse(localStorage.getItem('2@39$*8')) && JSON.parse(localStorage.getItem('auth_info'))[0].auth_token;
 //   if (to.matched.some(record => record.meta.requiresAuth)) {

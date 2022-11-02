@@ -346,6 +346,7 @@
 </style>
 <script>
 import VueElementLoading from "vue-element-loading";
+import {bus} from '../../main'
 import $ from "jquery";
 export default {
   data() {
@@ -459,9 +460,10 @@ export default {
       this.$api
         .get(`https://biomed-backend.herokuapp.com/api/cart/remove/${d.id}`)
         .then((res) => {
+          bus.$emit('updateCart');
           this.$toast.success(res.data.message);
-
           this.getCartItems();
+          
         })
         .catch((err) => {
           console.log(err.response);

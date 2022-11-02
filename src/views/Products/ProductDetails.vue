@@ -223,6 +223,7 @@
 	<script src="js/jquery.flexslider.js"></script> -->
 	<!-- <script> -->
 <script>
+import { bus } from '../../main'
 export default {
   data() {
     return {
@@ -280,6 +281,7 @@ export default {
       this.$api
         .post(`https://biomed-backend.herokuapp.com/api/cart`, payload)
         .then((res) => {
+          bus.$emit('updateCart');
           this.$toast.success(res.data.message);
         })
         .catch((err) => {
