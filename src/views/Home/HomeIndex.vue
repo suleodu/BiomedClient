@@ -1,6 +1,7 @@
 <template>
     <div>
 		<div class="container">
+			<!-- <PendingInvoice /> -->
 			<div class="row home-bg">
 			<div class="col-12 mt-5">
 				<div class="first-box">
@@ -57,7 +58,7 @@
 
 <script>
 import { mapState } from "vuex";
-// import ProductComponent from "./ProductComponent.vue";
+// import PendingInvoice from "../Cart/PendingInvoice.vue";
 export default {
     data() {
         return {

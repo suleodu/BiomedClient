@@ -132,7 +132,7 @@
       </div>
     </div>
     <!-- //navigation -->
-    </div>
+  </div>
 </template>
 <script>
 
@@ -216,6 +216,7 @@ export default {
    
 
   },
+
   computed: {
     ...mapState({
       categories: (state) => state.category.categories,
