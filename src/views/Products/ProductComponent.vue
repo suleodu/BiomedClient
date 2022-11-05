@@ -7,7 +7,53 @@
       spinner="bar-fade-scale"
     />
     <!-- banner -->
-  <section class="category-banner">
+  <section v-if="this.$route.params.category_id == '1'" class="category-banner1" style="">
+    <div class="container py-5">
+      <div class="category-details">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="part-img">
+            <!-- <img :src="`${publicPath}assets/images/drug2.jpg`" alt="" class="w-100"> -->
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="category align-items-center">
+            <h2 class="pb-5 pt-4" style="font-family:'Rubik'">
+              {{ getSelectedCategories()[0].category_name }}
+            </h2>
+            <span style="font-family:'Rubik'; font-size:22px; line-height:30px;">
+              {{ getSelectedCategories()[0].description }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+  <section v-if="this.$route.params.category_id == '2'" class="category-banner2" style="">
+    <div class="container py-5">
+      <div class="category-details">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="part-img">
+            <!-- <img :src="`${publicPath}assets/images/drug2.jpg`" alt="" class="w-100"> -->
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="category align-items-center">
+            <h2 class="pb-5 pt-4" style="font-family:'Rubik'">
+              {{ getSelectedCategories()[0].category_name }}
+            </h2>
+            <span style="font-family:'Rubik'; font-size:22px; line-height:30px;">
+              {{ getSelectedCategories()[0].description }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+  <section v-if="this.$route.params.category_id == '3'" class="category-banner3" style="">
     <div class="container py-5">
       <div class="category-details">
       <div class="row">
@@ -464,8 +510,18 @@ export default {
     border-bottom: 4px solid rgb(54,112,182) !important;
     box-shadow: -2px -2px 10px grey;
   }
-  .category-banner{
-    background: url(../../../public/assets/images/download.jpeg);
+  .category-banner1{
+    background: url(../../../public/assets/images/vetenary.png);
+    background-size: cover;
+    background-position: center;
+  }
+  .category-banner2{
+    background: url(../../../public/assets/images/human.png);
+    background-size: cover;
+    background-position: center;
+  }
+  .category-banner3{
+    background: url(../../../public/assets/images/cell.png);
     background-size: cover;
     background-position: center;
   }
