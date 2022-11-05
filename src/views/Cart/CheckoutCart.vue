@@ -198,10 +198,10 @@
                                   <div class="entry value">
                                     <div
                                       class="spinner-border text-warning"
-                                      :class="'d-' + dis"
                                       style="color: #ff884f !important"
+                                      v-if="i == spinnerIndex"
                                     ></div>
-                                    <p :class="'d-' + dis2">
+                                    <p v-else>
                                       {{ p.quantity }}
                                     </p>
                                   </div>
@@ -365,7 +365,8 @@ export default {
       coupon:"",
       couponData:{},
       couponAmount:"",
-      total:""
+      total:"",
+      spinnerIndex:null,
     };
   },
 
@@ -378,8 +379,11 @@ export default {
         this.countries = response.data;
       });
     },
-    getCartItems() {
-      this.loading = true;
+    getCartItems(shoouldReload = true) {
+      if(shoouldReload){
+        this.loading = true;
+      }
+      
       this.loadingText = "Please wait...";
       this.$api
         .get(`https://biomed-backend.herokuapp.com/api/cart`)
@@ -539,14 +543,14 @@ export default {
           console.log(res);
         });
     },
-    changeQuantity(p, a) {
+    changeQuantity(p, a, index) {
+      this.spinnerIndex = index;
       if (a == "de") {
         if (p.quantity <= 1) {
           return this.$toast.error("You can't add less than one");
         }
       }
-      this.dis = "block";
-      this.dis2 = "none";
+ 
       let payload = {
         action: a,
         product_id: 500,
@@ -557,16 +561,14 @@ export default {
           payload
         )
         .then((res) => {
-          this.getCartItems();
+          this.getCartItems(false);
           this.$toast.success(res.data.message);
         })
         .catch((err) => {
           console.log(err.response);
         })
-        .finally((res) => {
-          this.dis = "none";
-          this.dis2 = "block";
-          console.log(res);
+        .finally(() => {
+          this.spinnerIndex = null;
         });
     },
   },
