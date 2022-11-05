@@ -150,7 +150,7 @@ export default {
     },
     mounted() {
         
-		// console.log(this.products.data)
+
     },
 	
     computed: {

@@ -49,27 +49,29 @@ export default {
   components: {},
   methods: {
     getUnpaidInvoices() {
-      this.loading = true;
-      this.loadingText = "Please wait...";
-      this.$api
-        .get(
-          `https://biomed-backend.herokuapp.com/api/invoice/all_invoice/user_unpaid_invoices`
-        )
-        .then((res) => {
-          this.invoices = res.data.data;
-          this.total = this.invoices.reduce(
-            (total, a) => parseInt(a.total) + total,
-            0
-          );
-        })
-        .catch((err) => {
-          console.log(err.response);
-        })
-        .finally((res) => {
-          this.loading = false;
-          this.loadingText = "";
-          console.log(res);
-        });
+      if(localStorage.getItem("2@39$*8")) {
+
+        this.loading = true;
+        this.loadingText = "Please wait...";
+        this.$api
+          .get(
+            `https://biomed-backend.herokuapp.com/api/invoice/all_invoice/user_unpaid_invoices`
+          )
+          .then((res) => {
+            this.invoices = res.data.data;
+            this.total = this.invoices.reduce(
+              (total, a) => parseInt(a.total) + total,
+              0
+            );
+          })
+          .catch(() => {
+         
+          })
+          .finally(() => {
+            this.loading = false;
+            this.loadingText = "";
+          });
+      }
     },
     routeToInvoice() {
       this.$router.push("/my-invoices");

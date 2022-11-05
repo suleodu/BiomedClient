@@ -403,15 +403,15 @@ export default {
             (subtotal, a) => a.calculated_amount + subtotal,
             0
           );
-          // console.log(this.products)
+
         })
-        .catch((err) => {
-          console.log(err.response);
+        .catch(() => {
+
         })
-        .finally((res) => {
+        .finally(() => {
           this.loading = false;
           this.loadingText = "";
-          console.log(res);
+
         });
     },
     verifyCoupon() {
@@ -429,10 +429,10 @@ export default {
         .catch((err) => {
           this.$toast.error(err.response.data.message);
         })
-        .finally((res) => {
+        .finally(() => {
           this.checkloading = false;
           this.loadingText = "";
-          console.log(res);
+
         });
     },
     getDefAddress() {
@@ -449,13 +449,13 @@ export default {
             }
           }
         })
-        .catch((err) => {
-          console.log(err.response);
+        .catch(() => {
+
         })
-        .finally((res) => {
+        .finally(() => {
           this.loading = false;
           this.loadingText = "";
-          console.log(res);
+
         });
     },
     removeProduct(d) {
@@ -469,13 +469,13 @@ export default {
           this.getCartItems();
           
         })
-        .catch((err) => {
-          console.log(err.response);
+        .catch(() => {
+
         })
-        .finally((res) => {
+        .finally(() => {
           this.loading = false;
           this.loadingText = "";
-          console.log(res);
+
         });
     },
     saveAddress() {
@@ -491,13 +491,13 @@ export default {
           this.makeDefault(res.data.data);
           $("#addressModal").modal('hide');
         })
-        .catch((err) => {
-          console.log(err.response);
+        .catch(() => {
+
         })
-        .finally((res) => {
+        .finally(() => {
           this.loading = false;
           this.loadingText = "";
-          console.log(res);
+
         });
     },
     generateInvoice() {
@@ -514,13 +514,13 @@ export default {
           let invoice = res.data.data
           this.$router.push(`/invoice/${invoice.invoice_id}`)
         })
-        .catch((err) => {
-          console.log(err.response);
+        .catch(() => {
+
         })
-        .finally((res) => {
+        .finally(() => {
           this.checkloading = false;
           this.loadingText = "";
-          console.log(res);
+
         });
     },
     makeDefault(data) {
@@ -534,13 +534,13 @@ export default {
           this.$toast.success(res.data.message);
           this.getDefAddress();
         })
-        .catch((err) => {
-          console.log(err.response);
+        .catch(() => {
+
         })
-        .finally((res) => {
+        .finally(() => {
           this.loading = false;
           this.loadingText = "";
-          console.log(res);
+
         });
     },
     changeQuantity(p, a, index) {
@@ -564,8 +564,8 @@ export default {
           this.getCartItems(false);
           this.$toast.success(res.data.message);
         })
-        .catch((err) => {
-          console.log(err.response);
+        .catch(() => {
+
         })
         .finally(() => {
           this.spinnerIndex = null;

@@ -263,13 +263,13 @@ export default {
         .then((res) => {
           this.products = res.data.data;
         })
-        .catch((err) => {
-          console.log(err.response);
+        .catch(() => {
+
         })
-        .finally((res) => {
+        .finally(() => {
           this.loading = false;
           this.loadingText = "";
-          console.log(res);
+
         });
     },
     getAllAddresses() {
@@ -280,13 +280,13 @@ export default {
         .then((res) => {
           this.myaddresses = res.data.data;
         })
-        .catch((err) => {
-          console.log(err.response);
+        .catch(() => {
+
         })
-        .finally((res) => {
+        .finally(() => {
           this.loading = false;
           this.loadingText = "";
-          console.log(res);
+
         });
     },
     getAllAddress() {
@@ -303,13 +303,13 @@ export default {
             }
           }
         })
-        .catch((err) => {
-          console.log(err.response);
+        .catch(() => {
+
         })
-        .finally((res) => {
+        .finally(() => {
           this.loading = false;
           this.loadingText = "";
-          console.log(res);
+
         });
     },
   },

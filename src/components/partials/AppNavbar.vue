@@ -242,7 +242,7 @@ export default {
         '.theme-switch input[type="checkbox"]'
       );
       const currentTheme = localStorage.getItem("theme");
-      // console.log(toggleSwitch);
+
       if (currentTheme) {
         document.documentElement.setAttribute("data-theme", currentTheme);
 
@@ -252,18 +252,20 @@ export default {
       }
     },
     getCartItems() {
-      
-      this.$api
-        .get(`https://biomed-backend.herokuapp.com/api/cart`)
-        .then((res) => {
-          this.carts = res.data.data;
-        })
-        .catch(() => {
-          // console.log(err.response);
-        })
-        .finally((res) => {
-          console.log(res);
-        });
+      if(localStorage.getItem("2@39$*8")) {
+
+        this.$api
+          .get(`https://biomed-backend.herokuapp.com/api/cart`)
+          .then((res) => {
+            this.carts = res.data.data;
+          })
+          .catch(() => {
+  
+          })
+          .finally(() => {
+  
+          });
+      }
     },
     switchTheme(e) {
       if (e.target.checked) {
@@ -293,7 +295,7 @@ export default {
           this.products = res.data.data;
         })
         .catch(() => {
-          // console.log(err.response);
+
         });
     },
     getProdByCat(id) {

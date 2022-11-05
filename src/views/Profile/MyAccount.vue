@@ -366,13 +366,11 @@ export default {
           this.getAllAddress();
           $("#addressModal").modal('hide');
         })
-        .catch((err) => {
-          console.log(err.response);
+        .catch(() => {
         })
-        .finally((res) => {
+        .finally(() => {
           this.loading = false;
           this.loadingText = "";
-          console.log(res);
         });
     },
 
@@ -390,10 +388,9 @@ export default {
           this.getAllAddress();
         })
         // .catch(this.$toast.error("An Errror Occured"))
-        .finally((res) => {
+        .finally(() => {
           this.loading = false;
           this.loadingText = "";
-          console.log(res);
         });
     },
     getAllAddress() {
@@ -404,13 +401,12 @@ export default {
         .then((res) => {
           this.myaddresses = res.data.data;
         })
-        .catch((err) => {
-          console.log(err.response);
+        .catch(() => {
+
         })
-        .finally((res) => {
+        .finally(() => {
           this.loading = false;
           this.loadingText = "";
-          console.log(res);
         });
     },
     makeDefault(data) {
@@ -424,13 +420,12 @@ export default {
           this.$toast.success(res.data.message);
           this.getAllAddress();
         })
-        .catch((err) => {
-          console.log(err.response);
+        .catch(() => {
         })
-        .finally((res) => {
+        .finally(() => {
           this.loading = false;
           this.loadingText = "";
-          console.log(res);
+
         });
     },
     deleteAddress(data) {
@@ -452,13 +447,11 @@ export default {
               this.$toast.success(res.data.message);
               this.getAllAddress();
             })
-            .catch((err) => {
-              console.log(err.response);
+            .catch(() => {
             })
-            .finally((res) => {
+            .finally(() => {
               this.loading = false;
               this.loadingText = "";
-              console.log(res);
             });
         } 
       });

@@ -166,13 +166,11 @@ table tr td button{
             0
           );
         })
-        .catch((err) => {
-          console.log(err.response);
+        .catch(() => {
         })
-        .finally((res) => {
+        .finally(() => {
           this.loading = false;
           this.loadingText = "";
-          console.log(res);
         });
     },
       getAllInvoices() {
@@ -183,13 +181,13 @@ table tr td button{
           .then((res) => {
             this.invoices = res.data.data
           })
-          .catch((err) => {
-            console.log(err.response);
+          .catch(() => {
+
           })
-          .finally((res) => {
+          .finally(() => {
             this.loading = false;
             this.loadingText = "";
-            console.log(res);
+
           });
       },
       routeInvoice(id) {

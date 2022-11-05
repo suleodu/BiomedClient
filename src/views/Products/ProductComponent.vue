@@ -431,8 +431,8 @@ export default {
         .then((res) => {
           this.products = res.data.data;
         })
-        .catch((err) => {
-          console.log(err.response);
+        .catch(() => {
+  
         });
     },
   },

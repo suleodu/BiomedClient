@@ -245,8 +245,7 @@ export default {
         .then((res) => {
           this.productDetails = res.data.data;
         })
-        .catch((err) => {
-          console.log(err.response);
+        .catch(() => {
         });
     },
     addProductToWishList() {
@@ -261,11 +260,11 @@ export default {
         .then((res) => {
           this.$toast.success(res.data.message);
         })
-        .catch((err) => {
-          console.log(err.response);
+        .catch(() => {
+
         })
-        .finally((res) => {
-          console.log(res);
+        .finally(() => {
+       
           this.cartstat3 = "block";
           this.cartstat4 = "none";
         });
@@ -287,8 +286,7 @@ export default {
         .catch((err) => {
           this.$toast.error(err.response.data.message);
         })
-        .finally((res) => {
-          console.log(res);
+        .finally(() => {
           this.cartstat2 = "none";
           this.cartstat1 = "block";
         });

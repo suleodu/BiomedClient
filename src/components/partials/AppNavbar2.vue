@@ -159,7 +159,7 @@ export default {
         '.theme-switch input[type="checkbox"]'
       );
       const currentTheme = localStorage.getItem("theme");
-      console.log(toggleSwitch);
+
       if (currentTheme) {
         document.documentElement.setAttribute("data-theme", currentTheme);
 
@@ -195,8 +195,8 @@ export default {
         .then((res) => {
           this.products = res.data.data;
         })
-        .catch((err) => {
-          console.log(err.response);
+        .catch(() => {
+
         });
     },
     getProdByCat(id) {

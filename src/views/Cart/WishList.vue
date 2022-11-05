@@ -135,13 +135,12 @@ export default {
         .then((res) => {
           this.products = res.data.data;
         })
-        .catch((err) => {
-          console.log(err.response);
+        .catch(() => {
+         
         })
-        .finally((res) => {
+        .finally(() => {
           this.loading = false;
           this.loadingText = "";
-          console.log(res);
         });
     },
     removeProduct(d) {
@@ -156,13 +155,13 @@ export default {
 
           this.getWishListProducts();
         })
-        .catch((err) => {
-          console.log(err.response);
+        .catch(() => {
+
         })
-        .finally((res) => {
+        .finally(() => {
           this.loading = false;
           this.loadingText = "";
-          console.log(res);
+
         });
     },
     addToCart(p) {
@@ -180,10 +179,10 @@ export default {
         .catch((err) => {
           this.$toast.error(err.response.data.message);
         })
-        .finally((res) => {
+        .finally(() => {
           this.loading = false;
           this.loadingText = "";
-          console.log(res);
+         
         });
     },
   },

@@ -497,7 +497,6 @@ export default {
         //     }
         // ],
         onComplete: function (response) {
-          // console.log(response);
           $this.verify(response);
         
         //   {
