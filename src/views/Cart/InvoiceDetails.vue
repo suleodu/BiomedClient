@@ -3,7 +3,8 @@
     <div class="container-fluid">
       <div class="row" v-if="invoice[0].status == 'UNPAID'">
         <div class="col-md-9">
-          <div class="card">
+          <div id="invoice">
+            <div class="card">
             <div class="card-body">
               <div class="row">
                 <div class="col-md-8">
@@ -102,6 +103,7 @@
               </div>
             </div>
           </div>
+          </div>
         </div>
         <div class="col-md-3">
           <div class="main-sidebar">
@@ -189,6 +191,7 @@
                             height: 55px;
                             padding-top: 8px;
                           "
+                          @click="downloadInvoice()"
                         >
                           Download Invoice
                         </button>
@@ -322,7 +325,7 @@
   flex: 1 0 auto;
 }
 .invoice-title {
-  font-size: 40px;
+  font-size: 30px;
   font-weight: light;
   line-height: var(--line-height-h2);
   color: var(--text-heading-color);
@@ -444,6 +447,17 @@ export default {
         (subtotal, a) => a.product_price + subtotal,
         0
       );
+    },
+    downloadInvoice() {
+      const invoice = document.getElementById("invoice");
+      var opt = {
+                margin: 1,
+                filename: 'invoice.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 5 },
+                jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+            };
+      html2pdf().from(invoice).set(opt).save();
     },
     verify(response) {
       this.$api.post(`https://biomed-backend.herokuapp.com/api/invoice/check-status/${response.paymentReference}/${this.$route.params.invoice_id}`)

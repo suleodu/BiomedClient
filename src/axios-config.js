@@ -10,13 +10,12 @@ const appAxios = axios.create({
 // axios.interceptors.request.use(config => {
 //   config.headers.common['Authorization'] = localStorage.getItem('token')
 //   return config;
-// })
-
-
-// before a request is made start the nprogress
-// appAxios.interceptors.request.use(config => {
-//     NProgress.start()
-//     return config
-// })
+// }, (error) => {
+//     if (error.response.status == 401) {
+//         localStorage.clear();
+//         window.location.href = '/login';
+//     }
+//     return Promise.reject(error);
+//   })
 
 export default appAxios;
