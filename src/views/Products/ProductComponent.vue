@@ -7,7 +7,53 @@
       spinner="bar-fade-scale"
     />
     <!-- banner -->
-  <section v-if="this.$route.params.product_id == '1'" class="category-banner1" style="">
+  <section v-if="this.$route.params.category_id == '1'" class="category-banner1" style="">
+    <div class="container py-5">
+      <div class="category-details">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="part-img">
+            <!-- <img :src="`${publicPath}assets/images/drug2.jpg`" alt="" class="w-100"> -->
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="category align-items-center">
+            <h2 class="pb-5 pt-4" style="font-family:'Rubik'">
+              {{ getSelectedCategories()[0].category_name }}
+            </h2>
+            <span style="font-family:'Rubik'; font-size:22px; line-height:30px;">
+              {{ getSelectedCategories()[0].description }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+  <section v-if="this.$route.params.category_id == '2'" class="category-banner2" style="">
+    <div class="container py-5">
+      <div class="category-details">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="part-img">
+            <!-- <img :src="`${publicPath}assets/images/drug2.jpg`" alt="" class="w-100"> -->
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="category align-items-center">
+            <h2 class="pb-5 pt-4" style="font-family:'Rubik'">
+              {{ getSelectedCategories()[0].category_name }}
+            </h2>
+            <span style="font-family:'Rubik'; font-size:22px; line-height:30px;">
+              {{ getSelectedCategories()[0].description }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+  <section v-if="this.$route.params.category_id == '3'" class="category-banner3" style="">
     <div class="container py-5">
       <div class="category-details">
       <div class="row">
