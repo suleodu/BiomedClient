@@ -465,7 +465,7 @@ export default {
     box-shadow: -2px -2px 10px grey;
   }
   .category-banner{
-    background: url(../../../public/assets/images/images3.jpeg);
+    background: url(../../../public/assets/images/download.jpeg);
     background-size: cover;
     background-position: center;
   }
