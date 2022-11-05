@@ -7,7 +7,7 @@
       spinner="bar-fade-scale"
     />
     <!-- banner -->
-  <section class="category-banner">
+  <section v-if="this.$route.params.product_id == '1'" class="category-banner1" style="">
     <div class="container py-5">
       <div class="category-details">
       <div class="row">
@@ -464,8 +464,18 @@ export default {
     border-bottom: 4px solid rgb(54,112,182) !important;
     box-shadow: -2px -2px 10px grey;
   }
-  .category-banner{
-    background: url(../../../public/assets/images/images3.jpeg);
+  .category-banner1{
+    background: url(../../../public/assets/images/vetenary.png);
+    background-size: cover;
+    background-position: center;
+  }
+  .category-banner2{
+    background: url(../../../public/assets/images/human.png);
+    background-size: cover;
+    background-position: center;
+  }
+  .category-banner3{
+    background: url(../../../public/assets/images/cell.png);
     background-size: cover;
     background-position: center;
   }
