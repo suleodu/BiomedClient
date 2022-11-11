@@ -4,8 +4,8 @@ export default {
     },
     methods: {
         dynamic_route(endUrl) {
-                // return "https://biomed-backend.herokuapp.com" + endUrl;
-                return "http://biomed.test" + endUrl;
+                return "https://biomed-backend.herokuapp.com" + endUrl;
+                // return "http://biomed.test" + endUrl;
         },
     },
 };
