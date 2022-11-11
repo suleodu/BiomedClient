@@ -386,7 +386,7 @@ export default {
       
       this.loadingText = "Please wait...";
       this.$api
-        .post(`http://biomed.test/api/cart/get`, {unique_id:localStorage.getItem('unique_id')})
+        .post(`https://biomed-backend.herokuapp.com/api/cart/get`, {unique_id:localStorage.getItem('unique_id')})
         .then((res) => {
           this.products = res.data.data.map((item) => {
             let data = item;
@@ -439,7 +439,7 @@ export default {
       this.loading = true;
       this.loadingText = "Please wait...";
       this.$api
-        .get(`http://biomed.test/api/user-address`)
+        .get(`https://biomed-backend.herokuapp.com/api/user-address`)
         .then((res) => {
           let addres = [];
           for (let i = 0; i < res.data.data.length; i++) {
@@ -462,7 +462,7 @@ export default {
       this.loading = true;
       this.loadingText = "Please wait...";
       this.$api
-        .get(`http://biomed.test/api/cart/remove/${d.id}`)
+        .get(`https://biomed-backend.herokuapp.com/api/cart/remove/${d.id}`)
         .then((res) => {
           bus.$emit('updateCart');
           this.$toast.success(res.data.message);
@@ -558,7 +558,7 @@ export default {
       };
       this.$api
         .patch(
-          `http://biomed.test/api/cart/update-quantity/${p.id}`,
+          `https://biomed-backend.herokuapp.com/api/cart/update-quantity/${p.id}`,
           payload
         )
         .then((res) => {

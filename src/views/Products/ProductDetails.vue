@@ -265,7 +265,7 @@ export default {
         unique_id : unique_id
       };
       this.$api
-        .post(`http://biomed.test/api/wish-list`, payload)
+        .post(`https://biomed-backend.herokuapp.com/api/wish-list`, payload)
         .then((res) => {
           this.$toast.success(res.data.message);
         })
@@ -296,7 +296,7 @@ export default {
         unique_id : unique_id
       };
       this.$api
-        .post(`http://biomed.test/api/cart`, payload)
+        .post(`https://biomed-backend.herokuapp.com/api/cart`, payload)
         .then((res) => {
           bus.$emit('updateCart');
           this.$toast.success(res.data.message);
