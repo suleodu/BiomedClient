@@ -17,7 +17,7 @@ const product = {
         get_category({ commit }, payload){
             commit('LOADING', true)
             axios.post(
-                "https://biomed-backend.herokuapp.com/api/category/all",
+                `http://biomed.test/api/category/all`,
                 payload
             )
             .then((res) => {

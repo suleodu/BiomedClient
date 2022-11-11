@@ -259,7 +259,7 @@ export default {
       this.loading = true;
       this.loadingText = "Please wait...";
       this.$api
-        .get(`https://biomed-backend.herokuapp.com/api/cart`)
+        .get(this.dynamic_route(`/api/cart`))
         .then((res) => {
           this.products = res.data.data;
         })
@@ -276,7 +276,7 @@ export default {
       this.loading = true;
       this.loadingText = "Please wait...";
       this.$api
-        .get(`https://biomed-backend.herokuapp.com/api/user-address`)
+        .get(this.dynamic_route(`/api/user-address`))
         .then((res) => {
           this.myaddresses = res.data.data;
         })
@@ -293,7 +293,7 @@ export default {
       this.loading = true;
       this.loadingText = "Please wait...";
       this.$api
-        .get(`https://biomed-backend.herokuapp.com/api/user-address`)
+        .get(this.dynamic_route(`/api/user-address`))
         .then((res) => {
           let addres = [];
           for (let i = 0; i < res.data.data.length; i++) {

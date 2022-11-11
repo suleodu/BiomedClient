@@ -83,7 +83,7 @@ export default {
             if(this.$route.params.nested_sub_category_id){
                 param += `/${this.$route.params.nested_sub_category_id}`
             }
-            this.$api.get(`https://biomed-backend.herokuapp.com/api/product/product-search${param}`)
+            this.$api.get(this.dynamic_route(`/api/product/product-search${param}`))
             .then((res) => {
                 this.products = res.data.data;
             })

@@ -141,7 +141,7 @@ export default {
       this.loadingText = "Creating user, Please wait...";
       this.$api
         .post(
-          "https://biomed-backend.herokuapp.com/api/auth/register",
+          this.dynamic_route(`/api/auth/register`),
           this.form
         )
         .then((res) => {
@@ -149,7 +149,9 @@ export default {
           this.$toast.success(res.data.message);
           let auth_token = res.data.data.token;
           let auth_user = res.data.data.user;
+          var myItem = localStorage.getItem('unique_id');
           localStorage.clear();
+          localStorage.setItem('unique_id',myItem);
           for (let index = 0; index < 10; index++) {
             localStorage.setItem(this.generateTokens(7),JSON.stringify(this.generateTokens(42)));
             

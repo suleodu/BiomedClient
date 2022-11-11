@@ -386,7 +386,7 @@ export default {
       
       this.loadingText = "Please wait...";
       this.$api
-        .get(`https://biomed-backend.herokuapp.com/api/cart`)
+        .post(`http://biomed.test/api/cart/get`, {unique_id:localStorage.getItem('unique_id')})
         .then((res) => {
           this.products = res.data.data.map((item) => {
             let data = item;
@@ -419,7 +419,7 @@ export default {
       this.loadingText = "Please wait...";
       let getPercentage;
       this.$api
-        .get(`https://biomed-backend.herokuapp.com/api/coupon/get-coupon/${this.coupon}`)
+        .get( this.dynamic_route(`/api/coupon/get-coupon/${this.coupon}`))
         .then((res) => {
            this.couponData = res.data.data;
             getPercentage = this.couponData.percent/100 * this.subtotal
@@ -439,7 +439,7 @@ export default {
       this.loading = true;
       this.loadingText = "Please wait...";
       this.$api
-        .get(`https://biomed-backend.herokuapp.com/api/user-address`)
+        .get(`http://biomed.test/api/user-address`)
         .then((res) => {
           let addres = [];
           for (let i = 0; i < res.data.data.length; i++) {
@@ -462,7 +462,7 @@ export default {
       this.loading = true;
       this.loadingText = "Please wait...";
       this.$api
-        .get(`https://biomed-backend.herokuapp.com/api/cart/remove/${d.id}`)
+        .get(`http://biomed.test/api/cart/remove/${d.id}`)
         .then((res) => {
           bus.$emit('updateCart');
           this.$toast.success(res.data.message);
@@ -483,7 +483,7 @@ export default {
       this.loadingText = "Please wait...";
       this.$api
         .post(
-          `https://biomed-backend.herokuapp.com/api/user-address`,
+          this.dynamic_route(`/api/user-address`),
           this.address
         )
         .then((res) => {
@@ -508,7 +508,7 @@ export default {
       }
       this.$api
         .post(
-          `https://biomed-backend.herokuapp.com/api/invoice/generate_invoice`, payload)
+          this.dynamic_route(`/api/invoice/generate_invoice`), payload)
         .then((res) => {
           this.$toast.success(res.data.message);
           let invoice = res.data.data
@@ -528,7 +528,7 @@ export default {
       this.loadingText = "Please wait...";
       this.$api
         .patch(
-          `https://biomed-backend.herokuapp.com/api/user-address/make-default/${data.id}`
+          this.dynamic_route(`/api/user-address/make-default/${data.id}`)
         )
         .then((res) => {
           this.$toast.success(res.data.message);
@@ -554,10 +554,11 @@ export default {
       let payload = {
         action: a,
         product_id: 500,
+        unique_id : localStorage.getItem('unique_id')
       };
       this.$api
         .patch(
-          `https://biomed-backend.herokuapp.com/api/cart/update-quantity/${p.id}`,
+          `http://biomed.test/api/cart/update-quantity/${p.id}`,
           payload
         )
         .then((res) => {

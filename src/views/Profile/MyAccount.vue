@@ -358,7 +358,7 @@ export default {
       this.loadingText = "Please wait...";
       this.$api
         .post(
-          `https://biomed-backend.herokuapp.com/api/user-address`,
+          this.dynamic_route(`/api/user-address`),
           this.address
         )
         .then((res) => {
@@ -379,7 +379,7 @@ export default {
       this.loadingText = "Please wait...";
       this.$api
         .patch(
-          `https://biomed-backend.herokuapp.com/api/user-address/${this.edit.id}`,
+          this.dynamic_route(`/api/user-address/${this.edit.id}`),
           this.edit
         )
         .then((res) => {
@@ -397,7 +397,7 @@ export default {
       this.loading = true;
       this.loadingText = "Please wait...";
       this.$api
-        .get(`https://biomed-backend.herokuapp.com/api/user-address`)
+        .get(this.dynamic_route(`/api/user-address}`))
         .then((res) => {
           this.myaddresses = res.data.data;
         })
@@ -414,7 +414,7 @@ export default {
       this.loadingText = "Please wait...";
       this.$api
         .patch(
-          `https://biomed-backend.herokuapp.com/api/user-address/make-default/${data.id}`
+          this.dynamic_route(`/api/user-address/user-address/make-default/${data.id}`)
         )
         .then((res) => {
           this.$toast.success(res.data.message);
@@ -441,7 +441,7 @@ export default {
           this.loadingText = "Please wait...";
           this.$api
             .get(
-              `https://biomed-backend.herokuapp.com/api/user-address/remove/${data.id}`
+              this.dynamic_route(`/api/user-address/user-address/remove/${data.id}`)
             )
             .then((res) => {
               this.$toast.success(res.data.message);

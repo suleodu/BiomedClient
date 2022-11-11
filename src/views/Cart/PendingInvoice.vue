@@ -55,7 +55,7 @@ export default {
         this.loadingText = "Please wait...";
         this.$api
           .get(
-            `https://biomed-backend.herokuapp.com/api/invoice/all_invoice/user_unpaid_invoices`
+            this.dynamic_route(`/api/invoice/all_invoice/user_unpaid_invoices`)
           )
           .then((res) => {
             this.invoices = res.data.data;

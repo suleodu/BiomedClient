@@ -391,7 +391,7 @@ export default {
     getUserDetails() {
       // get user details
       this.$api
-        .get("https://biomed-backend.herokuapp.com/api/user-details")
+        .get(this.dynamic_route(`/api/user-details}`))
         .then((response) => {
           this.user_details = response.data.data;
          
@@ -405,7 +405,7 @@ export default {
       this.checkloading = true;
       this.loadingText = "Please wait...";
       this.$api
-        .get(`https://biomed-backend.herokuapp.com/api/invoice/${invoice_id}`)
+        .get(this.dynamic_route(`/api/invoice/${invoice_id}`))
         .then((res) => {
           // this.$toast.success(res.data.message);
           this.invoice = res.data.data;
@@ -426,7 +426,7 @@ export default {
       this.loadingText = "Please wait...";
       this.$api
         .post(
-          `https://biomed-backend.herokuapp.com/api/invoice/${invoice_id}/pay`,
+          this.dynamic_route(`/api/invoice/${invoice_id}/pay`),
           {
             gateway: this.gateway,
           }
@@ -460,7 +460,7 @@ export default {
       html2pdf().from(invoice).set(opt).save();
     },
     verify(response) {
-      this.$api.post(`https://biomed-backend.herokuapp.com/api/invoice/check-status/${response.paymentReference}/${this.$route.params.invoice_id}`)
+      this.$api.post(this.dynamic_route(`/api/invoice/check-status/${response.paymentReference}/${this.$route.params.invoice_id}`))
       .then((res) =>{
         if (res.data.message == "Transaction Successful") {
           this.$toast.success(res.data.message);

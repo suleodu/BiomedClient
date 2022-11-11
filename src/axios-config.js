@@ -12,11 +12,12 @@ const onErrorResponse = async (error) => {
 
     if (error.response) {
         if (error.response.status === 401 &&  error.response.data.message === 'Unauthenticated.') {
-            
-            localStorage.clear();
+          var myItem = localStorage.getItem('unique_id');
+          localStorage.clear();
+          localStorage.setItem('unique_id',myItem);
             swal({
                 title: "Unauthenticated",
-                text: "You are not authorized to perform this action",
+                text: "Please Login or Create an Account to perform this action",
                 icon: "error",
                 // buttons: true,
                 dangerMode: true,

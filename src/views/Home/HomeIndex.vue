@@ -71,7 +71,7 @@ export default {
 			let payload = {
 				status:true
 			}
-            this.$api.post(`https://biomed-backend.herokuapp.com/api/product/all`, payload)
+            this.$api.post(this.dynamic_route(`/api/product/all`), payload)
             .then((res) => {
                 this.products = res.data.data;
             })

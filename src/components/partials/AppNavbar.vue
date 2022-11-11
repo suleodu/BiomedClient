@@ -255,7 +255,7 @@ export default {
       if(localStorage.getItem("2@39$*8")) {
 
         this.$api
-          .get(`https://biomed-backend.herokuapp.com/api/cart`)
+          .get(this.dynamic_route(`/api/cart`))
           .then((res) => {
             this.carts = res.data.data;
           })
@@ -265,6 +265,20 @@ export default {
           .finally(() => {
   
           });
+      }else{
+        if(localStorage.getItem("unique_id")) {
+          this.$api
+            .post(this.dynamic_route(`/api/cart/get`),{unique_id:localStorage.getItem("unique_id")})
+            .then((res) => {
+              this.carts = res.data.data;
+            })
+            .catch(() => {
+
+            })
+            .finally(() => {
+
+            });
+          }
       }
     },
     switchTheme(e) {
@@ -286,17 +300,17 @@ export default {
     },
     searchProduct() {
       this.products = {};
-      this.$api
-        .post(
-          `https://biomed-backend.herokuapp.com/api/product/name`,
-          this.searchProducts
-        )
-        .then((res) => {
-          this.products = res.data.data;
-        })
-        .catch(() => {
+      // this.$api
+      //   .post(
+      //     this.dynamic_route(`/api/product/name`),
+      //     this.searchProducts
+      //   )
+      //   .then((res) => {
+      //     this.products = res.data.data;
+      //   })
+      //   .catch(() => {
 
-        });
+      //   });
     },
     getProdByCat(id) {
       this.$router.push(`/products/${id}`);

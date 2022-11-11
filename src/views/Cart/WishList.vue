@@ -131,7 +131,7 @@ export default {
       this.loading = true;
       this.loadingText = "Please wait...";
       this.$api
-        .get(`https://biomed-backend.herokuapp.com/api/wish-list`)
+        .post(`http://biomed.test/api/wish-list/get`,{unique_id : localStorage.getItem('unique_id')})
         .then((res) => {
           this.products = res.data.data;
         })
@@ -148,7 +148,7 @@ export default {
       this.loadingText = "Please wait...";
       this.$api
         .get(
-          `https://biomed-backend.herokuapp.com/api/wish-list/remove/${d.wid}`
+          `http://biomed.test/api/wish-list/remove/${d.wid}`
         )
         .then((res) => {
           this.$toast.success(res.data.message);
@@ -167,11 +167,20 @@ export default {
     addToCart(p) {
       this.loading = true;
       this.loadingText = "Please wait...";
+      var unique_id = localStorage.getItem('unique_id');
+      // check if the unique_id exist in the localStorage
+      
+      if(!unique_id){
+        localStorage.setItem('unique_id', this.uniqueid());
+        unique_id = localStorage.getItem('unique_id')
+      }
+      
       let payload = {
         product_id: p.id,
+        unique_id : localStorage.getItem('unique_id')
       };
       this.$api
-        .post(`https://biomed-backend.herokuapp.com/api/cart`, payload)
+        .post(`http://biomed.test/api/cart`, payload)
         .then((res) => {
           this.$toast.success(res.data.message);
           this.removeProduct(p)
@@ -188,6 +197,7 @@ export default {
   },
   mounted() {
     this.getWishListProducts();
+    console.log(this.dynamic_route('redf'))
   },
 };
 </script>

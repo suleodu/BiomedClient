@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import http from "./axios-config.js";
+import authMixin from './mixins/auth';
 import store from './store/Index'
 import Toast from "vue-toastification";
 // import { fpjsPlugin } from '@fingerprintjs/fingerprintjs-pro-vue-v2';
@@ -14,14 +15,15 @@ Vue.use(Toast, options);
 //     endpoint: "https://biomed.demiogegbo.com"
 //   },
 // });
+Vue.mixin(authMixin);
 Vue.config.productionTip = false
 Vue.prototype.$api = http;
 
 export const bus = new Vue();
 
-
 new Vue({
   router,
+  mixins: [authMixin],
   store,
   render: h => h(App)
 }).$mount('#app')

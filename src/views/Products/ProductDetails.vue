@@ -241,7 +241,7 @@ export default {
     getProductDetails() {
       let param = this.$route.params.product_id;
       this.$api
-        .get(`https://biomed-backend.herokuapp.com/api/product/${param}`)
+        .get(this.dynamic_route(`/api/product/${param}`))
         .then((res) => {
           this.productDetails = res.data.data;
         })
@@ -251,12 +251,21 @@ export default {
     addProductToWishList() {
       this.cartstat3 = "none";
       this.cartstat4 = "block";
+      var unique_id = localStorage.getItem('unique_id');
+      // check if the unique_id exist in the localStorage
+      
+      if(!unique_id){
+        localStorage.setItem('unique_id', this.uniqueid());
+        unique_id = localStorage.getItem('unique_id')
+      }
+      
       let param = this.$route.params.product_id;
       let payload = {
         product_id: param,
+        unique_id : unique_id
       };
       this.$api
-        .post(`https://biomed-backend.herokuapp.com/api/wish-list`, payload)
+        .post(`http://biomed.test/api/wish-list`, payload)
         .then((res) => {
           this.$toast.success(res.data.message);
         })
@@ -273,12 +282,21 @@ export default {
       this.cartstat2 = "block";
       this.cartstat1 = "none";
 
+      var unique_id = localStorage.getItem('unique_id');
+      // check if the unique_id exist in the localStorage
+      
+      if(!unique_id){
+        localStorage.setItem('unique_id', this.uniqueid());
+        unique_id = localStorage.getItem('unique_id')
+      }
+      
       let param = this.$route.params.product_id;
       let payload = {
         product_id: param,
+        unique_id : unique_id
       };
       this.$api
-        .post(`https://biomed-backend.herokuapp.com/api/cart`, payload)
+        .post(`http://biomed.test/api/cart`, payload)
         .then((res) => {
           bus.$emit('updateCart');
           this.$toast.success(res.data.message);
@@ -291,6 +309,31 @@ export default {
           this.cartstat1 = "block";
         });
     },
+  uniqueid(){
+        // always start with a letter (for DOM friendlyness)
+        var idstr=String.fromCharCode(Math.floor((Math.random()*25)+65));
+        do {                
+            // between numbers and characters (48 is 0 and 90 is Z (42-48 = 90)
+            var ascicode=Math.floor((Math.random()*42)+48);
+            if (ascicode<58 || ascicode>64){
+                // exclude all chars between : (58) and @ (64)
+                idstr+=String.fromCharCode(ascicode);    
+            }                
+        } while (idstr.length<32);
+
+        return (idstr);
+    },
+    makeId(tokenLen) {
+        if (tokenLen == null) {
+            tokenLen = 16;
+        }
+        var text = "";
+        const possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        for (var i = 0; i < tokenLen; ++i)
+            text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+        return text;
+    }
   },
   mounted() {
     this.getProductDetails();

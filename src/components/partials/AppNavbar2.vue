@@ -189,7 +189,7 @@ export default {
       this.products = {};
       this.$api
         .post(
-          `https://biomed-backend.herokuapp.com/api/product/name`,
+          this.dynamic_route(`/api/product/name`),
           this.searchProducts
         )
         .then((res) => {
