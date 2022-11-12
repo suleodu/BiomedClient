@@ -1,10 +1,10 @@
 <template>
-    <div style="background-color: #e5e5e5">
+    <div style="background-color: #e5e5e5" v-if="unpaidInvoice.length">
       <div>
 
         <div class="container py-5">
           <div class="row">
-            <div class="col-md-3" v-if="unpaidInvoice.length">
+            <div class="col-md-3">
                 <div class="pay-card py-4">
                     <div class="container">
                         <p style="display:inline-block;">

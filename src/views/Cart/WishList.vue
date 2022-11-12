@@ -1,93 +1,102 @@
 <template>
-  <div>
-    <!-- banner-2 -->
-    <div class="page-head_agile_info_w3l inner-checkout-page">
+  <div style="background-color: #e5e5e5">
+    <div>
       <div class="container py-5">
-        <h3 class="title-style text-white pt-5">My<span> Wishlist</span></h3>
-        <ul class="w3_short pt-3 pb-5">
-          <li>
-            <router-link to="/" class="text-white">Home</router-link>
-            <i class="fa fa-angle-right mx-2 text-white" aria-hidden="true"></i>
-          </li>
-          <li class="text-light">Wishlist</li>
-        </ul>
-      </div>
-    </div>
-    <!-- //banner-2 -->
-    <!-- page -->
-    <div class="services-breadcrumb">
-      <div class="agile_inner_breadcrumb"></div>
-    </div>
-    <!-- //page -->
-    <div style="margin: 8px auto; display: block; text-align: center">
-      <!---728x90--->
-    </div>
-    <!-- checkout page -->
-    <div class="privacy py-5">
-      <div class="container py-md-5 py-4">
-        <div class="checkout-right">
-          <!-- <h4 class="mb-sm-4 mb-3">
-            Your shopping cart contains:
-            <span>3 Products</span>
-          </h4> -->
-          <div class="table-responsive" v-if="products.length">
-            <table class="timetable_sub">
-              <vue-element-loading
-                :active="loading"
-                color="#FF6700"
-                :text="loadingText"
-                spinner="bar-fade-scale"
-              />
-              <thead>
-                <tr>
-                  <th>SL No.</th>
-                  <th>Product</th>
-                  <th>Product Name</th>
-
-                  <th>Price</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="rem1" v-for="(p, i) in products" :key="i">
-                  <td class="invert">{{ i + 1 }}</td>
-                  <td class="invert-image">
-                    <a href="">
-                      <img
-                        :src="`${publicPath}assets/images/drug1.jpg`"
-                        alt=""
-                        class="img-responsive"
-                      />
-                    </a>
-                  </td>
-                  <td class="invert">{{ p.product_name }}</td>
-                  <td class="invert">₦{{ p.price }}</td>
-                  <td class="invert">
-                    <div class="rem">
-                      <!-- <div class="close1"></div> -->
-                      <button
-                        class="btn btn-secondary mr-2"
-                        style="background: #628cc8; border: none"
-                        @click="addToCart(p)"
-                      >
-                        Add to cart
-                      </button>
-                      <button class="btn btn-danger" @click="removeProduct(p)">
-                        Remove
-                      </button>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+        <div class="row" v-if="!products.length">
+          <div class="col-md-12 text-center">
+            <div class="card">
+              <div class="card-body">
+                <div class="container py-5">
+                  <p class="text-black mb-3">Your Wishlist is empty!</p>
+                  <p class="mb-3">
+                    Browse our categories and discover our best deals!
+                  </p>
+                  <router-link
+                    to="/products"
+                    class="btn btn-primary"
+                    style="background: var(--primary-color)"
+                  >
+                    Browse
+                  </router-link>
+                </div>
+              </div>
+            </div>
           </div>
-          <h3
-            class="alert alert-primary text-center"
-            style="background: #628cc8; color: white; border: none"
-            v-else
-          >
-            You don't have any products yet
-          </h3>
+        </div>
+        <div class="row mr-5 ml-5" v-else>
+          <div class="col-md-12">
+            <div class="privacy">
+              <div class="container">
+                <div class="checkout-right">
+                  <!-- <h4 class="mb-sm-4 mb-3">
+              Your shopping cart contains:
+              <span>3 Products</span>
+            </h4> -->
+                  <div class="card">
+                    <div class="card-body">
+                      <h4>Wishlist</h4>
+                      <hr />
+                      <table class="table table-bordered">
+                        <vue-element-loading
+                          :active="loading"
+                          color="#FF6700"
+                          :text="loadingText"
+                          spinner="bar-fade-scale"
+                        />
+                        <thead>
+                          <tr>
+                            <!-- <th>#</th> -->
+                            <th col="10%">Product</th>
+                            <th>Price</th>
+                            <th>Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr class="rem1" v-for="(p, i) in products" :key="i">
+                            <!-- <td class="invert">{{ i + 1 }}</td> -->
+                            <td class="invert-image" style="width: 40%">
+                              <div class="row">
+                                <div class="col-md-4">
+                                  <img
+                                    :src="`${publicPath}assets/images/drug1.jpg`"
+                                    alt=""
+                                    class="img-responsive"
+                                    width="100%"
+                                  />
+                                </div>
+                                <div class="col-md-8">
+                                  <p>
+                                    {{ p.product_name }}
+                                  </p>
+                                </div>
+                              </div>
+                            </td>
+
+                            <td class="invert">₦{{ p.calculated_amount }}</td>
+                            <td class="invert text-center pt-4">
+                              <div class="row">
+                                <div class="col-md-3">
+
+                                  <i
+                                    class="fa fa-times fa-2x"
+                                    @click="removeProduct(p)"
+                                  ></i>
+                                </div>
+                                <div class="col-md-6">
+
+                                  <i class="fa fa-shopping-cart fa-2x float-left" @click="addToCart(p)"  aria-hidden="true"></i>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -131,13 +140,13 @@ export default {
       this.loading = true;
       this.loadingText = "Please wait...";
       this.$api
-        .post(`http://biomed.test/api/wish-list/get`,{unique_id : localStorage.getItem('unique_id')})
+        .post(`https://biomed-backend.herokuapp.com/api/wish-list/get`, {
+          unique_id: localStorage.getItem("unique_id"),
+        })
         .then((res) => {
           this.products = res.data.data;
         })
-        .catch(() => {
-         
-        })
+        .catch(() => {})
         .finally(() => {
           this.loading = false;
           this.loadingText = "";
@@ -148,42 +157,39 @@ export default {
       this.loadingText = "Please wait...";
       this.$api
         .get(
-          `http://biomed.test/api/wish-list/remove/${d.wid}`
+          `https://biomed-backend.herokuapp.com/api/wish-list/remove/${d.wid}`
         )
         .then((res) => {
           this.$toast.success(res.data.message);
 
           this.getWishListProducts();
         })
-        .catch(() => {
-
-        })
+        .catch(() => {})
         .finally(() => {
           this.loading = false;
           this.loadingText = "";
-
         });
     },
     addToCart(p) {
       this.loading = true;
       this.loadingText = "Please wait...";
-      var unique_id = localStorage.getItem('unique_id');
+      var unique_id = localStorage.getItem("unique_id");
       // check if the unique_id exist in the localStorage
-      
-      if(!unique_id){
-        localStorage.setItem('unique_id', this.uniqueid());
-        unique_id = localStorage.getItem('unique_id')
+
+      if (!unique_id) {
+        localStorage.setItem("unique_id", this.uniqueid());
+        unique_id = localStorage.getItem("unique_id");
       }
-      
+
       let payload = {
         product_id: p.id,
-        unique_id : localStorage.getItem('unique_id')
+        unique_id: localStorage.getItem("unique_id"),
       };
       this.$api
-        .post(`http://biomed.test/api/cart`, payload)
+        .post(`https://biomed-backend.herokuapp.com/api/cart`, payload)
         .then((res) => {
           this.$toast.success(res.data.message);
-          this.removeProduct(p)
+          this.removeProduct(p);
         })
         .catch((err) => {
           this.$toast.error(err.response.data.message);
@@ -191,13 +197,11 @@ export default {
         .finally(() => {
           this.loading = false;
           this.loadingText = "";
-         
         });
     },
   },
   mounted() {
     this.getWishListProducts();
-    console.log(this.dynamic_route('redf'))
   },
 };
 </script>
