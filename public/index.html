@@ -7,199 +7,25 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <link rel="icon" href="<%= BASE_URL %>favicon.ico">
   <title>Biomed</title>
-  <!-- Custom-Files -->
-  <link href="<%= BASE_URL %>assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-  <!-- Bootstrap css -->
-  <link href="<%= BASE_URL %>assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
-  <!-- Main css -->
-  <link rel="stylesheet" href="<%= BASE_URL %>assets/css/fontawesome-all.css">
-  <!-- Font-Awesome-Icons-CSS -->
-  <link href="<%= BASE_URL %>assets/css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
-  <!-- pop-up-box -->
-  <link href="<%= BASE_URL %>assets/css/menu.css" rel="stylesheet" type="text/css" media="all" />
-  <!-- menu style -->
-  <!-- //Custom-Files -->
-<script type="text/javascript" src="https://sdk.monnify.com/plugin/monnify.js" defer></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
   <!-- web fonts -->
   <link href="http://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
     rel="stylesheet">
     <link href="http://fonts.googleapis.com/css2?family=Rubik:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
     rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
-  <style>
-    * {
-      box-sizing: border-box;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-    }
-
-
-    #w3lDemoBar.w3l-demo-bar {
-      top: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 9999;
-      padding: 40px 5px;
-      padding-top: 70px;
-      margin-bottom: 70px;
-      background: #0D1326;
-      border-top-left-radius: 9px;
-      border-bottom-left-radius: 9px;
-    }
-
-    #w3lDemoBar.w3l-demo-bar a {
-      display: block;
-      color: #e6ebff;
-      text-decoration: none;
-      line-height: 24px;
-      opacity: .6;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    #w3lDemoBar.w3l-demo-bar span.w3l-icon {
-      display: block;
-    }
-
-    #w3lDemoBar.w3l-demo-bar a:hover {
-      opacity: 1;
-    }
-
-    #w3lDemoBar.w3l-demo-bar .w3l-icon svg {
-      color: #e6ebff;
-    }
-
-    #w3lDemoBar.w3l-demo-bar .responsive-icons {
-      margin-top: 30px;
-      border-top: 1px solid #41414d;
-      padding-top: 40px;
-    }
-
-    #w3lDemoBar.w3l-demo-bar .demo-btns {
-      border-top: 1px solid #41414d;
-      padding-top: 30px;
-    }
-
-    #w3lDemoBar.w3l-demo-bar .responsive-icons a span.fa {
-      font-size: 26px;
-    }
-
-    #w3lDemoBar.w3l-demo-bar .no-margin-bottom {
-      margin-bottom: 0;
-    }
-
-    .toggle-right-sidebar span {
-      background: #0D1326;
-      width: 50px;
-      height: 50px;
-      line-height: 50px;
-      text-align: center;
-      color: #e6ebff;
-      border-radius: 50px;
-      font-size: 26px;
-      cursor: pointer;
-      opacity: .5;
-    }
-
-    .pull-right {
-      float: right;
-      position: fixed;
-      right: 0px;
-      top: 70px;
-      width: 90px;
-      z-index: 99999;
-      text-align: center;
-    }
-
-    /* ============================================================
-      RIGHT SIDEBAR SECTION
-      ============================================================ */
-
-    #right-sidebar {
-      width: 90px;
-      position: fixed;
-      height: 100%;
-      z-index: 1000;
-      right: 0px;
-      top: 0;
-      margin-top: 60px;
-      -webkit-transition: all .5s ease-in-out;
-      -moz-transition: all .5s ease-in-out;
-      -o-transition: all .5s ease-in-out;
-      transition: all .5s ease-in-out;
-      overflow-y: auto;
-    }
-
-
-    /* ============================================================
-      RIGHT SIDEBAR TOGGLE SECTION
-      ============================================================ */
-
-    .hide-right-bar-notifications {
-      margin-right: -300px !important;
-      -webkit-transition: all .3s ease-in-out;
-      -moz-transition: all .3s ease-in-out;
-      -o-transition: all .3s ease-in-out;
-      transition: all .3s ease-in-out;
-    }
-
-
-
-    @media (max-width: 992px) {
-      #w3lDemoBar.w3l-demo-bar a.desktop-mode {
-        display: none;
-
-      }
-    }
-
-    @media (max-width: 767px) {
-      #w3lDemoBar.w3l-demo-bar a.tablet-mode {
-        display: none;
-
-      }
-    }
-
-    @media (max-width: 568px) {
-      #w3lDemoBar.w3l-demo-bar a.mobile-mode {
-        display: none;
-      }
-
-      #w3lDemoBar.w3l-demo-bar .responsive-icons {
-        margin-top: 0px;
-        border-top: none;
-        padding-top: 0px;
-      }
-
-      #right-sidebar,
-      .pull-right {
-        width: 90px;
-      }
-
-      #w3lDemoBar.w3l-demo-bar .no-margin-bottom-mobile {
-        margin-bottom: 0;
-      }
-    }
-    .badge {
-  padding-left: 9px;
-  padding-right: 9px;
-  -webkit-border-radius: 9px;
-  -moz-border-radius: 9px;
-  border-radius: 9px;
-}
-
-.label-warning[href],
-.badge-warning[href] {
-  background-color: #c67605;
-}
-#lblCartCount {
-    font-size: 12px;
-    background: #fe6904;
-    color: #fff;
-    padding: 2px 5px;
-    vertical-align: top;
-    margin-left: -10px; 
-}
-  </style>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&amp;display=swap"
+    rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="<%= BASE_URL %>assets/css/bootstrap.min.css" type="text/css">
+  <link rel="stylesheet" href="<%= BASE_URL %>assets/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="<%= BASE_URL %>assets/css/elegant-icons.css" type="text/css">
+  <link rel="stylesheet" href="<%= BASE_URL %>assets/css/magnific-popup.css" type="text/css">
+  <link rel="stylesheet" href="<%= BASE_URL %>assets/css/nice-select.css" type="text/css">
+  <link rel="stylesheet" href="<%= BASE_URL %>assets/css/owl.carousel.min.css" type="text/css">
+  <link rel="stylesheet" href="<%= BASE_URL %>assets/css/slicknav.min.css" type="text/css">
+  <link rel="stylesheet" href="<%= BASE_URL %>assets/css/style.css" type="text/css">
+  <script
+    nonce="be75fa72-62c1-4a6f-8ca1-193ea514f2d1">(function (w, d) { !function (e, f, g, h) { e.zarazData = e.zarazData || {}; e.zarazData.executed = []; e.zaraz = { deferred: [], listeners: [] }; e.zaraz.q = []; e.zaraz._f = function (i) { return function () { var j = Array.prototype.slice.call(arguments); e.zaraz.q.push({ m: i, a: j }) } }; for (const k of ["track", "set", "debug"]) e.zaraz[k] = e.zaraz._f(k); e.zaraz.init = () => { var l = f.getElementsByTagName(h)[0], m = f.createElement(h), n = f.getElementsByTagName("title")[0]; n && (e.zarazData.t = f.getElementsByTagName("title")[0].text); e.zarazData.x = Math.random(); e.zarazData.w = e.screen.width; e.zarazData.h = e.screen.height; e.zarazData.j = e.innerHeight; e.zarazData.e = e.innerWidth; e.zarazData.l = e.location.href; e.zarazData.r = f.referrer; e.zarazData.k = e.screen.colorDepth; e.zarazData.n = f.characterSet; e.zarazData.o = (new Date).getTimezoneOffset(); if (e.dataLayer) for (const r of Object.entries(Object.entries(dataLayer).reduce(((s, t) => ({ ...s[1], ...t[1] }))))) zaraz.set(r[0], r[1], { scope: "page" }); e.zarazData.q = []; for (; e.zaraz.q.length;) { const u = e.zaraz.q.shift(); e.zarazData.q.push(u) } m.defer = !0; for (const v of [localStorage, sessionStorage]) Object.keys(v || {}).filter((x => x.startsWith("_zaraz_"))).forEach((w => { try { e.zarazData["z_" + w.slice(7)] = JSON.parse(v.getItem(w)) } catch { e.zarazData["z_" + w.slice(7)] = v.getItem(w) } })); m.referrerPolicy = "origin"; m.src = "https://preview.colorlib.com/cdn-cgi/zaraz/s.js?z=" + btoa(encodeURIComponent(JSON.stringify(e.zarazData))); l.parentNode.insertBefore(m, l) };["complete", "interactive"].includes(f.readyState) ? zaraz.init() : e.addEventListener("DOMContentLoaded", zaraz.init) }(w, d, 0, "script"); })(window, document);</script>
 </head>
 
 <body>
@@ -210,172 +36,31 @@
   <div id="app"></div>
   <!-- built files will be auto injected -->
 
-  <!-- js-files -->
-  <!-- common jquery plugin -->
+
   <script src="<%= BASE_URL %>assets/js/jquery-3.3.1.min.js"></script>
-  <!-- //common jquery plugin -->
-
-  <!-- here stars scrolling icon -->
-  <script type="text/javascript">
-      $(document).ready(function () {
-        /*
-          var defaults = {
-          containerID: 'toTop', // fading element id
-          containerHoverID: 'toTopHover', // fading element hover id
-          scrollSpeed: 1200,
-          easingType: 'linear' 
-          };
-        */
-
-        $().UItoTop({
-          easingType: 'easeOutQuart'
-        });
-
-      });
-  </script>
-  <!-- //here ends scrolling icon -->
-  <!-- js -->
-  <script src="<%= BASE_URL %>assets/js/jquery-1.11.1.min.js"></script>
-  <!-- //js -->
-  <!-- start-smoth-scrolling -->
-  <script type="text/javascript">
-    jQuery(document).ready(function ($) {
-      $(".scroll").click(function (event) {
-        event.preventDefault();
-        $('html,body').animate({
-          scrollTop: $(this.hash).offset().top
-        }, 1000);
-      });
-    });
-  </script>
-  <!-- start-smoth-scrolling -->
-
-  <!-- nav smooth scroll -->
-  <script>
-    $(document).ready(function () {
-      $(".dropdown").hover(
-        function () {
-          $('.dropdown-menu', this).stop(true, true).slideDown("fast");
-          $(this).toggleClass('open');
-        },
-        function () {
-          $('.dropdown-menu', this).stop(true, true).slideUp("fast");
-          $(this).toggleClass('open');
-        }
-      );
-    });
-  </script>
-  <!-- //nav smooth scroll -->
-
-  <!-- popup modal (for location)-->
-  <script src="<%= BASE_URL %>assets/js/jquery.magnific-popup.js"></script>
-  <script>
-    $(document).ready(function () {
-      $('.popup-with-zoom-anim').magnificPopup({
-        type: 'inline',
-        fixedContentPos: false,
-        fixedBgPos: true,
-        overflowY: 'auto',
-        closeBtnInside: true,
-        preloader: false,
-        midClick: true,
-        removalDelay: 300,
-        mainClass: 'my-mfp-zoom-in'
-      });
-
-    });
-  </script>
-  <!-- //popup modal (for location)-->
-
-  <!-- scroll seller -->
-  
-  <!-- //cart-js -->
-
-  <!-- password-script -->
-  <script>
-    window.onload = function () {
-      document.getElementById("password1").onchange = validatePassword;
-      document.getElementById("password2").onchange = validatePassword;
-    }
-
-    function validatePassword() {
-      var pass2 = document.getElementById("password2").value;
-      var pass1 = document.getElementById("password1").value;
-      if (pass1 != pass2)
-        document.getElementById("password2").setCustomValidity("Passwords Don't Match");
-      else
-        document.getElementById("password2").setCustomValidity('');
-      //empty string means no validation error
-    }
-  </script>
-  <!-- //password-script -->
-
-  <!-- theme switch js (light and dark)-->
-  <!-- <script src="assets/js/theme-change.js"></script> -->
-  <script>
-    function autoType(elementClass, typingSpeed) {
-      var thhis = $(elementClass);
-      thhis.css({
-        "position": "relative",
-        "display": "inline-block"
-      });
-      thhis.prepend('<div class="cursor" style="right: initial; left:0;"></div>');
-      thhis = thhis.find(".text-js");
-      var text = thhis.text().trim().split('');
-      var amntOfChars = text.length;
-      var newString = "";
-      thhis.text("|");
-      setTimeout(function () {
-        thhis.css("opacity", 1);
-        thhis.prev().removeAttr("style");
-        thhis.text("");
-        for (var i = 0; i < amntOfChars; i++) {
-          (function (i, char) {
-            setTimeout(function () {
-              newString += char;
-              thhis.text(newString);
-            }, i * typingSpeed);
-          })(i + 1, text[i]);
-        }
-      }, 1500);
-    }
-
-    $(document).ready(function () {
-      // Now to start autoTyping just call the autoType function with the 
-      // class of outer div
-      // The second paramter is the speed between each letter is typed.   
-      autoType(".type-js", 200);
-    });
-  </script>
-  <!-- //theme switch js (light and dark)-->
-
-  <!-- disable body scroll which navbar is in active -->
-  <script>
-    $(function () {
-      $('.navbar-toggler').click(function () {
-        $('body').toggleClass('noscroll');
-      })
-    });
-  </script>
-  <script src="<%= BASE_URL %>assets/js/imagezoom.js"></script>
-  <!-- //disable body scroll which navbar is in active -->
-  <link rel="stylesheet" href="<%= BASE_URL %>assets/css/flexslider.css" type="text/css" media="screen" />
-
-  <script src="<%= BASE_URL %>assets/js/jquery.flexslider.js"></script>
-  <script>
-    // Can also be used with $(document).ready()
-    $(window).load(function () {
-      $('.flexslider').flexslider({
-        animation: "slide",
-        controlNav: "thumbnails"
-      });
-    });
-  </script>
-  <!--bootstrap-->
   <script src="<%= BASE_URL %>assets/js/bootstrap.min.js"></script>
-  <!-- //bootstrap-->
-  <!-- //Js scripts -->
+  <script src="<%= BASE_URL %>assets/js/jquery.nice-select.min.js"></script>
+  <script src="<%= BASE_URL %>assets/js/jquery.nicescroll.min.js"></script>
+  <script src="<%= BASE_URL %>assets/js/jquery.magnific-popup.min.js"></script>
+  <script src="<%= BASE_URL %>assets/js/jquery.countdown.min.js"></script>
+  <script src="<%= BASE_URL %>assets/js/jquery.slicknav.js"></script>
+  <script src="<%= BASE_URL %>assets/js/mixitup.min.js"></script>
+  <script src="<%= BASE_URL %>assets/js/owl.carousel.min.js"></script>
+  <script src="<%= BASE_URL %>assets/js/main.js"></script>
 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-23581568-13');
+  </script>
+  <script defer
+    src="https://static.cloudflareinsights.com/beacon.min.assets/js/vaafb692b2aea4879b33c060e79fe94621666317369993"
+    integrity="sha512-0ahDYl866UMhKuYcW078ScMalXqtFJggm7TmlUtp0UlD4eQk0Ixfnm5ykXKvGJNFjLMoortdseTfsRT8oCfgGA=="
+    data-cf-beacon='{"rayId":"76b3a7c33af5d0cd","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2022.11.0","si":100}'
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
