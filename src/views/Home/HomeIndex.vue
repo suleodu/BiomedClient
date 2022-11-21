@@ -1,180 +1,81 @@
 <template>
   <div>
     <section class="hero">
-      <div class="hero__slider ">
-        <Carousel autoplay="true">
-            <div class="hero__items set-bg" style="background-image: url('assets/img/hero/hero-1.jpg');">
-              <div class="container">
-                <div class="row">
-                  <div class="col-xl-5 col-lg-7 col-md-8">
-                    <div class="hero__text">
-                      <!-- <h6>Summer Collection</h6> -->
-                      <h2>Veterinary Diagnostics</h2>
-                      <p>BioMed’s Veterinary diagnostics section offers a wide range of diagnostics kits such like ELISA,
-                        PCR, rapid test kits and any other technics or technologies that can help in the diagnostics
-                        processes of the animal diseases and/or related disease.</p>
-                      <a href="#" class="primary-btn">Explore <span class="arrow_right"></span></a>
-                      <!-- <div class="hero__social">
-                      <a href="#"><i class="fa fa-facebook"></i></a>
-                      <a href="#"><i class="fa fa-twitter"></i></a>
-                      <a href="#"><i class="fa fa-pinterest"></i></a>
-                      <a href="#"><i class="fa fa-instagram"></i></a>
-                    </div> -->
-                    </div>
-                  </div>
+      <div class="hero__slider owl-carousel">
+        <div class="hero__items set-bg" data-setbg="assets/img/hero/hero-1.jpg">
+          <div class="container">
+            <div class="row">
+              <div class="col-xl-5 col-lg-7 col-md-8">
+                <div class="hero__text">
+                  <!-- <h6>Summer Collection</h6> -->
+                  <h2>Veterinary Diagnostics</h2>
+                  <p>BioMed’s Veterinary diagnostics section offers a wide range of diagnostics kits such like ELISA,
+                    PCR, rapid test kits and any other technics or technologies that can help in the diagnostics
+                    processes of the animal diseases and/or related disease.</p>
+                  <a href="#" class="primary-btn">Explore <span class="arrow_right"></span></a>
+                  <!-- <div class="hero__social">
+                  <a href="#"><i class="fa fa-facebook"></i></a>
+                  <a href="#"><i class="fa fa-twitter"></i></a>
+                  <a href="#"><i class="fa fa-pinterest"></i></a>
+                  <a href="#"><i class="fa fa-instagram"></i></a>
+                </div> -->
                 </div>
-              </div>
-            </div>
-            <div class="hero__items set-bg" style="background-image: url('assets/img/hero/hero-2.jpg');">
-              <div class="container">
-                <div class="row">
-                  <div class="col-xl-5 col-lg-7 col-md-8">
-                    <div class="hero__text">
-                      <!-- <h6>Summer Collection</h6> -->
-                      <h2>Human Diagnostic</h2>
-                      <p>BioMed’s Human diagnostics section offers a wide range of diagnostics kits and reagents such like
-                        ELISA, PCR, rapid test kits and any other technics our technologies that can help in the diagnostic
-                        process of the human diseases and/or related diseases.</p>
-                      <a href="#" class="primary-btn">Explore <span class="arrow_right"></span></a>
-                      <!-- <div class="hero__social">
-                      <a href="#"><i class="fa fa-facebook"></i></a>
-                      <a href="#"><i class="fa fa-twitter"></i></a>
-                      <a href="#"><i class="fa fa-pinterest"></i></a>
-                      <a href="#"><i class="fa fa-instagram"></i></a>
-                    </div> -->
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="hero__items set-bg" style="background-image: url('assets/img/hero/hero-2.jpg');">
-              <div class="container">
-                <div class="row">
-                  <div class="col-xl-5 col-lg-7 col-md-8">
-                    <div class="hero__text">
-                      <!-- <h6>Summer Collection</h6> -->
-                      <h2>Human Diagnostic</h2>
-                      <p>BioMed’s Human diagnostics section offers a wide range of diagnostics kits and reagents such like
-                        ELISA, PCR, rapid test kits and any other technics our technologies that can help in the diagnostic
-                        process of the human diseases and/or related diseases.</p>
-                      <a href="#" class="primary-btn">Explore <span class="arrow_right"></span></a>
-                      <!-- <div class="hero__social">
-                      <a href="#"><i class="fa fa-facebook"></i></a>
-                      <a href="#"><i class="fa fa-twitter"></i></a>
-                      <a href="#"><i class="fa fa-pinterest"></i></a>
-                      <a href="#"><i class="fa fa-instagram"></i></a>
-                    </div> -->
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="hero__items set-bg" style="background-image: url('assets/img/hero/hero-2.jpg');">
-              <div class="container">
-                <div class="row">
-                  <div class="col-xl-5 col-lg-7 col-md-8">
-                    <div class="hero__text">
-                      <!-- <h6>Summer Collection</h6> -->
-                      <h2>Human Diagnostic</h2>
-                      <p>BioMed’s Human diagnostics section offers a wide range of diagnostics kits and reagents such like
-                        ELISA, PCR, rapid test kits and any other technics our technologies that can help in the diagnostic
-                        process of the human diseases and/or related diseases.</p>
-                      <a href="#" class="primary-btn">Explore <span class="arrow_right"></span></a>
-                      <!-- <div class="hero__social">
-                      <a href="#"><i class="fa fa-facebook"></i></a>
-                      <a href="#"><i class="fa fa-twitter"></i></a>
-                      <a href="#"><i class="fa fa-pinterest"></i></a>
-                      <a href="#"><i class="fa fa-instagram"></i></a>
-                    </div> -->
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="hero__items set-bg" style="background-image: url('assets/img/hero/hero-2.jpg');">
-              <div class="container">
-                <div class="row">
-                  <div class="col-xl-5 col-lg-7 col-md-8">
-                    <div class="hero__text">
-                      <!-- <h6>Summer Collection</h6> -->
-                      <h2>Human Diagnostic</h2>
-                      <p>BioMed’s Human diagnostics section offers a wide range of diagnostics kits and reagents such like
-                        ELISA, PCR, rapid test kits and any other technics our technologies that can help in the diagnostic
-                        process of the human diseases and/or related diseases.</p>
-                      <a href="#" class="primary-btn">Explore <span class="arrow_right"></span></a>
-                      <!-- <div class="hero__social">
-                      <a href="#"><i class="fa fa-facebook"></i></a>
-                      <a href="#"><i class="fa fa-twitter"></i></a>
-                      <a href="#"><i class="fa fa-pinterest"></i></a>
-                      <a href="#"><i class="fa fa-instagram"></i></a>
-                    </div> -->
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-        </Carousel>
-        
-      </div>
-    </section>
-
-
-    <section class="banner spad">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-7 offset-lg-4">
-            <div class="banner__item">
-              <div class="banner__item__pic">
-                <img src="assets/img/banner/banner-1.jpg" alt="">
-              </div>
-              <div class="banner__item__text">
-                <h2>Clothing Collections 2030</h2>
-                <a href="#">Shop now</a>
               </div>
             </div>
           </div>
-          <div class="col-lg-5">
-            <div class="banner__item banner__item--middle">
-              <div class="banner__item__pic">
-                <img src="assets/img/banner/banner-2.jpg" alt="">
-              </div>
-              <div class="banner__item__text">
-                <h2>Accessories</h2>
-                <a href="#">Shop now</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-7">
-            <div class="banner__item banner__item--last">
-              <div class="banner__item__pic">
-                <img src="assets/img/banner/banner-3.jpg" alt="">
-              </div>
-              <div class="banner__item__text">
-                <h2>Shoes Spring 2030</h2>
-                <a href="#">Shop now</a>
+        </div>
+        <div class="hero__items set-bg" data-setbg="assets/img/hero/hero-2.jpg">
+          <div class="container">
+            <div class="row">
+              <div class="col-xl-5 col-lg-7 col-md-8">
+                <div class="hero__text">
+                  <!-- <h6>Summer Collection</h6> -->
+                  <h2>Human Diagnostic</h2>
+                  <p>BioMed’s Human diagnostics section offers a wide range of diagnostics kits and reagents such like
+                    ELISA, PCR, rapid test kits and any other technics our technologies that can help in the diagnostic
+                    process of the human diseases and/or related diseases.</p>
+                  <a href="#" class="primary-btn">Explore <span class="arrow_right"></span></a>
+                  <!-- <div class="hero__social">
+                  <a href="#"><i class="fa fa-facebook"></i></a>
+                  <a href="#"><i class="fa fa-twitter"></i></a>
+                  <a href="#"><i class="fa fa-pinterest"></i></a>
+                  <a href="#"><i class="fa fa-instagram"></i></a>
+                </div> -->
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-
-
-    <section class="product spad">
+    <section class="best-choice py-5">
       <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <ul class="filter__controls">
-              <li class="active" data-filter="*">Best Sellers</li>
-              <li data-filter=".new-arrivals">New Arrivals</li>
-              <li data-filter=".hot-sales">Hot Sales</li>
-            </ul>
-          </div>
+        <div class="best-choice-content text-center">
+          <h2>Our Best Choice</h2>
+          <p>
+            We manufacture products for use in histopathology, hematology, cytology, transfusiology and microbiology
+            with a wide national and international distribution network present in over 65 countries. BioGnost offers
+            only the best quality products at competitive prices and has one of the widest ranges of medical products in
+            South-Eastern Europe. Our experience and flexibility towards the client makes us a sought-after business
+            partner, which has been
+            recognized in the global market.
+          </p>
         </div>
-        <div class="row product__filter">
-          <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
+      </div>
+    </section>
+    <section class="product spad py-5">
+      <div class="container">
+        <div class="our-products">
+          <h2 class="pb-5">
+            Our Products
+          </h2>
+        </div>
+
+        <div class="row product__filter mt-5">
+          <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals" v-for="(p, i) in products"
+            :key="i">
             <div class="product__item">
-              <div class="product__item__pic set-bg" data-setbg="assets/img/product/product-1.jpg">
+              <div class="product__item__pic set-bg" v-bind:style="{ 'background-image': 'url(' + p.image + ')' }">
                 <span class="label">New</span>
                 <ul class="product__hover">
                   <li><a href="#"><img src="assets/img/icon/heart.png" alt=""></a></li>
@@ -183,7 +84,7 @@
                 </ul>
               </div>
               <div class="product__item__text">
-                <h6>Piqué Biker Jacket</h6>
+                <h6>{{ p.product_name }}</h6>
                 <a href="#" class="add-cart">+ Add To Cart</a>
                 <div class="rating">
                   <i class="fa fa-star-o"></i>
@@ -192,7 +93,7 @@
                   <i class="fa fa-star-o"></i>
                   <i class="fa fa-star-o"></i>
                 </div>
-                <h5>$67.24</h5>
+                <h5>${{ p.discount_price }}</h5>
                 <div class="product__color__select">
                   <label for="pc-1">
                     <input type="radio" id="pc-1">
@@ -207,246 +108,7 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix hot-sales">
-            <div class="product__item">
-              <div class="product__item__pic set-bg" data-setbg="assets/img/product/product-2.jpg">
-                <ul class="product__hover">
-                  <li><a href="#"><img src="assets/img/icon/heart.png" alt=""></a></li>
-                  <li><a href="#"><img src="assets/img/icon/compare.png" alt=""> <span>Compare</span></a></li>
-                  <li><a href="#"><img src="assets/img/icon/search.png" alt=""></a></li>
-                </ul>
-              </div>
-              <div class="product__item__text">
-                <h6>Piqué Biker Jacket</h6>
-                <a href="#" class="add-cart">+ Add To Cart</a>
-                <div class="rating">
-                  <i class="fa fa-star-o"></i>
-                  <i class="fa fa-star-o"></i>
-                  <i class="fa fa-star-o"></i>
-                  <i class="fa fa-star-o"></i>
-                  <i class="fa fa-star-o"></i>
-                </div>
-                <h5>$67.24</h5>
-                <div class="product__color__select">
-                  <label for="pc-4">
-                    <input type="radio" id="pc-4">
-                  </label>
-                  <label class="active black" for="pc-5">
-                    <input type="radio" id="pc-5">
-                  </label>
-                  <label class="grey" for="pc-6">
-                    <input type="radio" id="pc-6">
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
-            <div class="product__item sale">
-              <div class="product__item__pic set-bg" data-setbg="assets/img/product/product-3.jpg">
-                <span class="label">Sale</span>
-                <ul class="product__hover">
-                  <li><a href="#"><img src="assets/img/icon/heart.png" alt=""></a></li>
-                  <li><a href="#"><img src="assets/img/icon/compare.png" alt=""> <span>Compare</span></a></li>
-                  <li><a href="#"><img src="assets/img/icon/search.png" alt=""></a></li>
-                </ul>
-              </div>
-              <div class="product__item__text">
-                <h6>Multi-pocket Chest Bag</h6>
-                <a href="#" class="add-cart">+ Add To Cart</a>
-                <div class="rating">
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star-o"></i>
-                </div>
-                <h5>$43.48</h5>
-                <div class="product__color__select">
-                  <label for="pc-7">
-                    <input type="radio" id="pc-7">
-                  </label>
-                  <label class="active black" for="pc-8">
-                    <input type="radio" id="pc-8">
-                  </label>
-                  <label class="grey" for="pc-9">
-                    <input type="radio" id="pc-9">
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix hot-sales">
-            <div class="product__item">
-              <div class="product__item__pic set-bg" data-setbg="assets/img/product/product-4.jpg">
-                <ul class="product__hover">
-                  <li><a href="#"><img src="assets/img/icon/heart.png" alt=""></a></li>
-                  <li><a href="#"><img src="assets/img/icon/compare.png" alt=""> <span>Compare</span></a></li>
-                  <li><a href="#"><img src="assets/img/icon/search.png" alt=""></a></li>
-                </ul>
-              </div>
-              <div class="product__item__text">
-                <h6>Diagonal Textured Cap</h6>
-                <a href="#" class="add-cart">+ Add To Cart</a>
-                <div class="rating">
-                  <i class="fa fa-star-o"></i>
-                  <i class="fa fa-star-o"></i>
-                  <i class="fa fa-star-o"></i>
-                  <i class="fa fa-star-o"></i>
-                  <i class="fa fa-star-o"></i>
-                </div>
-                <h5>$60.9</h5>
-                <div class="product__color__select">
-                  <label for="pc-10">
-                    <input type="radio" id="pc-10">
-                  </label>
-                  <label class="active black" for="pc-11">
-                    <input type="radio" id="pc-11">
-                  </label>
-                  <label class="grey" for="pc-12">
-                    <input type="radio" id="pc-12">
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
-            <div class="product__item">
-              <div class="product__item__pic set-bg" data-setbg="assets/img/product/product-5.jpg">
-                <ul class="product__hover">
-                  <li><a href="#"><img src="assets/img/icon/heart.png" alt=""></a></li>
-                  <li><a href="#"><img src="assets/img/icon/compare.png" alt=""> <span>Compare</span></a></li>
-                  <li><a href="#"><img src="assets/img/icon/search.png" alt=""></a></li>
-                </ul>
-              </div>
-              <div class="product__item__text">
-                <h6>Lether Backpack</h6>
-                <a href="#" class="add-cart">+ Add To Cart</a>
-                <div class="rating">
-                  <i class="fa fa-star-o"></i>
-                  <i class="fa fa-star-o"></i>
-                  <i class="fa fa-star-o"></i>
-                  <i class="fa fa-star-o"></i>
-                  <i class="fa fa-star-o"></i>
-                </div>
-                <h5>$31.37</h5>
-                <div class="product__color__select">
-                  <label for="pc-13">
-                    <input type="radio" id="pc-13">
-                  </label>
-                  <label class="active black" for="pc-14">
-                    <input type="radio" id="pc-14">
-                  </label>
-                  <label class="grey" for="pc-15">
-                    <input type="radio" id="pc-15">
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix hot-sales">
-            <div class="product__item sale">
-              <div class="product__item__pic set-bg" data-setbg="assets/img/product/product-6.jpg">
-                <span class="label">Sale</span>
-                <ul class="product__hover">
-                  <li><a href="#"><img src="assets/img/icon/heart.png" alt=""></a></li>
-                  <li><a href="#"><img src="assets/img/icon/compare.png" alt=""> <span>Compare</span></a></li>
-                  <li><a href="#"><img src="assets/img/icon/search.png" alt=""></a></li>
-                </ul>
-              </div>
-              <div class="product__item__text">
-                <h6>Ankle Boots</h6>
-                <a href="#" class="add-cart">+ Add To Cart</a>
-                <div class="rating">
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star-o"></i>
-                </div>
-                <h5>$98.49</h5>
-                <div class="product__color__select">
-                  <label for="pc-16">
-                    <input type="radio" id="pc-16">
-                  </label>
-                  <label class="active black" for="pc-17">
-                    <input type="radio" id="pc-17">
-                  </label>
-                  <label class="grey" for="pc-18">
-                    <input type="radio" id="pc-18">
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
-            <div class="product__item">
-              <div class="product__item__pic set-bg" data-setbg="assets/img/product/product-7.jpg">
-                <ul class="product__hover">
-                  <li><a href="#"><img src="assets/img/icon/heart.png" alt=""></a></li>
-                  <li><a href="#"><img src="assets/img/icon/compare.png" alt=""> <span>Compare</span></a></li>
-                  <li><a href="#"><img src="assets/img/icon/search.png" alt=""></a></li>
-                </ul>
-              </div>
-              <div class="product__item__text">
-                <h6>T-shirt Contrast Pocket</h6>
-                <a href="#" class="add-cart">+ Add To Cart</a>
-                <div class="rating">
-                  <i class="fa fa-star-o"></i>
-                  <i class="fa fa-star-o"></i>
-                  <i class="fa fa-star-o"></i>
-                  <i class="fa fa-star-o"></i>
-                  <i class="fa fa-star-o"></i>
-                </div>
-                <h5>$49.66</h5>
-                <div class="product__color__select">
-                  <label for="pc-19">
-                    <input type="radio" id="pc-19">
-                  </label>
-                  <label class="active black" for="pc-20">
-                    <input type="radio" id="pc-20">
-                  </label>
-                  <label class="grey" for="pc-21">
-                    <input type="radio" id="pc-21">
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix hot-sales">
-            <div class="product__item">
-              <div class="product__item__pic set-bg" data-setbg="assets/img/product/product-8.jpg">
-                <ul class="product__hover">
-                  <li><a href="#"><img src="assets/img/icon/heart.png" alt=""></a></li>
-                  <li><a href="#"><img src="assets/img/icon/compare.png" alt=""> <span>Compare</span></a></li>
-                  <li><a href="#"><img src="assets/img/icon/search.png" alt=""></a></li>
-                </ul>
-              </div>
-              <div class="product__item__text">
-                <h6>Basic Flowing Scarf</h6>
-                <a href="#" class="add-cart">+ Add To Cart</a>
-                <div class="rating">
-                  <i class="fa fa-star-o"></i>
-                  <i class="fa fa-star-o"></i>
-                  <i class="fa fa-star-o"></i>
-                  <i class="fa fa-star-o"></i>
-                  <i class="fa fa-star-o"></i>
-                </div>
-                <h5>$26.28</h5>
-                <div class="product__color__select">
-                  <label for="pc-22">
-                    <input type="radio" id="pc-22">
-                  </label>
-                  <label class="active black" for="pc-23">
-                    <input type="radio" id="pc-23">
-                  </label>
-                  <label class="grey" for="pc-24">
-                    <input type="radio" id="pc-24">
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
+
         </div>
       </div>
     </section>
@@ -571,11 +233,60 @@
     </section>
   </div>
 </template>
+<style>
+.best-choice h2 {
+  color: #111111;
+  font-weight: 700;
+  line-height: 46px;
+  margin-bottom: 10px;
+  font-family: 'Rubik';
+}
+
+.our-products h2 {
+  color: #111111;
+  font-weight: 700;
+  line-height: 46px;
+  margin-bottom: 10px;
+  font-family: 'Rubik';
+}
+
+.best-choice p {
+  color: #111111;
+  font-size: 18px;
+  line-height: 45px;
+}
+</style>
 <script>
-import Carousel from 'vue-owl-carousel';
-export default{
-  components : {
-    Carousel
+import $ from 'jquery';
+export default {
+  data() {
+    return {
+      products: {},
+    }
+  },
+  components: {
+  },
+  methods: {
+    getProducts() {
+      this.$api.post(this.dynamic_route('/product/all/all-products'))
+        .then((response) => {
+          this.products = response.data.data.data;
+          this.products.forEach(object => {
+            object.image = null
+            object.image = object.picture[0].picture;
+          });
+
+        })
+    }
+  },
+  mounted() {
+    $('.set-bg').each(function () {
+      var bg = $(this).data('setbg');
+      $(this).css('background-image', 'url(' + bg + ')');
+    });
+
+    this.getProducts();
   }
 }
+
 </script>
