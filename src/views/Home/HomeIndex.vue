@@ -63,10 +63,63 @@
         </div>
       </div>
     </section>
-    <section class="product spad py-5">
+    
+
+
+    <!-- ======= Our Services Section ======= -->
+    <section id="services" class="categories services sections-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header text-center">
+          <h2>Support that we offer</h2>
+          <p>We are constantly developing our business to meet the ever-evolving needs of our customers.
+Our goal is to work together, building trusted, long-term relationships, in order to create innovative products and solutions.</p>
+        </div>
+
+        <div class="row gy-4" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="service-item  position-relative">
+              <div class="icon">
+                <i class="bi bi-activity"></i>
+              </div>
+              <h3>Nesciunt Mete</h3>
+              <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure perferendis tempore et consequatur.</p>
+              <a href="#" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-broadcast"></i>
+              </div>
+              <h3>Eosle Commodi</h3>
+              <p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>
+              <a href="#" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-easel"></i>
+              </div>
+              <h3>Ledo Markt</h3>
+              <p>Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id voluptas adipisci eos earum corrupti.</p>
+              <a href="#" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div><!-- End Service Item -->
+
+        </div>
+
+      </div>
+    </section><!-- End Our Services Section -->
+
+    <section class="product spad">
       <div class="container">
         <div class="our-products">
-          <h2 class="pb-5">
+          <h2 class="pb-5 text-center">
             Our Products
           </h2>
         </div>
@@ -112,80 +165,104 @@
         </div>
       </div>
     </section>
-
-
-    <section class="categories spad">
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="categories testimonials">
       <div class="container">
-        <div class="row">
-          <div class="col-lg-3">
-            <div class="categories__text">
-              <h2>Clothings Hot <br /> <span>Shoe Collection</span> <br /> Accessories</h2>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="categories__hot__deal">
-              <img src="assets/img/product-sale.png" alt="">
-              <div class="hot__deal__sticker">
-                <span>Sale Of</span>
-                <h5>$29.99</h5>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 offset-lg-1">
-            <div class="categories__deal__countdown">
-              <span>Deal Of The Week</span>
-              <h2>Multi-pocket Chest Bag Black</h2>
-              <div class="categories__deal__countdown__timer" id="countdown">
-                <div class="cd-item">
-                  <span>3</span>
-                  <p>Days</p>
-                </div>
-                <div class="cd-item">
-                  <span>1</span>
-                  <p>Hours</p>
-                </div>
-                <div class="cd-item">
-                  <span>50</span>
-                  <p>Minutes</p>
-                </div>
-                <div class="cd-item">
-                  <span>18</span>
-                  <p>Seconds</p>
+
+        <div class="section-header text-center">
+          <h2>Testimonials</h2>
+          <p>What do our satisfied clients say?</p>
+        </div>
+
+        <carousel :autoplay="true" :nav="false">
+          <div class="testimonial-wrap">
+            <div class="testimonial-item">
+              <div class="d-flex align-items-center">
+                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img flex-shrink-0" alt="">
+                <div>
+                  <h3>Saul Goodman</h3>
+                  <h4>Ceo &amp; Founder</h4>
+                  <div class="stars">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                      class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  </div>
                 </div>
               </div>
-              <a href="#" class="primary-btn">Shop now</a>
+              <p>
+                <i class="bi bi-quote quote-icon-left"></i>
+                Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium
+                quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                <i class="bi bi-quote quote-icon-right"></i>
+              </p>
             </div>
           </div>
-        </div>
+          <div class="testimonial-wrap">
+            <div class="testimonial-item">
+              <div class="d-flex align-items-center">
+                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img flex-shrink-0" alt="">
+                <div>
+                  <h3>Saul Goodman</h3>
+                  <h4>Ceo &amp; Founder</h4>
+                  <div class="stars">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                      class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  </div>
+                </div>
+              </div>
+              <p>
+                <i class="bi bi-quote quote-icon-left"></i>
+                Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium
+                quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                <i class="bi bi-quote quote-icon-right"></i>
+              </p>
+            </div>
+          </div>
+          <div class="testimonial-wrap">
+            <div class="testimonial-item">
+              <div class="d-flex align-items-center">
+                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img flex-shrink-0" alt="">
+                <div>
+                  <h3>Saul Goodman</h3>
+                  <h4>Ceo &amp; Founder</h4>
+                  <div class="stars">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                      class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  </div>
+                </div>
+              </div>
+              <p>
+                <i class="bi bi-quote quote-icon-left"></i>
+                Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium
+                quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                <i class="bi bi-quote quote-icon-right"></i>
+              </p>
+            </div>
+          </div>
+          <div class="testimonial-wrap">
+            <div class="testimonial-item">
+              <div class="d-flex align-items-center">
+                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img flex-shrink-0" alt="">
+                <div>
+                  <h3>Saul Goodman</h3>
+                  <h4>Ceo &amp; Founder</h4>
+                  <div class="stars">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                      class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  </div>
+                </div>
+              </div>
+              <p>
+                <i class="bi bi-quote quote-icon-left"></i>
+                Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium
+                quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                <i class="bi bi-quote quote-icon-right"></i>
+              </p>
+            </div>
+          </div>
+        </carousel>
+
       </div>
-    </section>
-
-
-    <section class="instagram spad">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8">
-            <div class="instagram__pic">
-              <div class="instagram__pic__item set-bg" data-setbg="assets/img/instagram/instagram-1.jpg"></div>
-              <div class="instagram__pic__item set-bg" data-setbg="assets/img/instagram/instagram-2.jpg"></div>
-              <div class="instagram__pic__item set-bg" data-setbg="assets/img/instagram/instagram-3.jpg"></div>
-              <div class="instagram__pic__item set-bg" data-setbg="assets/img/instagram/instagram-4.jpg"></div>
-              <div class="instagram__pic__item set-bg" data-setbg="assets/img/instagram/instagram-5.jpg"></div>
-              <div class="instagram__pic__item set-bg" data-setbg="assets/img/instagram/instagram-6.jpg"></div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="instagram__text">
-              <h2>Instagram</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                labore et dolore magna aliqua.</p>
-              <h3>#Male_Fashion</h3>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
+    </section><!-- End Testimonials Section -->
 
     <section class="latest spad">
       <div class="container">
@@ -193,7 +270,7 @@
           <div class="col-lg-12">
             <div class="section-title">
               <span>Latest News</span>
-              <h2>Fashion New Trends</h2>
+              <h2>Hear Our Latest News</h2>
             </div>
           </div>
         </div>
@@ -242,6 +319,14 @@
   font-family: 'Rubik';
 }
 
+.section-header h2 {
+  color: #111111;
+  font-weight: 700;
+  line-height: 46px;
+  margin-bottom: 10px;
+  font-family: 'Rubik';
+}
+
 .our-products h2 {
   color: #111111;
   font-weight: 700;
@@ -255,17 +340,24 @@
   font-size: 18px;
   line-height: 45px;
 }
+
+.section-header p {
+  color: #111111;
+  font-size: 18px;
+  line-height: 45px;
+}
 </style>
 <script>
 import $ from 'jquery';
+import carousel from 'vue-owl-carousel'
 export default {
+  components: { carousel },
   data() {
     return {
       products: {},
     }
   },
-  components: {
-  },
+
   methods: {
     getProducts() {
       this.$api.post(this.dynamic_route('/product/all/all-products'))
