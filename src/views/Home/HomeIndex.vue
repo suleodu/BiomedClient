@@ -139,14 +139,14 @@ Our goal is to work together, building trusted, long-term relationships, in orde
               <div class="product__item__text">
                 <h6>{{ p.product_name }}</h6>
                 <a href="#" class="add-cart">+ Add To Cart</a>
-                <div class="rating">
+                <!-- <div class="rating">
                   <i class="fa fa-star-o"></i>
                   <i class="fa fa-star-o"></i>
                   <i class="fa fa-star-o"></i>
                   <i class="fa fa-star-o"></i>
                   <i class="fa fa-star-o"></i>
                 </div>
-                <h5>${{ p.discount_price }}</h5>
+                <h5>${{ p.discount_price }}</h5> -->
                 <div class="product__color__select">
                   <label for="pc-1">
                     <input type="radio" id="pc-1">
