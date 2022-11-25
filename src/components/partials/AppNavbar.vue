@@ -73,13 +73,15 @@
             <ul>
               <li class="active"><a href="index.html">Home</a></li>
               <li><a href="#">Product</a>
-                <ul class="dropdown">
-                  <li><a href="about.html">About Us</a></li>
-                  <li><a href="shop-details.html">Shop Details</a></li>
-                  <li><a href="shopping-cart.html">Shopping Cart</a></li>
-                  <li><a href="checkout.html">Check Out</a></li>
-                  <li><a href="blog-details.html">Blog Details</a></li>
-                </ul>
+                <div class="dropdown">
+                  <div class="row">
+                    <div class="col-lg-4" v-for="(c,i) in categories" :key="i">
+                      <p style="color:white; font-size: 18px; cursor: pointer;">{{ c.category_name }}</p>
+                      <p style="color:white; font-size: 14px; cursor: pointer;" v-for="(sc,i) in c.sub_category" :key="i">{{ sc.sub_category_name }}</p>
+                    </div>
+                  </div>
+                </div>
+                
               </li>
               <li><a href="blog.html">Company</a></li>
               <li><a href="blog.html">Contact</a></li>
@@ -101,3 +103,25 @@
   </header>
   </div>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      categories: {}
+    }
+  },
+  methods: {
+    getCategories() {
+      let payload = {
+        filters:""
+      }
+      this.$api.post(this.dynamic_route('/category/all'),payload).then(response => {
+        this.categories = response.data.data
+      })
+    }
+  },
+  mounted() {
+    this.getCategories()
+  }
+}
+</script>

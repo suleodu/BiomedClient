@@ -165,7 +165,11 @@
               </div>
             </div>
           </div>
-
+          <div class="col-lg-12" style="text-align:center;">
+            <div style="margin-bottom:50px; text-align:center;">
+              <button class="btn primary-btn">All Products</button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
