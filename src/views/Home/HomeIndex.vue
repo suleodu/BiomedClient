@@ -63,7 +63,7 @@
         </div>
       </div>
     </section>
-    
+
 
 
     <!-- ======= Our Services Section ======= -->
@@ -73,7 +73,8 @@
         <div class="section-header text-center">
           <h2>Support that we offer</h2>
           <p>We are constantly developing our business to meet the ever-evolving needs of our customers.
-Our goal is to work together, building trusted, long-term relationships, in order to create innovative products and solutions.</p>
+            Our goal is to work together, building trusted, long-term relationships, in order to create innovative
+            products and solutions.</p>
         </div>
 
         <div class="row gy-4" data-aos="fade-up" data-aos-delay="100">
@@ -84,7 +85,8 @@ Our goal is to work together, building trusted, long-term relationships, in orde
                 <i class="bi bi-activity"></i>
               </div>
               <h3>Nesciunt Mete</h3>
-              <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure perferendis tempore et consequatur.</p>
+              <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure perferendis
+                tempore et consequatur.</p>
               <a href="#" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
             </div>
           </div><!-- End Service Item -->
@@ -95,7 +97,8 @@ Our goal is to work together, building trusted, long-term relationships, in orde
                 <i class="bi bi-broadcast"></i>
               </div>
               <h3>Eosle Commodi</h3>
-              <p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>
+              <p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut
+                nesciunt dolorem.</p>
               <a href="#" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
             </div>
           </div><!-- End Service Item -->
@@ -106,7 +109,8 @@ Our goal is to work together, building trusted, long-term relationships, in orde
                 <i class="bi bi-easel"></i>
               </div>
               <h3>Ledo Markt</h3>
-              <p>Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id voluptas adipisci eos earum corrupti.</p>
+              <p>Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id voluptas adipisci
+                eos earum corrupti.</p>
               <a href="#" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
             </div>
           </div><!-- End Service Item -->
@@ -260,7 +264,6 @@ Our goal is to work together, building trusted, long-term relationships, in orde
             </div>
           </div>
         </carousel>
-
       </div>
     </section><!-- End Testimonials Section -->
 
@@ -270,6 +273,7 @@ Our goal is to work together, building trusted, long-term relationships, in orde
           <div class="col-lg-12">
             <div class="section-title">
               <span>Latest News</span>
+              <owlCarousel />
               <h2>Hear Our Latest News</h2>
             </div>
           </div>
@@ -346,12 +350,17 @@ Our goal is to work together, building trusted, long-term relationships, in orde
   font-size: 18px;
   line-height: 45px;
 }
+.best-choice-content {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
 </style>
 <script>
 import $ from 'jquery';
 import carousel from 'vue-owl-carousel'
+import owlCarousel from 'owl.carousel'
 export default {
-  components: { carousel },
+  components: { carousel, owlCarousel },
   data() {
     return {
       products: {},
@@ -376,7 +385,19 @@ export default {
       var bg = $(this).data('setbg');
       $(this).css('background-image', 'url(' + bg + ')');
     });
-
+    $(".hero__slider").owlCarousel({
+      loop: true,
+      margin: 0,
+      items: 1,
+      dots: false,
+      nav: true,
+      navText: ["<span class='arrow_left'><span/>", "<span class='arrow_right'><span/>"],
+      animateOut: 'fadeOut',
+      animateIn: 'fadeIn',
+      smartSpeed: 1200,
+      autoHeight: false,
+      autoplay: false
+    });
     this.getProducts();
   }
 }
