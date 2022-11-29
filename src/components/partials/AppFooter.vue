@@ -6,13 +6,13 @@
           <div class="col-lg-3 col-md-6 col-sm-6">
             <div class="footer__about">
               <div class="footer__logo">
-                <a href="#"><img src="assets/img/logo.png" style="width: 60%;" alt="" /></a>
+                <a href="#"><img src="/assets/img/logo.png" style="width: 60%;" alt="" /></a>
               </div>
               <p>
                 The customer is at the heart of our unique business model, which
                 includes design.
               </p>
-              <a href="#"><img src="assets/img/payment.png" alt="" /></a>
+              <a href="#"><img src="a/ssets/img/payment.png" alt="" /></a>
             </div>
           </div>
           <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">

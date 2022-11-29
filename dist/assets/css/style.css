@@ -398,10 +398,10 @@ ol {
 	position: absolute;
 	left: 0;
 	top: 56px;
-	width: 700px !important;
+	width: 700px;
 	background: #111111;
 	text-align: left;
-	padding: 5px 0;
+	padding: 15px;
 	z-index: 9;
 	opacity: 0;
 	visibility: hidden;

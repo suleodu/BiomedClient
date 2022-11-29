@@ -21,9 +21,9 @@
       </div>
     </div>
     <div class="offcanvas__nav__option">
-      <a href="#" class="search-switch"><img src="assets/img/icon/search.png" alt=""></a>
-      <a href="#"><img src="assets/img/icon/heart.png" alt=""></a>
-      <a href="#"><img src="assets/img/icon/cart.png" alt=""> <span>0</span></a>
+      <a href="#" class="search-switch"><img src="/assets/img/icon/search.png" alt=""></a>
+      <a href="#"><img src="/assets/img/icon/heart.png" alt=""></a>
+      <a href="#"><img src="/assets/img/icon/cart.png" alt=""> <span>0</span></a>
       <div class="price">$0.00</div>
     </div>
     <div id="mobile-menu-wrap"></div>
@@ -65,7 +65,7 @@
       <div class="row">
         <div class="col-lg-3 col-md-3">
           <div class="header__logo">
-            <a href="index.html"><img src="assets/img/logo.png" alt=""></a>
+            <a href="index.html"><img src="/assets/img/logo.png" alt=""></a>
           </div>
         </div>
         <div class="col-lg-6 col-md-6">
@@ -76,8 +76,8 @@
                 <div class="dropdown">
                   <div class="row">
                     <div class="col-lg-4" v-for="(c,i) in categories" :key="i">
-                      <p style="color:white; font-size: 18px; cursor: pointer;">{{ c.category_name }}</p>
-                      <p style="color:white; font-size: 14px; cursor: pointer;" v-for="(sc,i) in c.sub_category" :key="i">{{ sc.sub_category_name }}</p>
+                      <p style="color:white; font-size: 18px; cursor: pointer;" @click="routeProduct(c.id)">{{ c.category_name }}</p>
+                      <p @click="routeSubProduct(c.id,sc.id)" style="color:white; font-size: 14px; cursor: pointer;" v-for="(sc,i) in c.sub_category" :key="i">{{ sc.sub_category_name }}</p>
                     </div>
                   </div>
                 </div>
@@ -91,9 +91,9 @@
         </div>
         <div class="col-lg-3 col-md-3">
           <div class="header__nav__option">
-            <a href="#" class="search-switch"><img src="assets/img/icon/search.png" alt=""></a>
-            <a href="#"><img src="assets/img/icon/heart.png" alt=""></a>
-            <a href="#"><img src="assets/img/icon/cart.png" alt=""> <span>0</span></a>
+            <a href="#" class="search-switch"><img src="/assets/img/icon/search.png" alt=""></a>
+            <a href="#"><img src="/assets/img/icon/heart.png" alt=""></a>
+            <a href="#"><img src="/assets/img/icon/cart.png" alt=""> <span>0</span></a>
             <div class="price">$0.00</div>
           </div>
         </div>
@@ -104,6 +104,7 @@
   </div>
 </template>
 <script>
+
 export default {
   data() {
     return {
@@ -118,6 +119,12 @@ export default {
       this.$api.post(this.dynamic_route('/category/all'),payload).then(response => {
         this.categories = response.data.data
       })
+    },
+    routeProduct(category_id) {  
+      this.$router.push(`/product-category/${category_id}`)
+    },
+    routeSubProduct(category_id,sub_category_id) {
+      this.$router.push(`/product-category/${category_id}/${sub_category_id}`)
     }
   },
   mounted() {
