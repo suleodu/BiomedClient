@@ -64,10 +64,11 @@ ul,
 }
 
 .caret::after {
-    content: "\25B6";
+    content: ">";
     color: black;
     display: inline-block;
     margin-right: 6px;
+    font-size: 15px !important;
 
 }
 
