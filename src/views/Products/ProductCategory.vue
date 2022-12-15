@@ -5,15 +5,14 @@
             <ul id="myUL">
                 <li>
                     <ul class="nesteds">
-                        <li v-for="(c, i) in categories" :key="i" class="wtu"><span class="caret" id="caret"
-                                @click="toggle(i)">{{ c.category_name
+                        <li v-for="(c, i) in categories" :key="i" class="wtu"><span class="caret" :id="'caret'+i+c.id"
+                                @click="toggle(i+''+c.id)">{{ c.category_name
                                 }}</span>
-                            <ul class="nested" :id="'nested' + i">
+                            <ul class="nested" :id="'nested' + i+''+c.id">
                                 <li class="wtu" style="padding-left:25px" v-for="(sc, id) in c.sub_category" :key="id">
-                                    <span class="caret" @click="toggle(i + '' + id)">{{ sc.sub_category_name }}</span>
-                                    <ul class="nested" :id="'nested' + i + id">
-                                        <li class="wtu" style="padding-left:25px;font-size: 20px;
-    color: #466eb4;" v-for="(ic, i) in sc.nested_sub_category" :key="i">{{ ic.name }}</li>
+                                    <span class="caret" :id="'caret'+i+id+c.id" @click="toggle(i + '' + id + '' +c.id)">{{ sc.sub_category_name }}</span>
+                                    <ul class="nested" :id="'nested' + i + id +c.id">
+                                        <li class="wtu" style="padding-left:25px;font-size: 20px;color: #466eb4;" v-for="(ic, i) in sc.nested_sub_category" :key="i">{{ ic.name }}</li>
                                     </ul>
                                 </li>
                             </ul>
@@ -65,10 +64,11 @@ ul,
 
 .caret::after {
     content: ">";
+    margin-left: 10px;
     color: black;
     display: inline-block;
     margin-right: 6px;
-    font-size: 15px !important;
+    font-size: 20px !important;
 
 }
 

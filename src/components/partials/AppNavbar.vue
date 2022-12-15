@@ -77,13 +77,40 @@
                   <div class="row">
                     <div class="col-lg-4" v-for="(c,i) in categories" :key="i">
                       <p style="color:white; font-size: 18px; cursor: pointer;" @click="routeProduct(c.id)">{{ c.category_name }}</p>
+                      <img :src="c.picture[0].picture" alt="" class="mb-2">
                       <p @click="routeSubProduct(c.id,sc.id)" style="color:white; font-size: 14px; cursor: pointer;" v-for="(sc,i) in c.sub_category" :key="i">{{ sc.sub_category_name }}</p>
                     </div>
                   </div>
                 </div>
                 
               </li>
-              <li><a href="blog.html">Company</a></li>
+              <li><a href="#">Company</a>
+                <div class="dropdown">
+                  <ul>
+                    <li>
+                      <router-link style="color:white; font-size: 18px; cursor: pointer;" to="/comapny">
+                        Company
+                      </router-link>
+                    </li>
+                    <li>
+                      <router-link style="color:white; font-size: 18px; cursor: pointer;" to="/company/mission-vision-value">
+                        Mission, Vision & Values
+                      </router-link>
+                    </li>
+                    <li>
+                      <router-link style="color:white; font-size: 18px; cursor: pointer;" to="/comapny/history">
+                        History
+                      </router-link>
+                    </li>
+                    <li>
+                      <router-link style="color:white; font-size: 18px; cursor: pointer;" to="/comapny">
+                        Meet the team
+                      </router-link>
+                    </li>
+                  </ul>
+                </div>
+                
+              </li>
               <li><a href="blog.html">Contact</a></li>
               <li><a href="contact.html">Services</a></li>
             </ul>
