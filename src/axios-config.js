@@ -1,5 +1,6 @@
 import axios from "axios";
 import swal from 'sweetalert'
+import NProgress from 'nprogress'
 let token = localStorage.getItem("2@39$*8");
 
 const appAxios = axios.create({
@@ -7,7 +8,17 @@ const appAxios = axios.create({
         authorization: `Bearer ${token}`
     }
 });
+// before a request is made start the nprogress
+appAxios.interceptors.request.use(config => {
+  NProgress.start()
+  return config
+})
 
+// before a response is returned stop nprogress
+appAxios.interceptors.response.use(response => {
+  NProgress.done()
+  return response
+})
 const onErrorResponse = async (error) => {
 
     if (error.response) {
