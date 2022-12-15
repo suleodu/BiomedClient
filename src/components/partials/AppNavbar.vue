@@ -88,7 +88,7 @@
                 <div class="dropdown">
                   <ul>
                     <li>
-                      <router-link style="color:white; font-size: 18px; cursor: pointer;" to="/comapny">
+                      <router-link style="color:white; font-size: 18px; cursor: pointer;" to="/company">
                         Company
                       </router-link>
                     </li>
@@ -98,12 +98,12 @@
                       </router-link>
                     </li>
                     <li>
-                      <router-link style="color:white; font-size: 18px; cursor: pointer;" to="/comapny/history">
+                      <router-link style="color:white; font-size: 18px; cursor: pointer;" to="/company/history">
                         History
                       </router-link>
                     </li>
                     <li>
-                      <router-link style="color:white; font-size: 18px; cursor: pointer;" to="/comapny">
+                      <router-link style="color:white; font-size: 18px; cursor: pointer;" to="/company">
                         Meet the team
                       </router-link>
                     </li>

@@ -16,7 +16,7 @@
                                 <router-link to="/company/history">History</router-link>
                             </li>
                             <li class="wtu">
-                                <router-link to="/company">Meet The Team</router-link>
+                                <router-link to="/company/meet-the-team">Meet The Team</router-link>
                             </li>
                         </ul>
                     </li>
@@ -26,3 +26,15 @@
         </div>
     </div>
 </template>
+<style>
+    .wtu:hover {
+    background-color: #f5f5f5 !important;
+    color: black !important;
+    transition: 1s;
+    cursor: pointer;
+}
+a:hover {
+    color: black !important;
+    transition: 1s;
+}
+</style>

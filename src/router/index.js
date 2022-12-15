@@ -6,6 +6,7 @@ import SingleProduct from '../views/Products/SingleProduct.vue'
 import MyCompany from '../views/Company/MyCompany.vue'
 import MissionValues from '../views/Company/MissionValues.vue'
 import CompanyHistory from '../views/Company/CompanyHistory.vue'
+import TheTeam from '../views/Company/TheTeam.vue'
 import VueRouter from 'vue-router'
 import NProgress from 'nprogress'
 
@@ -41,6 +42,11 @@ const routes = [
     path: '/company/history',
     name: 'History',
     component: CompanyHistory
+  },
+  {
+    path: '/company/meet-the-team',
+    name: 'Team',
+    component: TheTeam
   },
 ]
 const router = new VueRouter({

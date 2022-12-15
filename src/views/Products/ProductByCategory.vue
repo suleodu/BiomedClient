@@ -23,27 +23,31 @@
               </p>
             </div>
             <hr>
-            <div class="each-product" v-for="(p, i) in products.data" :key="i">
+            <div class="each-product mb-3" v-for="(p, i) in products.data" :key="i">
               <div class="row">
-                <div class="col-md-4">
-                  <img :src="p.picture[0] && p.picture[0].picture" alt="">
+                <div class="col-md-5">
+                  <img height="100%" width="100%" :src="p.picture[0] && p.picture[0].picture" alt="">
                 </div>
-                <div class="col-md-8 pt-3">
+                <div class="col-md-7 pt-3">
                   <p style="color:#466eb4; font-size:20px;">
                     {{ p.product_name }}
                   </p>
                   <div>
-                    <carousel :per-page="3" :navigate-to="someLocalProperty" :mouse-drag="false">
-                      <slide v-for="(pic, ip) in p.picture" :key="ip">
-                        <!-- <img :src="pic.picture" alt=""> -->
+                    <carousel :per-page="3" :navigate-to="someLocalProperty" :mouse-drag="true" :autoplay="true" :paginationEnabled="false">
+                      <slide v-for="(pic, ip) in p.picture" :key="ip" class="mr-3">
+                        <img height="100%" :src="pic.picture" alt="">
                       </slide>
                     </carousel>
                   </div>
-                  <p>
+                  <p class="pt-3">
                     {{ p.content }}
                   </p>
+                  <button class="btn btn-primary float-right" style="background-color:#466eb5; border: 1px solid #466eb5;">
+                    <i class="bi bi-cart" style="font-size: 2rem;"></i>
+                  </button>
                 </div>
               </div>
+              <hr>
             </div>
           </section>
         </div>
