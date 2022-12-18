@@ -6,13 +6,13 @@
                 <li>
                     <ul class="nesteds">
                         <li v-for="(c, i) in categories" :key="i" class="wtu"><span class="caret" :id="'caret'+i+c.id"
-                                @click="toggle(i+''+c.id)">{{ c.category_name
+                                @click="toggle(i+''+c.id); routeProd(c.id)">{{ c.category_name
                                 }}</span>
                             <ul class="nested" :id="'nested' + i+''+c.id">
                                 <li class="wtu" style="padding-left:25px" v-for="(sc, id) in c.sub_category" :key="id">
-                                    <span class="caret" :id="'caret'+i+id+c.id" @click="toggle(i + '' + id + '' +c.id)">{{ sc.sub_category_name }}</span>
+                                    <span class="caret" :id="'caret'+i+id+c.id" @click="toggle(i + '' + id + '' +c.id); routeProd(c.id+'/'+sc.id)">{{ sc.sub_category_name }}</span>
                                     <ul class="nested" :id="'nested' + i + id +c.id">
-                                        <li class="wtu" style="padding-left:25px;font-size: 20px;color: #466eb4;" v-for="(ic, i) in sc.nested_sub_category" :key="i">{{ ic.name }}</li>
+                                        <li class="wtu" style="padding-left:25px;font-size: 20px;color: #466eb4;" v-for="(ic, i) in sc.nested_sub_category" :key="i" @click="routeProd(c.id+'/'+sc.id+'/'+ic.id)">{{ ic.name }}</li>
                                     </ul>
                                 </li>
                             </ul>
@@ -128,6 +128,9 @@ export default {
             console.log(i)
             document.getElementById(`nested${i}`).classList.toggle("active");
             document.getElementById(`caret${i}`).classList.toggle("caret-down");
+        },
+        routeProd(i) {
+            this.$router.push(`/product-category/${i}`)
         }
     },
     mounted() {

@@ -9,6 +9,9 @@ import VueCarousel from 'vue-carousel';
 // import { fpjsPlugin } from '@fingerprintjs/fingerprintjs-pro-vue-v2';
 // Import the CSS or use your own!
 import options from "vue-toastification/dist/index.css";
+import Magnifier from 'vuejs-magnifier'
+ 
+ Vue.use(Magnifier)
 Vue.use(Toast, options);
 // Vue.use(fpjsPlugin, {
 //   loadOptions: {

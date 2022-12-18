@@ -3,10 +3,13 @@ import Vue from 'vue'
 import Home from '../views/Home/HomeIndex.vue'
 import ProductByCategory from '../views/Products/ProductByCategory.vue'
 import SingleProduct from '../views/Products/SingleProduct.vue'
+import ProductCart from '../views/Products/ProductCart.vue'
 import MyCompany from '../views/Company/MyCompany.vue'
 import MissionValues from '../views/Company/MissionValues.vue'
 import CompanyHistory from '../views/Company/CompanyHistory.vue'
 import TheTeam from '../views/Company/TheTeam.vue'
+import Login from '../views/Auth/Login.vue'
+import RegisterUser from '../views/Auth/RegisterUser.vue'
 import VueRouter from 'vue-router'
 import NProgress from 'nprogress'
 
@@ -19,6 +22,16 @@ const routes = [
     component: Home
   },
   {
+    path: '/auth/login',
+    name: 'Login',
+    component: Login
+  },
+  {
+    path: '/auth/register',
+    name: 'Register',
+    component: RegisterUser
+  },
+  {
     path: '/product-category/:category_id?/:sub_category_id?',
     name:'Products',
     component: ProductByCategory
@@ -27,6 +40,11 @@ const routes = [
     path: '/product/:product_id',
     name: 'Product',
     component: SingleProduct
+  },
+  {
+    path: '/cart',
+    name: 'Cart',
+    component: ProductCart
   },
   {
     path: '/company',

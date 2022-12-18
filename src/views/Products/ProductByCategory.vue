@@ -42,7 +42,7 @@
                   <p class="pt-3">
                     {{ p.content }}
                   </p>
-                  <button class="btn btn-primary float-right" style="background-color:#466eb5; border: 1px solid #466eb5;">
+                  <button @click="routeProduct(p.id)" class="btn btn-primary float-right" style="background-color:#466eb5; border: 1px solid #466eb5;">
                     <i class="bi bi-cart" style="font-size: 2rem;"></i>
                   </button>
                 </div>
@@ -149,6 +149,9 @@ export default {
         .catch(() => {
 
         })
+    },
+    routeProduct(id) {
+      this.$router.push(`/product/${id}`);
     }
   },
   mounted() {

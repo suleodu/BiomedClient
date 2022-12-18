@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <AppNavbar></AppNavbar>
+    <AppNavbar v-if="this.$router.currentRoute.fullPath !== '/auth/login' || this.$router.currentRoute.fullPath !== '/auth/register'"></AppNavbar>
     <router-view />
-    <AppFooter></AppFooter>
+    <AppFooter v-if="this.$router.currentRoute.fullPath !== '/auth/login' || this.$router.currentRoute.fullPath !== '/auth/register'"></AppFooter>
   </div>
 </template>
 
@@ -21,5 +21,8 @@ export default {
   methods: {
 
     },
+    mounted() {
+      console.log(this.$router.currentRoute.fullPath);
+    }
 };
 </script>

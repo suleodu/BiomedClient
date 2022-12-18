@@ -23,8 +23,7 @@
     <div class="offcanvas__nav__option">
       <a href="#" class="search-switch"><img src="/assets/img/icon/search.png" alt=""></a>
       <a href="#"><img src="/assets/img/icon/heart.png" alt=""></a>
-      <a href="#"><img src="/assets/img/icon/cart.png" alt=""> <span>0</span></a>
-      <div class="price">$0.00</div>
+      <router-link to="/cart"><img src="/assets/img/icon/cart.png" alt=""> <span>0</span></router-link>
     </div>
     <div id="mobile-menu-wrap"></div>
     <div class="offcanvas__text">
@@ -45,7 +44,7 @@
           <div class="col-lg-6 col-md-5">
             <div class="header__top__right">
               <div class="header__top__links">
-                <a href="#">Sign in</a>
+                <router-link to="/auth/login">Sign in</router-link>
                 <a href="#">FAQs</a>
               </div>
               <div class="header__top__hover">
@@ -65,13 +64,13 @@
       <div class="row">
         <div class="col-lg-3 col-md-3">
           <div class="header__logo">
-            <a href="index.html"><img src="/assets/img/logo.png" alt=""></a>
+            <router-link to="/"><img src="/assets/img/logo.png" alt=""></router-link>
           </div>
         </div>
         <div class="col-lg-6 col-md-6">
           <nav class="header__menu mobile-menu">
             <ul>
-              <li class="active"><a href="index.html">Home</a></li>
+              <li class="active"><router-link to="/">Home</router-link></li>
               <li><a href="#">Product</a>
                 <div class="dropdown">
                   <div class="row">
@@ -118,10 +117,9 @@
         </div>
         <div class="col-lg-3 col-md-3">
           <div class="header__nav__option">
-            <a href="#" class="search-switch"><img src="/assets/img/icon/search.png" alt=""></a>
-            <a href="#"><img src="/assets/img/icon/heart.png" alt=""></a>
-            <a href="#"><img src="/assets/img/icon/cart.png" alt=""> <span>0</span></a>
-            <div class="price">$0.00</div>
+            <router-link to="/wishlist"><span class="bi bi-heart" style="font-size:18px; font-weight: bold;"></span></router-link>
+            <router-link to="/cart"><span class="bi bi-cart" style="font-size:18px; font-weight: bold;">0</span></router-link>
+            <!-- <div class="price">$0.00</div> -->
           </div>
         </div>
       </div>

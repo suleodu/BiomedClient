@@ -27,7 +27,9 @@
     "vue-owl-carousel": "^2.0.3",
     "vue-router": "^3.5.1",
     "vue-toastification": "^1.7.14",
-    "vuex": "^3.6.2"
+    "vuejs-magnifier": "^0.1.1",
+    "vuex": "^3.6.2",
+    "zoomlens": "^1.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
