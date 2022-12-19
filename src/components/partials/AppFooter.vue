@@ -62,7 +62,7 @@
                 Copyright ©
                 {{ new Date().getFullYear() }}
 
-                All rights reserved | Designed by Demscript
+                All rights reserved | Biomed
               </p>
             </div>
           </div>

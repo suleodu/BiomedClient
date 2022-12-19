@@ -111,7 +111,7 @@
                 
               </li>
               <li><router-link to="/contact-us">Contact</router-link></li>
-              <li><a href="contact.html">Services</a></li>
+              <li><a href="contact.html">Special Order</a></li>
             </ul>
           </nav>
         </div>
