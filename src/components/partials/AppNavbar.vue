@@ -110,7 +110,7 @@
                 </div>
                 
               </li>
-              <li><a href="blog.html">Contact</a></li>
+              <li><router-link to="/contact-us">Contact</router-link></li>
               <li><a href="contact.html">Services</a></li>
             </ul>
           </nav>
