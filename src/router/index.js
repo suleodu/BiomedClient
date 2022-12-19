@@ -8,6 +8,7 @@ import MyCompany from '../views/Company/MyCompany.vue'
 import MissionValues from '../views/Company/MissionValues.vue'
 import CompanyHistory from '../views/Company/CompanyHistory.vue'
 import TheTeam from '../views/Company/TheTeam.vue'
+import ContactUs from '../views/ContactUs.vue'
 import Login from '../views/Auth/Login.vue'
 import RegisterUser from '../views/Auth/RegisterUser.vue'
 import VueRouter from 'vue-router'
@@ -65,6 +66,11 @@ const routes = [
     path: '/company/meet-the-team',
     name: 'Team',
     component: TheTeam
+  },
+  {
+    path: '/contact-us',
+    name: 'Contact',
+    component: ContactUs
   },
 ]
 const router = new VueRouter({
