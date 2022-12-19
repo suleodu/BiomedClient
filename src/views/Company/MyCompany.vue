@@ -17,7 +17,7 @@
                                         </h1>
                                     </div>
                                     <div>
-                                        <img src="../../../public/assets/images/BM.png" alt="" width="100%" />
+                                        <img src="https://www.biognost.com/wp-content/uploads/2019/01/G0078314-300x200.jpg" style="object-fit:cover" alt="" width="100%" />
                                     </div>
                                     <div class="mb-3">
                                         <p style="font-size:17px; font-family:'Rubik';">
@@ -48,7 +48,7 @@
                                             </div><div class="col-md-3">
                                                 <img class="mb-3" src="https://www.biognost.com/wp-content/uploads/2019/01/G0078314-300x200.jpg" alt="">
                                             </div><div class="col-md-3">
-                                                <img class="mb-3" src="https://www.biognost.com/wp-content/uploads/2019/01/G0078317-300x200.jpg" alt="">
+                                                <img class="mb-3" src="https://www.biognost.com/wp-content/uploads/2019/01/G0078314-300x200.jpg" alt="">
                                             </div><div class="col-md-3">
                                                 <img class="mb-3" src="https://www.biognost.com/wp-content/uploads/2019/01/G0078314-300x200.jpg" alt="">
                                             </div><div class="col-md-3">

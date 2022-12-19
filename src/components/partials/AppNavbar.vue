@@ -67,7 +67,7 @@
             <router-link to="/"><img src="/assets/img/logo.png" alt=""></router-link>
           </div>
         </div>
-        <div class="col-lg-6 col-md-6">
+        <div class="col-lg-7 col-md-7">
           <nav class="header__menu mobile-menu">
             <ul>
               <li class="active"><router-link to="/">Home</router-link></li>
@@ -115,7 +115,7 @@
             </ul>
           </nav>
         </div>
-        <div class="col-lg-3 col-md-3">
+        <div class="col-lg-1 col-md-1">
           <div class="header__nav__option">
             <router-link to="/wishlist"><span class="bi bi-heart" style="font-size:18px; font-weight: bold;"></span></router-link>
             <router-link to="/cart"><span class="bi bi-cart" style="font-size:18px; font-weight: bold;">0</span></router-link>
