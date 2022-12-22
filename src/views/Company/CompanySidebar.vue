@@ -1,7 +1,7 @@
 <template>
     <div>
         <div>
-            <h2>Product Category</h2>
+            <h2>Company</h2>
             <div class="catSub">
                 <ul id="myUL">
                     <li>
