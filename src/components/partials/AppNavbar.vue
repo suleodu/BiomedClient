@@ -118,7 +118,7 @@
         <div class="col-lg-1 col-md-1">
           <div class="header__nav__option">
             <router-link to="/wishlist"><span class="bi bi-heart" style="font-size:18px; font-weight: bold;"></span></router-link>
-            <router-link to="/cart"><span class="bi bi-cart" style="font-size:18px; font-weight: bold;">0</span></router-link>
+            <router-link to="/cart"><span class="bi bi-cart" style="font-size:18px; font-weight: bold;"></span></router-link>
             <!-- <div class="price">$0.00</div> -->
           </div>
         </div>
