@@ -1,51 +1,21 @@
 <template>
   <div>
-    <section class="hero">
-      <div class="hero__slider owl-carousel">
-        <div class="hero__items set-bg" data-setbg="assets/img/hero/hero-1.jpg">
-          <div class="container">
+    <section class="py-5">
+      <div class="container">
+        <carousel :perPage="1">
+          <slide v-for="(c,i) in categories" :key="i">
             <div class="row">
-              <div class="col-xl-5 col-lg-7 col-md-8">
-                <div class="hero__text">
-                  <!-- <h6>Summer Collection</h6> -->
-                  <h2>Veterinary Diagnostics</h2>
-                  <p>BioMed’s Veterinary diagnostics section offers a wide range of diagnostics kits such like ELISA,
-                    PCR, rapid test kits and any other technics or technologies that can help in the diagnostics
-                    processes of the animal diseases and/or related disease.</p>
-                  <a href="#" class="primary-btn">Explore <span class="arrow_right"></span></a>
-                  <!-- <div class="hero__social">
-                  <a href="#"><i class="fa fa-facebook"></i></a>
-                  <a href="#"><i class="fa fa-twitter"></i></a>
-                  <a href="#"><i class="fa fa-pinterest"></i></a>
-                  <a href="#"><i class="fa fa-instagram"></i></a>
-                </div> -->
-                </div>
+              <div class="col-md-6">
+                <img :src="c.picture[0].picture" alt="" width="100%">
+              </div>
+              <div class="col-md-6">
+                <h2>
+                  {{ c.category_name }}
+                </h2>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="hero__items set-bg" data-setbg="assets/img/hero/hero-2.jpg">
-          <div class="container">
-            <div class="row">
-              <div class="col-xl-5 col-lg-7 col-md-8">
-                <div class="hero__text">
-                  <!-- <h6>Summer Collection</h6> -->
-                  <h2>Human Diagnostic</h2>
-                  <p>BioMed’s Human diagnostics section offers a wide range of diagnostics kits and reagents such like
-                    ELISA, PCR, rapid test kits and any other technics our technologies that can help in the diagnostic
-                    process of the human diseases and/or related diseases.</p>
-                  <a href="#" class="primary-btn">Explore <span class="arrow_right"></span></a>
-                  <!-- <div class="hero__social">
-                  <a href="#"><i class="fa fa-facebook"></i></a>
-                  <a href="#"><i class="fa fa-twitter"></i></a>
-                  <a href="#"><i class="fa fa-pinterest"></i></a>
-                  <a href="#"><i class="fa fa-instagram"></i></a>
-                </div> -->
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+          </slide>
+        </carousel>
       </div>
     </section>
     <section class="best-choice py-5">
@@ -129,39 +99,20 @@
         </div>
 
         <div class="row product__filter mt-5">
-          <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals" v-for="(p, i) in products"
-            :key="i">
+          <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals" style="cursor:pointer"
+            v-for="(p, i) in products" :key="i" @click="viewProduct(p.id)">
             <div class="product__item">
               <div class="product__item__pic set-bg" v-bind:style="{ 'background-image': 'url(' + p.image + ')' }">
-                <span class="label">New</span>
+                <!-- <span class="label">New</span>
                 <ul class="product__hover">
                   <li><a href="#"><img src="assets/img/icon/heart.png" alt=""></a></li>
                   <li><a href="#"><img src="assets/img/icon/compare.png" alt=""> <span>Compare</span></a></li>
                   <li><a href="#"><img src="assets/img/icon/search.png" alt=""></a></li>
-                </ul>
+                </ul> -->
               </div>
               <div class="product__item__text">
                 <h6>{{ p.product_name }}</h6>
-                <a href="#" class="add-cart">+ Add To Cart</a>
-                <!-- <div class="rating">
-                  <i class="fa fa-star-o"></i>
-                  <i class="fa fa-star-o"></i>
-                  <i class="fa fa-star-o"></i>
-                  <i class="fa fa-star-o"></i>
-                  <i class="fa fa-star-o"></i>
-                </div>
-                <h5>${{ p.discount_price }}</h5> -->
-                <div class="product__color__select">
-                  <label for="pc-1">
-                    <input type="radio" id="pc-1">
-                  </label>
-                  <label class="active black" for="pc-2">
-                    <input type="radio" id="pc-2">
-                  </label>
-                  <label class="grey" for="pc-3">
-                    <input type="radio" id="pc-3">
-                  </label>
-                </div>
+
               </div>
             </div>
           </div>
@@ -354,20 +305,20 @@
   font-size: 18px;
   line-height: 45px;
 }
+
 .best-choice-content {
   padding-top: 50px;
   padding-bottom: 50px;
 }
 </style>
 <script>
-import $ from 'jquery';
-import carousel from 'vue-owl-carousel'
-import owlCarousel from 'owl.carousel'
+
 export default {
-  components: { carousel, owlCarousel },
+  components: {},
   data() {
     return {
       products: {},
+      categories: {},
     }
   },
 
@@ -382,27 +333,23 @@ export default {
           });
 
         })
-    }
+    },
+    viewProduct(id) {
+      this.$router.push({ name: 'Product', params: { product_id: id } })
+    },
+    getCategories() {
+      let payload = {
+        filters: ""
+      }
+      this.$api.post(this.dynamic_route('/category/all'), payload).then(response => {
+        this.categories = response.data.data
+
+      })
+    },
   },
   mounted() {
-    $('.set-bg').each(function () {
-      var bg = $(this).data('setbg');
-      $(this).css('background-image', 'url(' + bg + ')');
-    });
-    $(".hero__slider").owlCarousel({
-      loop: true,
-      margin: 0,
-      items: 1,
-      dots: false,
-      nav: true,
-      navText: ["<span class='arrow_left'><span/>", "<span class='arrow_right'><span/>"],
-      animateOut: 'fadeOut',
-      animateIn: 'fadeIn',
-      smartSpeed: 1200,
-      autoHeight: false,
-      autoplay: false
-    });
     this.getProducts();
+    this.getCategories();
   }
 }
 
