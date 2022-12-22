@@ -2,14 +2,14 @@
   <div>
     <section class="py-5 categories">
       <div class="container">
-        <carousel :perPage="1">
+        <carousel :perPage="1" :autoplayTimeout="3000" :autoplay="true">
           <slide v-for="(c,i) in categories" :key="i">
-            <div class="row">
+            <div class="row align-items-center">
               <div class="col-md-5">
                 <img :src="c.picture[0].picture" alt="" width="100%">
               </div>
               <div class="col-md-6">
-                <h2 class="pt-5">
+                <h2>
                   {{ c.category_name }}
                 </h2>
                 <p class="pt-4" style="font-size:16px">
