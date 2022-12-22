@@ -694,7 +694,7 @@ ol {
 -----------------------*/
 
 .categories {
-	background: #f3f2ee;
+	background: #f3f2ee !important;
 	overflow: hidden;
 	padding-top: 50px;
 	padding-bottom: 50px;
