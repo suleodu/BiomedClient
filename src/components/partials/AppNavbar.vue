@@ -71,12 +71,12 @@
           <nav class="header__menu mobile-menu">
             <ul>
               <li class="active"><router-link to="/">Home</router-link></li>
-              <li><a href="#">Product</a>
+              <li><router-link to="/product-category/1/1">Product</router-link>
                 <div class="dropdown">
                   <div class="row" style="width:1200px;">
-                    <div class="col-md-2" v-for="(c,i) in categories" :key="i">
+                    <div class="col" v-for="(c,i) in categories" :key="i">
                       <p style="font-size: 18px; cursor: pointer;" @click="routeProduct(c.id)" class="c_image">{{ c.category_name }}</p>
-                      <img :src="c.picture[0].picture" alt="" class="mb-2" style="max-width:150px;">
+                      <img :src="c.picture[0].picture" alt="" class="mb-2 w-100">
                       <p @click="routeSubProduct(c.id,sc.id)" style="font-size: 14px; cursor: pointer;" v-for="(sc,i) in c.sub_category" :key="i">{{ sc.sub_category_name }}</p>
                     </div>
                   </div>
