@@ -73,36 +73,36 @@
               <li class="active"><router-link to="/">Home</router-link></li>
               <li><a href="#">Product</a>
                 <div class="dropdown">
-                  <div class="row">
-                    <div class="col-lg-4" v-for="(c,i) in categories" :key="i">
-                      <p style="color:white; font-size: 18px; cursor: pointer;" @click="routeProduct(c.id)">{{ c.category_name }}</p>
-                      <img :src="c.picture[0].picture" alt="" class="mb-2">
-                      <p @click="routeSubProduct(c.id,sc.id)" style="color:white; font-size: 14px; cursor: pointer;" v-for="(sc,i) in c.sub_category" :key="i">{{ sc.sub_category_name }}</p>
+                  <div class="row" style="width:1200px;">
+                    <div class="col-md-2" v-for="(c,i) in categories" :key="i">
+                      <p style="font-size: 18px; cursor: pointer;" @click="routeProduct(c.id)">{{ c.category_name }}</p>
+                      <img :src="c.picture[0].picture" alt="" class="mb-2" style="max-width:150px;">
+                      <p @click="routeSubProduct(c.id,sc.id)" style="font-size: 14px; cursor: pointer;" v-for="(sc,i) in c.sub_category" :key="i">{{ sc.sub_category_name }}</p>
                     </div>
                   </div>
                 </div>
                 
               </li>
               <li><a href="#">Company</a>
-                <div class="dropdown">
-                  <ul>
+                <div class="dropdown" style="left: 0 !important;">
+                  <ul style="width: 300px;">
                     <li>
-                      <router-link style="color:white; font-size: 18px; cursor: pointer;" to="/company">
+                      <router-link style="font-size: 18px; cursor: pointer;" to="/company">
                         Company
                       </router-link>
                     </li>
                     <li>
-                      <router-link style="color:white; font-size: 18px; cursor: pointer;" to="/company/mission-vision-value">
+                      <router-link style="font-size: 18px; cursor: pointer;" to="/company/mission-vision-value">
                         Mission, Vision & Values
                       </router-link>
                     </li>
                     <li>
-                      <router-link style="color:white; font-size: 18px; cursor: pointer;" to="/company/history">
+                      <router-link style="font-size: 18px; cursor: pointer;" to="/company/history">
                         History
                       </router-link>
                     </li>
                     <li>
-                      <router-link style="color:white; font-size: 18px; cursor: pointer;" to="/company">
+                      <router-link style="font-size: 18px; cursor: pointer;" to="/company">
                         Meet the team
                       </router-link>
                     </li>
@@ -128,6 +128,12 @@
   </header>
   </div>
 </template>
+<style>
+  .dropdown {
+    background: white !important;
+    box-shadow: 1px 4px 4px 4px lightgrey !important;
+  }
+</style>
 <script>
 
 export default {

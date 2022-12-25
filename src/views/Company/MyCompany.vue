@@ -19,7 +19,7 @@
                                     <div>
                                         <img src="https://www.biognost.com/wp-content/uploads/2019/01/G0078314-300x200.jpg" style="object-fit:cover" alt="" width="100%" />
                                     </div>
-                                    <div class="mb-3">
+                                    <div class="py-4">
                                         <p style="font-size:17px; font-family:'Rubik';">
                                             BioGnost is an internationally recognized company and regional leader in the
                                             development and manufacture of in vitro medical diagnostic devices,

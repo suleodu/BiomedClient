@@ -19,7 +19,7 @@
                                     <div>
                                         <img src="https://www.biognost.com/wp-content/uploads/2019/02/mission.jpg" alt="" width="100%" />
                                     </div>
-                                    <div class="mb-3">
+                                    <div class="mb-3 pt-4">
                                         <h1>
                                             Your satisfaction and trust are our priorities
                                         </h1>
