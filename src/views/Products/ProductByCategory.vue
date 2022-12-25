@@ -1,5 +1,7 @@
 <template>
   <div>
+    <loading :active.sync="isLoading"/>
+
     <div class="first-wrapper">
       <img :src="category.picture[0].picture" alt="" width="100%" height="70%">
       <ul class="breadcrumb">
@@ -107,18 +109,23 @@ ul.breadcrumb li a:hover {
 </style>
 <script>
 import ProductCategory from './ProductCategory.vue';
+import loading from 'vue-loading-overlay';
+import 'vue-loading-overlay/dist/vue-loading.css';
 export default {
   data() {
     return {
       products: {},
       category: {},
+      isLoading: false
     }
   },
   components: {
-    ProductCategory
+    ProductCategory,
+    loading
   },
   methods: {
     getProducts() {
+      this.isLoading = true;
       let param = '';
       if (this.$route.params.category_id) {
         param += `/${this.$route.params.category_id}`
@@ -132,8 +139,11 @@ export default {
       this.$api.get(this.dynamic_route(`/product/product-search${param}`))
         .then((res) => {
           this.products = res.data.data;
+      this.isLoading = false;
+
         })
         .catch(() => {
+      this.isLoading = false;
 
         })
     },
@@ -157,6 +167,13 @@ export default {
   mounted() {
     this.getProducts();
     this.getCategoryDetails();
+  },
+  created() {
+    this.$watch('$route', () => {
+      // Make a request to the server with the new URL
+      this.getProducts();
+      this.getCategoryDetails();
+    })
   }
 }
 

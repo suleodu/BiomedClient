@@ -25,6 +25,7 @@
     "vue-carousel": "^0.18.0",
     "vue-element-loading": "^2.0.2",
     "vue-i18n": "^9.2.2",
+    "vue-loading-overlay": "^3.4.2",
     "vue-owl-carousel": "^2.0.3",
     "vue-router": "^3.5.1",
     "vue-toastification": "^1.7.14",

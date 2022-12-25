@@ -3,7 +3,7 @@
     <section class="py-5 categories">
       <div class="container">
         <carousel :perPage="1" :autoplayTimeout="3000" :autoplay="true">
-          <slide v-for="(c,i) in categories" :key="i">
+          <slide v-for="(c, i) in categories" :key="i">
             <div class="row align-items-center">
               <div class="col-md-5">
                 <img :src="c.picture[0].picture" alt="" width="100%">
@@ -45,8 +45,8 @@
             Our Products
           </h2>
         </div>
-
         <div class="row product__filter mt-5">
+          <loading :active.sync="isLoading"/>
           <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals" style="cursor:pointer"
             v-for="(p, i) in products" :key="i" @click="viewProduct(p.id)">
             <div class="product__item">
@@ -260,21 +260,28 @@
 }
 </style>
 <script>
-
+import loading from 'vue-loading-overlay';
+import 'vue-loading-overlay/dist/vue-loading.css';
 export default {
-  components: {},
   data() {
     return {
       products: {},
       categories: {},
+      isLoading: false,
+      fullPage: false,
     }
   },
-
+  components: {
+    loading
+  },
   methods: {
     getProducts() {
+      this.isLoading = true;
       this.$api.post(this.dynamic_route('/product/all/all-products'))
         .then((response) => {
           this.products = response.data.data.data;
+          this.isLoading = false;
+
           this.products.forEach(object => {
             object.image = null
             object.image = object.picture[0].picture;

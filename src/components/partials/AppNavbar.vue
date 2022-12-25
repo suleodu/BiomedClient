@@ -75,7 +75,7 @@
                 <div class="dropdown">
                   <div class="row" style="width:1200px;">
                     <div class="col-md-2" v-for="(c,i) in categories" :key="i">
-                      <p style="font-size: 18px; cursor: pointer;" @click="routeProduct(c.id)">{{ c.category_name }}</p>
+                      <p style="font-size: 18px; cursor: pointer;" @click="routeProduct(c.id)" class="c_image">{{ c.category_name }}</p>
                       <img :src="c.picture[0].picture" alt="" class="mb-2" style="max-width:150px;">
                       <p @click="routeSubProduct(c.id,sc.id)" style="font-size: 14px; cursor: pointer;" v-for="(sc,i) in c.sub_category" :key="i">{{ sc.sub_category_name }}</p>
                     </div>
@@ -132,6 +132,13 @@
   .dropdown {
     background: white !important;
     box-shadow: 1px 4px 4px 4px lightgrey !important;
+  }
+  .c_image {
+  width: 10em; /* the element needs a fixed width (in px, em, %, etc) */
+  overflow: hidden; /* make sure it hides the content that overflows */
+  white-space: nowrap; /* don't break the line */
+  text-overflow: ellipsis; /* give the beautiful '...' effect */
+
   }
 </style>
 <script>
