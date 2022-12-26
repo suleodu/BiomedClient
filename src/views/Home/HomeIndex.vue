@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="py-5">
+    <section class="mb-3">
       <div>
         <carousel :perPage="1" :autoplayTimeout="3000" :autoplay="true" v-bind:style="{ height: slideHeight + 'px' }">
           <slide>
