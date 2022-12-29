@@ -4,6 +4,7 @@ import Home from '../views/Home/HomeIndex.vue'
 import ProductByCategory from '../views/Products/ProductByCategory.vue'
 import SingleProduct from '../views/Products/SingleProduct.vue'
 import ProductCart from '../views/Products/ProductCart.vue'
+import SpecialOrder from '../views/Products/SpecialOrder.vue'
 import MyCompany from '../views/Company/MyCompany.vue'
 import MissionValues from '../views/Company/MissionValues.vue'
 import CompanyHistory from '../views/Company/CompanyHistory.vue'
@@ -71,6 +72,11 @@ const routes = [
     path: '/contact-us',
     name: 'Contact',
     component: ContactUs
+  },
+  {
+    path: '/special-order',
+    name: 'SpecialOrder',
+    component: SpecialOrder
   },
 ]
 const router = new VueRouter({
