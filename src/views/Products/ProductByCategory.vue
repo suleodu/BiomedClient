@@ -1,6 +1,9 @@
 <template>
   <div>
-    <loading :active.sync="isLoading"/>
+    <div>
+      <loading :active.sync="isLoading"/>
+      <h1>ffjfj</h1>
+    </div>
 
     <div class="first-wrapper">
       <img :src="category.picture[0].picture" alt="" width="100%" height="70%">

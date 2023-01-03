@@ -28,32 +28,35 @@
                         <div class="col-md-12 mb-2">
                             <div class="form-group
                             ">
-                                <input type="text" class="form-control" id="name" placeholder="First Name">
+                                <input type="text" v-model="form.first_name" class="form-control" id="name" placeholder="First Name">
                             </div>
                         </div>
                         <div class="col-md-12 mb-2">
                             <div class="form-group
                             ">
-                                <input type="text" class="form-control" id="name" placeholder="Last Name">
+                                <input type="text" v-model="form.last_name" class="form-control" id="name" placeholder="Last Name">
                             </div>
                         </div>
                         <div class="col-md-12 mb-2">
                             <div class="form-group
                             ">
-                                <input type="text" class="form-control" id="name" placeholder="Email Address">
+                                <input type="text" v-model="form.email" class="form-control" id="name" placeholder="Email Address">
                             </div>
                         </div>
                         <div class="col-md-12 mb-2">
                             <div class="form-group
                             ">
-                                <input type="text" class="form-control" id="name" placeholder="Phone Number">
+                                <input type="text" v-model="form.phone" class="form-control" id="name" placeholder="Phone Number">
                             </div>
                         </div>
-                        <div class="col-md-12 mb-2">
+                        <div class="col-md-12 mb-3">
                             <div class="form-group
                             ">
-                                <textarea class="form-control" name="" id="" cols="30" rows="5" placeholder="How may we assist?"></textarea>
+                                <textarea class="form-control" v-model="form.message" name="" id="" cols="30" rows="5" placeholder="How may we assist?"></textarea>
                             </div>
+                        </div>
+                        <div class="col-md-12">
+                            <button class="btn primary-btn float-right" @click="contactUs()">SUBMIT</button>
                         </div>
                     </div>
                 </div>
@@ -80,6 +83,7 @@ export default {
     data() {
         return {
             products: {},
+            form: {},
         }
     },
 
@@ -94,7 +98,28 @@ export default {
                     });
 
                 })
-        }
+        },
+        contactUs() {
+            this.$api.post(this.dynamic_route('/contact'), this.form)
+                .then(() => {
+                    this.$toast.success("Message Sent", {
+                            position: "top-right",
+                            timeout: 5000,
+                            closeOnClick: true,
+                            pauseOnFocusLoss: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            draggablePercent: 0.6,
+                            showCloseButtonOnHover: false,
+                            hideProgressBar: true,
+                            closeButton: "button",
+                            icon: true,
+                            rtl: false,
+                        });
+                        this.form = {};
+                })
+        },
+        
     },
     mounted() {
 

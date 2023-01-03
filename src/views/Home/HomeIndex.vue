@@ -4,18 +4,18 @@
       <div>
         <carousel :perPage="1" :autoplayTimeout="3000" :autoplay="true" v-bind:style="{ height: slideHeight + 'px' }">
           <slide>
-            <img src="https://wallpaperaccess.com/full/1987298.jpg" alt="" class="w-100">
+            <img src="https://thumbs.dreamstime.com/z/biomedical-research-background-biochemistry-pharmaceutical-concept-d-illustration-88059990.jpg" alt="" class="w-100">
           </slide>
           <slide>
             <img src="https://c8.alamy.com/comp/R20PRH/background-illustration-of-an-abstract-frame-with-biomedical-engineering-design-R20PRH.jpg" alt="" class="w-100">
           </slide>
           <slide>
-            <img src="https://thumbs.dreamstime.com/z/biomedical-research-background-biochemistry-pharmaceutical-concept-d-illustration-88059990.jpg" alt="" class="w-100">
+            <img src="https://thumbs.dreamstime.com/b/discoveries-biomedical-microbiology-research-medical-icons-female-scientist-blue-background-d-illustration-107288369.jpg" alt="" class="w-100">
           </slide>
         </carousel>
       </div>
     </section>
-    <!-- <section class="best-choice py-5">
+    <section class="best-choice py-5 categories">
       <div class="container">
         <div class="best-choice-content text-center">
           <h2>Our Best Choice</h2>
@@ -29,7 +29,7 @@
           </p>
         </div>
       </div>
-    </section> -->
+    </section>
 
 
     <section class="product spad">
@@ -177,8 +177,8 @@
         </div>
         <div class="row">
           <div class="col-lg-4 col-md-6 col-sm-6">
-            <div class="blog__item">
-              <div class="blog__item__pic set-bg" data-setbg="assets/img/blog/blog-1.jpg"></div>
+            <div class="blog__item">(
+              <div class="blog__item__pic set-bg" style="background-image:url('../../assets/img/blog/blog-1.jpg');"></div>
               <div class="blog__item__text">
                 <span><img src="assets/img/icon/calendar.png" alt=""> 16 February 2020</span>
                 <h5>What Curling Irons Are The Best Ones</h5>
@@ -188,7 +188,7 @@
           </div>
           <div class="col-lg-4 col-md-6 col-sm-6">
             <div class="blog__item">
-              <div class="blog__item__pic set-bg" data-setbg="assets/img/blog/blog-2.jpg"></div>
+              <div class="blog__item__pic set-bg" style="background-image:url('../../assets/img/blog/blog-2.jpg');"></div>
               <div class="blog__item__text">
                 <span><img src="assets/img/icon/calendar.png" alt=""> 21 February 2020</span>
                 <h5>Eternity Bands Do Last Forever</h5>
@@ -198,7 +198,7 @@
           </div>
           <div class="col-lg-4 col-md-6 col-sm-6">
             <div class="blog__item">
-              <div class="blog__item__pic set-bg" data-setbg="assets/img/blog/blog-3.jpg"></div>
+              <div class="blog__item__pic set-bg" style="background-image:url('../../assets/img/blog/blog-3.jpg');"></div>
               <div class="blog__item__text">
                 <span><img src="assets/img/icon/calendar.png" alt=""> 28 February 2020</span>
                 <h5>The Health Benefits Of Sunglasses</h5>

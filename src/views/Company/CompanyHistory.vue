@@ -17,7 +17,7 @@
                                         </h1>
                                     </div>
                                     <div>
-                                        <img src="https://www.biognost.com/wp-content/uploads/2019/01/G0078314-300x200.jpg" alt="" width="100%" />
+                                        <img src="https://www.biognost.com/wp-content/uploads/2019/05/facility.jpg" alt="" width="100%" />
                                     </div>
                                     <div>
                                         <p class="py-4" style="font-size:17px; font-family:'Rubik';">

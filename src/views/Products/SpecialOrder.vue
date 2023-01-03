@@ -23,9 +23,9 @@
                                 <td>
                                     <span id="snum1" class="indexnum">{{ row.id }}</span>
                                 </td>
-                                <td><input id="partnumber_1" class="form-control" type="text" name="partnumber[]"
+                                <td><input id="partnumber_1" class="form-control" type="text" v-model="row.reference"
                                         data-type="partnumber" autocomplete="off"></td>
-                                <td><input type="number" class="form-control"></td>
+                                <td><input type="number" class="form-control" v-model="row.quantity"></td>
                             </tr>
 
                         </tbody>
@@ -33,7 +33,7 @@
                             <tr>
                                 <td colspan="50">
                                     <button class="btn primary-btn mr-3" @click.prevent="addLine">Add Line</button>
-                                    <button class="btn site-btn">Add To Cart</button>
+                                    <button class="btn site-btn" @click.prevent="addToCart">Add To Cart</button>
                                 </td>
                             </tr>
                         </tfoot>
@@ -71,7 +71,7 @@ export default {
     data() {
         return {
             rows: [
-                { id: 1, reference: 'Value 1', quantity: 'Value 2' },
+                { id: 1, reference: '', quantity: '' },
             ]
         }
     },
@@ -82,9 +82,29 @@ export default {
             // Add a new row to the rows array
             this.rows.push({
                 id: newId,
-                column1: '',
-                column2: ''
+                reference: '',
+                quantity: ''
             });
+        },
+        addToCart() {
+            this.$api.post(this.dynamic_route('/special-order'), this.rows)
+                .then(() => {
+                    this.$toast.success("Order Sent", {
+                            position: "top-right",
+                            timeout: 5000,
+                            closeOnClick: true,
+                            pauseOnFocusLoss: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            draggablePercent: 0.6,
+                            showCloseButtonOnHover: false,
+                            hideProgressBar: true,
+                            closeButton: "button",
+                            icon: true,
+                            rtl: false,
+                        });
+                        this.rows.length = 0;
+                })
         }
     }
 }
