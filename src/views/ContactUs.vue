@@ -101,8 +101,8 @@ export default {
         },
         contactUs() {
             this.$api.post(this.dynamic_route('/contact'), this.form)
-                .then(() => {
-                    this.$toast.success("Message Sent", {
+                .then((res) => {
+                    this.$toast.success(res.data.message, {
                             position: "top-right",
                             timeout: 5000,
                             closeOnClick: true,

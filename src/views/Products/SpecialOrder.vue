@@ -88,8 +88,8 @@ export default {
         },
         addToCart() {
             this.$api.post(this.dynamic_route('/special-order'), this.rows)
-                .then(() => {
-                    this.$toast.success("Order Sent", {
+                .then((res) => {
+                    this.$toast.success(res.data.message, {
                             position: "top-right",
                             timeout: 5000,
                             closeOnClick: true,
